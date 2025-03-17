@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色匹配 - AOneRest</title>
+    <meta name="description" content="测试你的注意力和反应速度，判断单词的颜色是否与其含义匹配。">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/color-match.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-highlight">A</span>One<span class="logo-highlight">Rest</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../stats.html">统计</a></li>
+                    <li><a href="../about.html">关于</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <div class="game-header-content">
+                    <img src="../images/games/color-match.jpg" alt="颜色匹配" class="game-header-image">
+                    <div class="game-header-info">
+                        <h1 class="game-header-title">颜色匹配</h1>
+                        <div class="game-header-meta">
+                            <span class="game-type focus">专注力</span>
+                            <span class="game-duration">5 分钟</span>
+                        </div>
+                        <p class="game-header-description">测试你的注意力和反应速度，判断单词的颜色是否与其含义匹配。这个游戏基于斯特鲁普效应（Stroop Effect），能够有效训练你的大脑抑制自动反应的能力。</p>
+                        <button class="btn btn-primary" id="startGameBtn">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-container">
+            <div class="container">
+                <div class="game-instructions">
+                    <h2 class="instructions-title">游戏说明</h2>
+                    <p>在这个游戏中，你将看到一个彩色的单词。你的任务是判断单词的<strong>颜色</strong>是否与单词的<strong>含义</strong>相匹配。</p>
+                    <ul>
+                        <li>如果单词的颜色与其含义相匹配（例如，单词"红色"以红色显示），点击"匹配"按钮。</li>
+                        <li>如果单词的颜色与其含义不匹配（例如，单词"红色"以蓝色显示），点击"不匹配"按钮。</li>
+                        <li>游戏时间为60秒，尽可能快速准确地回答。</li>
+                        <li>每次正确回答得1分，错误回答不扣分。</li>
+                    </ul>
+                </div>
+
+                <div class="game-area" id="gameArea">
+                    <div class="game-welcome" id="gameWelcome">
+                        <h2>准备好了吗？</h2>
+                        <p>点击"开始游戏"按钮开始挑战！</p>
+                        <button class="btn btn-primary" id="startButton">开始游戏</button>
+                    </div>
+
+                    <div class="game-play" id="gamePlay" style="display: none;">
+                        <div class="game-stats">
+                            <div class="timer">
+                                <span class="timer-label">时间：</span>
+                                <span class="timer-value" id="timeLeft">60</span>
+                            </div>
+                            <div class="score">
+                                <span class="score-label">得分：</span>
+                                <span class="score-value" id="score">0</span>
+                            </div>
+                        </div>
+
+                        <div class="color-word" id="colorWord">红色</div>
+
+                        <div class="button-container">
+                            <button class="game-btn match-btn" id="matchBtn">匹配</button>
+                            <button class="game-btn no-match-btn" id="noMatchBtn">不匹配</button>
+                        </div>
+                    </div>
+
+                    <div class="game-over" id="gameOver" style="display: none;">
+                        <h2 class="game-over-title">游戏结束！</h2>
+                        <p class="game-over-score">你的得分：<span id="finalScore">0</span></p>
+                        <p class="game-over-message" id="gameOverMessage"></p>
+                        <div class="game-over-buttons">
+                            <button class="btn btn-primary" id="playAgainBtn">再玩一次</button>
+                            <button class="btn btn-secondary" id="shareBtn">分享成绩</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html">
+                        <span class="logo-highlight">A</span>One<span class="logo-highlight">Rest</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../stats.html">统计</a></li>
+                        <li><a href="../about.html">关于</a></li>
+                        <li><a href="../privacy.html">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AOneRest. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/games-data.js"></script>
+    <script src="../js/color-match.js"></script>
+</body>
+</html> 

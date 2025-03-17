@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOneRest - 一次休息，全面充电</title>
+    <meta name="description" content="AOneRest提供科学设计的游戏，帮助你在工作间隙进行有效的精神休息。几分钟内为大脑充电。">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-highlight">A</span>One<span class="logo-highlight">Rest</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="stats.html">统计</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">大脑充电游戏</h1>
+                <p class="page-description">浏览我们精心设计的游戏，为你的大脑提供完美的休息。按类型或时长筛选，找到最适合你需求的精神充电方式。</p>
+            </div>
+        </section>
+
+        <section class="games-filter">
+            <div class="container">
+                <div class="filter-group">
+                    <h3 class="filter-title">类型</h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-type="all">全部</button>
+                        <button class="filter-btn" data-type="focus">专注力</button>
+                        <button class="filter-btn" data-type="creative">创造力</button>
+                        <button class="filter-btn" data-type="logic">逻辑思维</button>
+                        <button class="filter-btn" data-type="calm">放松</button>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3 class="filter-title">时长</h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-duration="all">全部</button>
+                        <button class="filter-btn" data-duration="5">≤ 5分钟</button>
+                        <button class="filter-btn" data-duration="10">≤ 10分钟</button>
+                        <button class="filter-btn" data-duration="15">≤ 15分钟</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-list">
+            <div class="container">
+                <div class="game-grid" id="gamesGrid">
+                    <!-- 游戏卡片将通过JavaScript动态加载 -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p>没有符合当前筛选条件的游戏。请尝试调整筛选条件。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h2 class="section-title">为什么精神休息很重要</h2>
+                <p class="section-subtitle">战略性休息可以显著提高你的生产力和精神健康</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/icons/brain.svg" alt="大脑图标">
+                        </div>
+                        <h3 class="benefit-title">认知恢复</h3>
+                        <p class="benefit-description">短暂的精神休息有助于恢复注意力并防止认知疲劳，让你能够保持更长时间的专注。</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/icons/lightbulb.svg" alt="灯泡图标">
+                        </div>
+                        <h3 class="benefit-title">增强创造力</h3>
+                        <p class="benefit-description">暂时离开问题往往会带来突破性的见解，因为你的大脑在后台建立连接。</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/icons/chart.svg" alt="图表图标">
+                        </div>
+                        <h3 class="benefit-title">提高生产力</h3>
+                        <p class="benefit-description">研究表明，定期短暂休息比长时间连续工作能提高整体生产力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <span class="logo-highlight">A</span>One<span class="logo-highlight">Rest</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="stats.html">统计</a></li>
+                        <li><a href="about.html">关于</a></li>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AOneRest. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/games-data.js"></script>
+    <script src="js/games.js"></script>
+</body>
+</html> 
