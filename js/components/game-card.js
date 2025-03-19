@@ -10,17 +10,17 @@ class GameCard {
      */
     constructor(gameData, options = {}) {
         this.game = gameData;
-        this.options = Object.assign({
-            // Default options
-            showType: true,              // Whether to show the game type
-            showDescription: true,       // Whether to show the game description
-            imageSize: 'medium',         // Image size (small, medium, large)
-            clickable: true,             // Whether the card is clickable
-            customClass: '',             // Additional CSS classes
-            onClickCallback: null        // Custom click callback
-        }, options);
+        this.options = {
+            showType: true,
+            showDescription: true,
+            imageSize: 'medium',
+            clickable: true,
+            customClass: '',
+            ...options
+        };
         
-        this.element = null;
+        // Create and render the card
+        this.element = this.render();
     }
     
     /**
@@ -28,34 +28,63 @@ class GameCard {
      * @returns {HTMLElement} The rendered game card element
      */
     render() {
+        const { 
+            id,
+            title, 
+            description, 
+            type,
+            image
+        } = this.game;
+
         // Create card element
         const card = document.createElement('div');
         card.className = `game-card ${this.options.customClass}`;
+        card.dataset.id = id;
         
         // Add image size class
         card.classList.add(`image-${this.options.imageSize}`);
         
+        // Make card clickable if enabled
+        if (this.options.clickable) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => {
+                // Navigate to game-detail.html with game ID
+                window.location.href = `game-detail.html?id=${id}`;
+            });
+        }
+        
         // Use default image as fallback
-        const imageSrc = this.game.image || 'images/games/default-game.jpg';
+        const imageSrc = image || 'images/games/default-game.jpg';
         
         // Build card HTML
         let cardHTML = `
-            <img src="${imageSrc}" alt="${this.game.title}" class="game-image">
+            <img src="${imageSrc}" alt="${title}" class="game-image">
             <div class="game-content">
-                <h3 class="game-title">${this.game.title}</h3>
+                <h3 class="game-title">${title}</h3>
         `;
         
         // Add description if enabled
         if (this.options.showDescription) {
-            cardHTML += `<p class="game-description">${this.game.description}</p>`;
+            cardHTML += `<p class="game-description">${description}</p>`;
         }
         
         // Add game type if enabled
         if (this.options.showType) {
             cardHTML += `
                 <div class="game-meta">
-                    <span class="game-type ${this.game.type}">${getGameTypeName(this.game.type)}</span>
+                    <span class="game-type ${type}">${getGameTypeName(type)}</span>
                 </div>
+            `;
+        }
+        
+        // Add action button
+        if (!this.game.comingSoon) {
+            cardHTML += `
+                <button class="btn-play">Play Now</button>
+            `;
+        } else {
+            cardHTML += `
+                <button class="btn-play coming-soon">Coming Soon</button>
             `;
         }
         
@@ -65,23 +94,14 @@ class GameCard {
         // Set inner HTML
         card.innerHTML = cardHTML;
         
-        // Add click event if card is clickable
-        if (this.options.clickable) {
-            card.classList.add('clickable');
-            
-            card.addEventListener('click', (event) => {
-                if (this.options.onClickCallback) {
-                    // Use custom callback if provided
-                    this.options.onClickCallback(this.game, event);
-                } else {
-                    // Default behavior: navigate to game page
-                    window.location.href = this.game.path;
-                }
+        // Add event listener to Play Now button to prevent propagation
+        const playButton = card.querySelector('.btn-play');
+        if (playButton && !this.game.comingSoon) {
+            playButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the card click event
+                window.location.href = `game-detail.html?id=${id}`;
             });
         }
-        
-        // Store element reference
-        this.element = card;
         
         return card;
     }
@@ -92,17 +112,12 @@ class GameCard {
      * @returns {HTMLElement} The updated game card element
      */
     update(newGameData) {
-        this.game = newGameData;
+        this.game = { ...this.game, ...newGameData };
+        const newElement = this.render();
+        this.element.replaceWith(newElement);
+        this.element = newElement;
         
-        // If element already exists, replace it
-        if (this.element && this.element.parentNode) {
-            const newElement = this.render();
-            this.element.parentNode.replaceChild(newElement, this.element);
-            return newElement;
-        }
-        
-        // Otherwise just render
-        return this.render();
+        return newElement;
     }
 }
 

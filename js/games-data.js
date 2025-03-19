@@ -4,6 +4,14 @@
  */
 const gamesData = [
     {
+        id: 'monster-survivors',
+        title: 'Monster Survivors',
+        description: 'A fast-paced action game that provides the perfect mental refresh. Navigate through waves of monsters for a quick cognitive reset.',
+        type: 'focus',
+        image: 'https://img.itch.zone/aW1hZ2UvMTI5NzU1NS83NTU0NzI1LnBuZw==/original/WYIk3D.png',
+        path: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html'
+    },
+    {
         id: 'color-match',
         title: 'Color Match',
         description: 'Test your attention and reaction speed by determining if the color of a word matches its meaning.',
