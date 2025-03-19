@@ -1,21 +1,24 @@
 /**
- * 游戏列表页面的JavaScript
- * 处理游戏卡片的渲染和筛选功能
+ * Game list page JavaScript
+ * Handles game card rendering and filtering functionality
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化移动端菜单
+    // Initialize mobile menu
     initMobileMenu();
     
-    // 渲染游戏卡片
-    renderGames(getAllGames());
-    
-    // 初始化筛选功能
-    initFilters();
+    // Load game card component
+    loadComponent('js/components/game-card.js', function() {
+        // Render games after component is loaded
+        renderGames(getAllGames());
+        
+        // Initialize filters
+        initFilters();
+    });
 });
 
 /**
- * 初始化移动端菜单
+ * Initialize mobile menu
  */
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -30,8 +33,23 @@ function initMobileMenu() {
 }
 
 /**
- * 渲染游戏卡片
- * @param {Array} games 游戏数据数组
+ * Dynamically load a JavaScript component
+ * @param {string} src - Path to the component file
+ * @param {Function} callback - Function to call after component is loaded
+ */
+function loadComponent(src, callback) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = callback;
+    script.onerror = function() {
+        console.error('Failed to load component:', src);
+    };
+    document.head.appendChild(script);
+}
+
+/**
+ * Render game cards
+ * @param {Array} games - Array of game data
  */
 function renderGames(games) {
     const gamesGrid = document.getElementById('gamesGrid');
@@ -39,121 +57,67 @@ function renderGames(games) {
     
     if (!gamesGrid) return;
     
-    // 清空现有内容
+    // Clear existing content
     gamesGrid.innerHTML = '';
     
-    // 检查是否有游戏
+    // Check if there are games
     if (games.length === 0) {
         gamesGrid.style.display = 'none';
         noResults.style.display = 'block';
         return;
     }
     
-    // 显示游戏网格，隐藏无结果提示
+    // Show games grid, hide no results message
     gamesGrid.style.display = 'grid';
     noResults.style.display = 'none';
     
-    // 渲染每个游戏卡片
+    // Render each game card
     games.forEach(game => {
-        const gameCard = createGameCard(game);
-        gamesGrid.appendChild(gameCard);
+        // Create game card using the component
+        const gameCard = new GameCard(game);
+        gamesGrid.appendChild(gameCard.render());
     });
 }
 
 /**
- * 创建游戏卡片元素
- * @param {Object} game 游戏数据
- * @returns {HTMLElement} 游戏卡片DOM元素
- */
-function createGameCard(game) {
-    const card = document.createElement('div');
-    card.className = 'game-card';
-    
-    // 使用默认图片作为备用
-    const imageSrc = game.image || 'images/games/default-game.jpg';
-    
-    card.innerHTML = `
-        <img src="${imageSrc}" alt="${game.title}" class="game-image">
-        <div class="game-content">
-            <h3 class="game-title">${game.title}</h3>
-            <p class="game-description">${game.description}</p>
-            <div class="game-meta">
-                <span class="game-type ${game.type}">${getGameTypeName(game.type)}</span>
-                <span class="game-duration">${formatGameDuration(game.duration)}</span>
-            </div>
-        </div>
-    `;
-    
-    // 添加点击事件
-    card.addEventListener('click', function() {
-        window.location.href = game.path;
-    });
-    
-    return card;
-}
-
-/**
- * 初始化筛选功能
+ * Initialize filters
  */
 function initFilters() {
-    // 获取所有筛选按钮
+    // Get all filter buttons
     const typeButtons = document.querySelectorAll('.filter-btn[data-type]');
-    const durationButtons = document.querySelectorAll('.filter-btn[data-duration]');
     
-    // 当前筛选条件
+    // Current filter criteria
     let currentType = 'all';
-    let currentDuration = 'all';
     
-    // 为类型筛选按钮添加事件监听
+    // Add event listeners to type filter buttons
     typeButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // 更新按钮状态
+            // Update button state
             typeButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            // 更新当前类型
+            // Update current type
             currentType = this.getAttribute('data-type');
             
-            // 应用筛选
-            applyFilters(currentType, currentDuration);
-        });
-    });
-    
-    // 为时长筛选按钮添加事件监听
-    durationButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // 更新按钮状态
-            durationButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // 更新当前时长
-            currentDuration = this.getAttribute('data-duration');
-            
-            // 应用筛选
-            applyFilters(currentType, currentDuration);
+            // Apply filters
+            applyFilters(currentType);
         });
     });
 }
 
 /**
- * 应用筛选条件
- * @param {string} type 游戏类型
- * @param {string|number} duration 游戏最大时长
+ * Apply filter criteria
+ * @param {string} type - Game type
  */
-function applyFilters(type, duration) {
-    // 获取所有游戏
+function applyFilters(type) {
+    // Get all games
     let filteredGames = getAllGames();
     
-    // 按类型筛选
+    // Filter by type
     if (type !== 'all') {
         filteredGames = filteredGames.filter(game => game.type === type);
     }
     
-    // 按时长筛选
-    if (duration !== 'all') {
-        filteredGames = filteredGames.filter(game => game.duration <= parseInt(duration));
-    }
-    
-    // 渲染筛选后的游戏
+    // Render filtered games
     renderGames(filteredGames);
 } 

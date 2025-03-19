@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{GAME_TITLE}} - onerestgame</title>
+    <meta name="description" content="{{GAME_DESCRIPTION}}">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/{{GAME_CSS}}.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <div class="game-header-content">
+                    <img src="../images/games/{{GAME_IMAGE}}" alt="{{GAME_TITLE}}" class="game-header-image">
+                    <div class="game-header-info">
+                        <h1 class="game-header-title">{{GAME_TITLE}}</h1>
+                        <div class="game-header-meta">
+                            <span class="game-type {{GAME_TYPE}}">{{GAME_TYPE_NAME}}</span>
+                        </div>
+                        <p class="game-header-description">{{GAME_LONG_DESCRIPTION}}</p>
+                        <button class="btn btn-primary" id="startGameBtn">Start Game</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-container">
+            <div class="container">
+                <div class="game-instructions">
+                    <h2 class="instructions-title">Instructions</h2>
+                    {{GAME_INSTRUCTIONS}}
+                </div>
+
+                <div class="game-area" id="gameArea">
+                    <!-- Game content will be specific to each game -->
+                    {{GAME_CONTENT}}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html">
+                        <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                    </a>
+                    <div class="site-description">
+                        <p>onerestgame offers scientifically designed brain games for mental breaks. Our collection includes focus enhancement games, creative thinking puzzles, logic challenges, and relaxation activities. Take a strategic mental rest with our mini-games designed for busy professionals, students, and anyone seeking cognitive refreshment. Improve productivity, reduce mental fatigue, and boost creativity in just minutes.</p>
+                        <p>Keywords: mental break games, brain training, focus games, cognitive rest, productivity enhancement, mind refresher, quick brain games, strategic mental breaks, cognitive recovery, creativity boost</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/games-data.js"></script>
+    <script src="../js/{{GAME_JS}}.js"></script>
+    {{ADDITIONAL_SCRIPTS}}
+</body>
+</html> 

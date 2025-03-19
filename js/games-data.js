@@ -1,139 +1,127 @@
 /**
- * 游戏数据
- * 包含所有游戏的信息，用于在游戏列表页面和首页显示
+ * Game data
+ * Contains information for all games to be displayed on the game list page and homepage
  */
 const gamesData = [
     {
         id: 'color-match',
-        title: '颜色匹配',
-        description: '测试你的注意力和反应速度，判断单词的颜色是否与其含义匹配。',
+        title: 'Color Match',
+        description: 'Test your attention and reaction speed by determining if the color of a word matches its meaning.',
         type: 'focus',
-        duration: 5,
         image: 'images/games/color-match.jpg',
         path: 'games/color-match.html'
     },
     {
         id: 'memory-cards',
-        title: '记忆卡片',
-        description: '翻转卡片并找到匹配对，锻炼你的短期记忆和专注力。',
+        title: 'Memory Cards',
+        description: 'Flip cards and find matching pairs to train your short-term memory and focus.',
         type: 'focus',
-        duration: 10,
         image: 'images/games/memory-cards.jpg',
         path: 'games/memory-cards.html'
     },
     {
         id: 'word-scramble',
-        title: '单词重组',
-        description: '重新排列字母，找出隐藏的单词，提升你的词汇量和创造性思维。',
+        title: 'Word Scramble',
+        description: 'Rearrange letters to find hidden words and improve your vocabulary and creative thinking.',
         type: 'creative',
-        duration: 8,
         image: 'images/games/word-scramble.jpg',
         path: 'games/word-scramble.html'
     },
     {
         id: 'pattern-tap',
-        title: '图案点击',
-        description: '按照指定顺序点击图案，测试你的记忆力和注意力。',
+        title: 'Pattern Tap',
+        description: 'Tap patterns in the specified order to test your memory and attention.',
         type: 'focus',
-        duration: 7,
         image: 'images/games/pattern-tap.jpg',
         path: 'games/pattern-tap.html'
     },
     {
         id: 'math-challenge',
-        title: '数学挑战',
-        description: '解决简单的数学问题，在时间限制内提高你的计算速度。',
+        title: 'Math Challenge',
+        description: 'Solve simple math problems and improve your calculation speed within time limits.',
         type: 'logic',
-        duration: 5,
         image: 'images/games/math-challenge.jpg',
         path: 'games/math-challenge.html'
     },
     {
         id: 'breathing-exercise',
-        title: '呼吸练习',
-        description: '跟随动画进行深呼吸，减轻压力，提高专注力。',
+        title: 'Breathing Exercise',
+        description: 'Follow animated breathing patterns to reduce stress and improve focus.',
         type: 'calm',
-        duration: 5,
         image: 'images/games/breathing-exercise.jpg',
         path: 'games/breathing-exercise.html'
     },
     {
         id: 'puzzle-slide',
-        title: '拼图滑块',
-        description: '移动方块重组图片，锻炼你的空间思维能力。',
+        title: 'Puzzle Slide',
+        description: 'Move blocks to reconstruct images and train your spatial thinking abilities.',
         type: 'logic',
-        duration: 12,
         image: 'images/games/puzzle-slide.jpg',
         path: 'games/puzzle-slide.html'
     },
     {
         id: 'word-association',
-        title: '词语联想',
-        description: '找出与给定词语相关的单词，激发你的创造力和联想能力。',
+        title: 'Word Association',
+        description: 'Find words related to given prompts to stimulate your creativity and associative abilities.',
         type: 'creative',
-        duration: 8,
         image: 'images/games/word-association.jpg',
         path: 'games/word-association.html'
     },
     {
         id: 'sound-meditation',
-        title: '声音冥想',
-        description: '聆听舒缓的声音，放松心情，恢复精力。',
+        title: 'Sound Meditation',
+        description: 'Listen to soothing sounds to relax your mind and restore energy.',
         type: 'calm',
-        duration: 10,
         image: 'images/games/sound-meditation.jpg',
         path: 'games/sound-meditation.html'
     },
     {
         id: 'reaction-test',
-        title: '反应测试',
-        description: '测试你的反应速度，提高注意力和手眼协调能力。',
+        title: 'Reaction Test',
+        description: 'Test your reaction speed and improve attention and hand-eye coordination.',
         type: 'focus',
-        duration: 3,
         image: 'images/games/reaction-test.jpg',
         path: 'games/reaction-test.html'
     },
     {
         id: 'visual-illusion',
-        title: '视觉错觉',
-        description: '体验各种视觉错觉，了解大脑如何处理视觉信息。',
+        title: 'Visual Illusions',
+        description: 'Experience various visual illusions and understand how your brain processes visual information.',
         type: 'creative',
-        duration: 6,
         image: 'images/games/visual-illusion.jpg',
         path: 'games/visual-illusion.html'
     },
     {
         id: 'logic-puzzle',
-        title: '逻辑谜题',
-        description: '解决逻辑谜题，锻炼你的推理能力和批判性思维。',
+        title: 'Logic Puzzles',
+        description: 'Solve logic puzzles to train your reasoning abilities and critical thinking.',
         type: 'logic',
-        duration: 15,
         image: 'images/games/logic-puzzle.jpg',
         path: 'games/logic-puzzle.html'
     }
 ];
 
 /**
- * 获取所有游戏数据
- * @returns {Array} 游戏数据数组
+ * Get all games data
+ * @returns {Array} Array of game data
  */
 function getAllGames() {
     return gamesData;
 }
 
 /**
- * 根据ID获取游戏数据
- * @param {string} id 游戏ID
- * @returns {Object|null} 游戏数据对象或null
+ * Get game data by ID
+ * @param {string} id Game ID
+ * @returns {Object|null} Game data object or null
  */
 function getGameById(id) {
     return gamesData.find(game => game.id === id) || null;
 }
 
 /**
- * 根据类型筛选游戏
- * @param {string} type 游戏类型
- * @returns {Array} 筛选后的游戏数组
+ * Filter games by type
+ * @param {string} type Game type
+ * @returns {Array} Filtered array of games
  */
 function getGamesByType(type) {
     if (type === 'all') {
@@ -143,49 +131,28 @@ function getGamesByType(type) {
 }
 
 /**
- * 根据时长筛选游戏
- * @param {number} maxDuration 最大时长（分钟）
- * @returns {Array} 筛选后的游戏数组
- */
-function getGamesByDuration(maxDuration) {
-    if (maxDuration === 'all') {
-        return gamesData;
-    }
-    return gamesData.filter(game => game.duration <= maxDuration);
-}
-
-/**
- * 获取推荐游戏（首页展示）
- * @param {number} count 获取数量
- * @returns {Array} 推荐游戏数组
+ * Get featured games for homepage display
+ * @param {number} count Number of games to get
+ * @returns {Array} Array of featured games
  */
 function getFeaturedGames(count = 6) {
-    // 这里可以根据需要实现不同的推荐逻辑
-    // 简单示例：随机选择指定数量的游戏
+    // Different recommendation logic can be implemented here as needed
+    // Simple example: randomly select a specified number of games
     const shuffled = [...gamesData].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
 }
 
 /**
- * 获取游戏类型的中文名称
- * @param {string} type 游戏类型
- * @returns {string} 类型的中文名称
+ * Get the display name for a game type
+ * @param {string} type Game type
+ * @returns {string} Type display name
  */
 function getGameTypeName(type) {
     const typeNames = {
-        'focus': '专注力',
-        'creative': '创造力',
-        'logic': '逻辑思维',
-        'calm': '放松'
+        'focus': 'Focus',
+        'creative': 'Creativity',
+        'logic': 'Logic',
+        'calm': 'Relaxation'
     };
-    return typeNames[type] || '未知';
-}
-
-/**
- * 格式化游戏时长
- * @param {number} duration 游戏时长（分钟）
- * @returns {string} 格式化后的时长
- */
-function formatGameDuration(duration) {
-    return `${duration} 分钟`;
+    return typeNames[type] || 'Unknown';
 } 
