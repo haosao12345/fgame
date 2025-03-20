@@ -12,7 +12,6 @@ class GameCard {
         this.game = gameData;
         this.options = {
             showType: true,
-            showDescription: true,
             imageSize: 'medium',
             clickable: true,
             customClass: '',
@@ -31,7 +30,6 @@ class GameCard {
         const { 
             id,
             title, 
-            description, 
             type,
             image
         } = this.game;
@@ -56,52 +54,34 @@ class GameCard {
         // Use default image as fallback
         const imageSrc = image || 'images/games/default-game.jpg';
         
-        // Build card HTML
+        // 添加图片加载错误处理
+        const handleImageError = `onerror="this.onerror=null; this.src='images/games/default-game.jpg';"`;
+        
+        // Build card HTML with image container and type badge
         let cardHTML = `
-            <img src="${imageSrc}" alt="${title}" class="game-image">
-            <div class="game-content">
-                <h3 class="game-title">${title}</h3>
+            <div class="game-image-container">
+                <img src="${imageSrc}" alt="${title}" class="game-image" ${handleImageError}>
         `;
         
-        // Add description if enabled
-        if (this.options.showDescription) {
-            cardHTML += `<p class="game-description">${description}</p>`;
-        }
-        
-        // Add game type if enabled
+        // Add game type if enabled - inside image container
         if (this.options.showType) {
             cardHTML += `
-                <div class="game-meta">
-                    <span class="game-type ${type}">${getGameTypeName(type)}</span>
-                </div>
+                <div class="game-type ${type}">${getGameTypeName(type)}</div>
             `;
         }
         
-        // Add action button
-        if (!this.game.comingSoon) {
-            cardHTML += `
-                <button class="btn-play">Play Now</button>
-            `;
-        } else {
-            cardHTML += `
-                <button class="btn-play coming-soon">Coming Soon</button>
-            `;
-        }
-        
-        // Close content div
+        // Close image container
         cardHTML += `</div>`;
+        
+        // Add content section with title
+        cardHTML += `
+            <div class="game-content">
+                <h3 class="game-title">${title}</h3>
+            </div>
+        `;
         
         // Set inner HTML
         card.innerHTML = cardHTML;
-        
-        // Add event listener to Play Now button to prevent propagation
-        const playButton = card.querySelector('.btn-play');
-        if (playButton && !this.game.comingSoon) {
-            playButton.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent the card click event
-                window.location.href = `game-detail.html?id=${id}`;
-            });
-        }
         
         return card;
     }
@@ -121,98 +101,22 @@ class GameCard {
     }
 }
 
-// Add CSS styles for the component if needed
+// Note: Most styles are now defined in the main CSS file (style.css)
+// This only adds minimal necessary styles not already defined
 (function() {
     const style = document.createElement('style');
     style.textContent = `
-        /* Game card component styles */
-        .game-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .game-card.clickable {
-            cursor: pointer;
-        }
-        
-        .game-card.clickable:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-        
-        .game-card .game-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        
-        /* Image sizes */
-        .game-card.image-small .game-image {
+        /* Additional game card styles */
+        .game-card.image-small .game-image-container {
             height: 120px;
         }
         
-        .game-card.image-medium .game-image {
+        .game-card.image-medium .game-image-container {
             height: 160px;
         }
         
-        .game-card.image-large .game-image {
+        .game-card.image-large .game-image-container {
             height: 200px;
-        }
-        
-        .game-card .game-content {
-            padding: 15px;
-        }
-        
-        .game-card .game-title {
-            margin: 0 0 10px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .game-card .game-description {
-            margin: 0 0 15px;
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.4;
-        }
-        
-        .game-card .game-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .game-card .game-type {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        /* Type colors */
-        .game-card .game-type.focus {
-            background-color: #e6f7ff;
-            color: #0077cc;
-        }
-        
-        .game-card .game-type.creative {
-            background-color: #f9f0ff;
-            color: #9c27b0;
-        }
-        
-        .game-card .game-type.logic {
-            background-color: #e6fffa;
-            color: #00a3a3;
-        }
-        
-        .game-card .game-type.calm {
-            background-color: #f0f9ff;
-            color: #4caf50;
         }
     `;
     

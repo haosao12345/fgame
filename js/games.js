@@ -73,9 +73,15 @@ function renderGames(games) {
     
     // Render each game card
     games.forEach(game => {
-        // Create game card using the component
-        const gameCard = new GameCard(game);
-        gamesGrid.appendChild(gameCard.render());
+        // Create game card using the simplified component
+        const cardOptions = {
+            showType: true,
+            imageSize: 'medium',
+            clickable: true
+        };
+        
+        const gameCard = new GameCard(game, cardOptions);
+        gamesGrid.appendChild(gameCard.element);
     });
 }
 
