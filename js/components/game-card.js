@@ -46,8 +46,8 @@ class GameCard {
         if (this.options.clickable) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', () => {
-                // Navigate to game-detail.html with game ID
-                window.location.href = `game-detail.html?id=${id}`;
+                // 修改为导航到每个游戏的独立详情页
+                window.location.href = `games/${id}-detail.html`;
             });
         }
         

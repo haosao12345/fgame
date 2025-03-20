@@ -2,13 +2,175 @@
 
 This guide explains how to maintain consistent branding and styling across all game pages for the onerestgame website.
 
-## Overview
+## 游戏详情页标题与导航优化记录 (2025-03-22)
 
-We've created a system to ensure all game pages have a consistent look and feel, with proper branding as "onerestgame". The system includes:
+### 问题描述
+游戏详情页面的标题和返回按钮布局存在以下问题：
+1. 游戏标题和返回按钮位于页面右侧，与网站标识和品牌（onerestgame）分离
+2. 导航元素的视觉层次不清晰，用户难以快速识别当前游戏和返回路径
+3. 移动端适配性不足，在小屏幕设备上布局可能出现挤压
 
-1. A game card component (`js/components/game-card.js`) for displaying game cards in a configurable way
-2. A template file (`games/game-template.html`) that defines the structure for all game pages
-3. An update script (`js/update-game-pages.js`) that can automatically update all game pages to maintain consistency
+### 修复内容
+
+1. **页面布局优化**
+   - 将游戏标题和返回按钮从右侧移至左侧（品牌标识区域）
+   - 重新设计了页面顶部栏的布局结构，创建了更合理的视觉层次
+   ```html
+   <div class="header-content">
+       <div class="logo-section">
+           <a href="../index.html" class="back-link">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+               </svg>
+               返回首页
+           </a>
+           <h2 class="game-header-name">{{GAME_TITLE}}</h2>
+       </div>
+       <div class="logo">
+           <a href="../index.html">
+               <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+           </a>
+       </div>
+   </div>
+   ```
+
+2. **苹果风格设计优化**
+   - 按照苹果设计系统风格优化了返回按钮样式
+   - 添加了过渡动画和交互反馈，提升用户体验
+   - 调整了颜色和圆角，使设计更加符合苹果UI风格
+   ```css
+   .back-link {
+       display: flex;
+       align-items: center;
+       color: var(--apple-blue);
+       text-decoration: none;
+       font-weight: 500;
+       transition: all 0.2s ease;
+       padding: 6px 12px;
+       border-radius: 8px;
+       background-color: rgba(0, 122, 255, 0.1);
+       white-space: nowrap;
+   }
+
+   .back-link:hover {
+       background-color: rgba(0, 122, 255, 0.2);
+       transform: translateX(-2px);
+   }
+
+   .back-link:active {
+       background-color: rgba(0, 122, 255, 0.3);
+       transform: translateX(-2px) scale(0.98);
+   }
+   ```
+
+3. **响应式设计增强**
+   - 为不同屏幕尺寸添加了更细致的适配规则
+   - 优化了移动端下的元素尺寸和排列方式
+   - 添加了文本溢出处理，确保长游戏标题不会破坏布局
+   ```css
+   .game-header-name {
+       margin-left: 12px;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       max-width: 240px;
+   }
+   
+   @media (max-width: 768px) {
+       .header-content {
+           height: 56px;
+       }
+       
+       .game-header-name {
+           max-width: 180px;
+           font-size: 1.1rem;
+       }
+   }
+   
+   @media (max-width: 480px) {
+       .header-content {
+           height: 50px;
+       }
+       
+       .back-link {
+           padding: 4px 8px;
+           font-size: 0.9rem;
+       }
+       
+       .game-header-name {
+           max-width: 120px;
+           font-size: 1rem;
+       }
+   }
+   ```
+
+### 效果与收益
+1. 更加符合直觉的导航体验，用户可以快速识别当前游戏并返回首页
+2. 视觉层次更加清晰，游戏标题和返回按钮位于左侧，网站标识位于右侧
+3. 按照苹果设计规范优化的交互元素，提供了更佳的用户体验
+4. 在各种屏幕尺寸下都能良好显示，包括移动设备和平板电脑
+5. 动态交互反馈增强了用户体验，提高了导航的可用性
+
+### 后续注意事项
+1. 添加新游戏时，应注意游戏标题长度，过长的标题会在移动端被截断
+2. 修改游戏详情页模板后，需要重新运行生成脚本更新所有游戏详情页
+3. 可以考虑进一步优化移动端下的布局，例如在特小屏幕上调整标题和按钮的排列方式
+
+## 游戏详情页独立化记录 (2025-03-21)
+
+### 问题描述
+之前的游戏详情页实现方式是使用单一的`game-detail.html`页面，通过URL参数动态加载不同游戏的内容。这种方式存在以下问题：
+1. 搜索引擎优化(SEO)不佳，难以为每个游戏提供独立的元数据
+2. 分享链接不够直观，需要带有查询参数
+3. 页面加载时有延迟，需要先加载JavaScript然后再动态加载游戏内容
+
+### 修复内容
+
+1. **游戏卡片组件修改** (`js/components/game-card.js`)
+   - 更新了游戏卡片的点击事件处理，链接到独立的游戏详情页
+   - 将链接路径从`game-detail.html?id=${id}`改为`games/${id}-detail.html`
+   ```javascript
+   card.addEventListener('click', () => {
+       // 修改为导航到每个游戏的独立详情页
+       window.location.href = `games/${id}-detail.html`;
+   });
+   ```
+
+2. **创建游戏详情页模板** (`games/game-detail-template.html`)
+   - 创建了一个新模板文件，作为生成独立游戏详情页的基础
+   - 包含了样式、结构和游戏相关的占位符
+   - 模板基于原有的`game-detail.html`，但针对静态生成进行了优化
+   - 添加了游戏类型相关的样式，如针对不同类型的颜色定义
+
+3. **创建详情页生成脚本** (`js/generate-game-details.js`)
+   - 开发了一个Node.js脚本，用于为每个游戏生成独立的详情页
+   - 脚本从`games-data.js`提取游戏数据，并使用模板创建HTML文件
+   - 为不同游戏类型提供了特定的控制说明和游戏目标描述
+   - 支持处理外部和本地游戏链接，以及"即将推出"的游戏显示方式
+   ```javascript
+   // 为每个游戏生成详情页面
+   function generateGameDetailPage(game) {
+       // 替换模板中的占位符
+       let content = template
+           .replace(/{{GAME_TITLE}}/g, game.title)
+           .replace(/{{GAME_DESCRIPTION}}/g, game.description)
+           .replace(/{{GAME_TYPE}}/g, game.type)
+           // 更多替换...
+   }
+   ```
+
+### 效果与收益
+1. 每个游戏现在有一个专属的HTML页面，URL更简洁，如`games/monster-survivors-detail.html`
+2. 搜索引擎可以更好地索引每个游戏页面，提高SEO效果
+3. 页面加载更快，无需等待JavaScript执行就能显示内容
+4. 更容易为每个游戏定制特定的内容和行为
+5. 分享链接更简洁明了，更适合在社交媒体上传播
+
+### 后续注意事项
+1. 添加新游戏时，需要运行`generate-game-details.js`脚本生成对应的详情页
+2. 如果修改了详情页模板，需要重新运行脚本来更新所有游戏的详情页
+3. 可以通过编辑脚本中的`generateGameControls`和`generateGameGoal`函数来定制特定游戏的说明
+4. 确保所有游戏详情页的样式保持一致，以维持品牌形象
 
 ## 游戏卡片样式优化记录 (2025-03-20)
 
@@ -283,4 +445,12 @@ Remember these key elements of the onerestgame brand:
 - Maintain the consistent color scheme and typography across all pages
 - All content should be in English for international users
 
-For any questions or issues, please contact the web development team. 
+For any questions or issues, please contact the web development team.
+
+## Overview
+
+We've created a system to ensure all game pages have a consistent look and feel, with proper branding as "onerestgame". The system includes:
+
+1. A game card component (`js/components/game-card.js`) for displaying game cards in a configurable way
+2. A template file (`games/game-template.html`) that defines the structure for all game pages
+3. An update script (`js/update-game-pages.js`) that can automatically update all game pages to maintain consistency 
