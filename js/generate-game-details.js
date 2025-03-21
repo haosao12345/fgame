@@ -34,46 +34,6 @@ const gamesData = [
         type: 'focus',
         image: 'images/games/monster-survivors.jpg',
         path: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html'
-    },
-    {
-        id: 'color-match',
-        title: 'Color Match',
-        description: 'Test your attention and reaction speed by determining if the color of a word matches its meaning.',
-        type: 'focus',
-        image: 'images/games/color-match.jpg',
-        path: 'games/color-match.html'
-    },
-    {
-        id: 'memory-cards',
-        title: 'Memory Cards',
-        description: 'Flip cards and find matching pairs to train your short-term memory and focus.',
-        type: 'focus',
-        image: 'images/games/memory-cards.jpg',
-        path: 'games/memory-cards.html'
-    },
-    {
-        id: 'word-scramble',
-        title: 'Word Scramble',
-        description: 'Rearrange letters to find hidden words and improve your vocabulary and creative thinking.',
-        type: 'creative',
-        image: 'images/games/word-scramble.jpg',
-        path: 'games/word-scramble.html'
-    },
-    {
-        id: 'pattern-tap',
-        title: 'Pattern Tap',
-        description: 'Tap patterns in the specified order to test your memory and attention.',
-        type: 'focus',
-        image: 'images/games/pattern-tap.jpg',
-        path: 'games/pattern-tap.html'
-    },
-    {
-        id: 'math-challenge',
-        title: 'Math Challenge',
-        description: 'Solve simple math problems and improve your calculation speed within time limits.',
-        type: 'logic',
-        image: 'images/games/math-challenge.jpg',
-        path: 'games/math-challenge.html'
     }
 ];
 

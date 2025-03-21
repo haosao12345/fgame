@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Initialize filters
         initFilters();
+
+        // Initialize search functionality
+        initSearch();
     });
 });
 
@@ -106,22 +109,110 @@ function initFilters() {
             currentType = this.getAttribute('data-type');
             
             // Apply filters
-            applyFilters(currentType);
+            applyFilters();
         });
     });
 }
 
 /**
- * Apply filter criteria
- * @param {string} type - Game type
+ * Initialize search functionality
  */
-function applyFilters(type) {
+function initSearch() {
+    const searchInput = document.getElementById('gameSearch');
+    const clearButton = document.getElementById('clearSearch');
+    const searchWrapper = document.querySelector('.search-input-wrapper');
+    
+    if (!searchInput || !clearButton) return;
+    
+    // Add input event listener
+    searchInput.addEventListener('input', function() {
+        const searchText = this.value.trim();
+        
+        // Toggle clear button visibility
+        clearButton.style.display = searchText.length > 0 ? 'flex' : 'none';
+        
+        // Apply filters with search
+        applyFilters();
+    });
+    
+    // Add clear button event listener
+    clearButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        searchInput.value = '';
+        this.style.display = 'none';
+        
+        // Apply filters without search
+        applyFilters();
+        searchInput.focus();
+    });
+    
+    // Add focus/blur events for mobile
+    searchInput.addEventListener('focus', function() {
+        if (window.innerWidth <= 480) {
+            document.body.classList.add('search-focused');
+        }
+    });
+    
+    searchInput.addEventListener('blur', function() {
+        setTimeout(() => {
+            document.body.classList.remove('search-focused');
+        }, 100);
+    });
+    
+    // Add click event to icon for mobile
+    searchWrapper.addEventListener('click', function(e) {
+        if (window.innerWidth <= 480) {
+            searchInput.focus();
+        }
+    });
+    
+    // Add keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Focus search on Ctrl+F or Command+F
+        if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+        
+        // Clear search on Escape when search is focused
+        if (e.key === 'Escape' && document.activeElement === searchInput) {
+            searchInput.value = '';
+            clearButton.style.display = 'none';
+            applyFilters();
+            searchInput.blur();
+        }
+    });
+}
+
+/**
+ * Apply filter criteria
+ */
+function applyFilters() {
+    // Get current type filter
+    const activeTypeButton = document.querySelector('.filter-btn.active[data-type]');
+    const currentType = activeTypeButton ? activeTypeButton.getAttribute('data-type') : 'all';
+    
+    // Get search query
+    const searchInput = document.getElementById('gameSearch');
+    const searchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    
     // Get all games
     let filteredGames = getAllGames();
     
     // Filter by type
-    if (type !== 'all') {
-        filteredGames = filteredGames.filter(game => game.type === type);
+    if (currentType !== 'all') {
+        filteredGames = filteredGames.filter(game => game.type === currentType);
+    }
+    
+    // Filter by search query
+    if (searchQuery) {
+        filteredGames = filteredGames.filter(game => {
+            return (
+                game.title.toLowerCase().includes(searchQuery) || 
+                game.description.toLowerCase().includes(searchQuery)
+            );
+        });
     }
     
     // Render filtered games
