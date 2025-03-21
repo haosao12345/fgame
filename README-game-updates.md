@@ -2,6 +2,72 @@
 
 This guide explains how to maintain consistent branding and styling across all game pages for the onerestgame website.
 
+## 游戏详情页HTML结构修复与样式统一 (2025-03-25)
+
+### 问题描述
+部分游戏详情页面（Charge-It-detail.html和Tetris-detail.html）存在以下问题：
+1. 缺少完整的HTML文档结构，如DOCTYPE、html、head和body标签
+2. 与模板页面（monster-survivors-detail.html）的样式和布局存在不一致
+3. 标题命名与其他页面不一致，如"Brain Break Benefits"与"Mental Refresh Benefits"
+4. 游戏数据中的ID、标题和类型存在不一致问题
+
+### 修复内容
+
+1. **页面结构修复**
+   - 为Charge-It-detail.html和Tetris-detail.html添加了完整的HTML文档结构
+   - 包括DOCTYPE声明、html、head和body标签
+   - 添加了必要的meta标签、样式表和字体链接
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>游戏名称 - Mental Refresher Game | onerestgame</title>
+       <meta name="description" content="游戏描述">
+       <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+       <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="../css/style.css">
+       <!-- 其他样式和内容 -->
+   </head>
+   <body>
+       <!-- 页面内容 -->
+   </body>
+   </html>
+   ```
+
+2. **样式统一**
+   - 添加logo-highlight样式类，使logo显示正确的蓝色样式
+   - 添加game-header-name样式类和对应HTML结构，使游戏名称在左上角正确显示
+   - 统一返回首页按钮的样式和图标
+   ```css
+   .logo-highlight {
+       font-weight: 600;
+       color: var(--apple-blue);
+   }
+   
+   .game-header-name {
+       font-size: 1.2rem;
+       font-weight: 500;
+       margin-left: var(--spacing-md);
+   }
+   ```
+
+3. **标题命名统一**
+   - 将所有页面中的"Brain Break Benefits"统一改为"Mental Refresh Benefits"
+   - 确保所有页面保持一致的命名规范和术语使用
+
+4. **游戏数据修正**
+   - 修正了游戏数据中的ID、标题和类型
+   - draw-here的标题从'draw-here'改为'Draw Here'，类型从'focus'改为'creative'
+   - House-Painter的类型从'Relaxation'改为'calm'，以匹配过滤器
+   - Charge-It和Tetris的类型从大写'Logic'改为小写'logic'
+   - 更新了所有游戏的描述，使其更准确地反映游戏内容
+   - 修正了Tetris游戏的路径链接
+
+### 修复验证
+确认所有游戏详情页现在都有完整的HTML结构，统一的样式，一致的命名约定，以及正确的数据关联。所有游戏卡片现在能够正确地链接到对应的详情页面。
+
 ## 游戏详情页标题与导航优化记录 (2025-03-22)
 
 ### 问题描述

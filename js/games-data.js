@@ -4,14 +4,37 @@
  */
 const gamesData = [
     {
-        id: 'monster-survivors',
-        title: 'Monster Survivors',
-        description: 'A fast-paced action game that provides the perfect mental refresh. Navigate through waves of monsters for a quick cognitive reset.',
-        type: 'focus',
-        image: 'images/games/monster-survivors.jpg',
-        path: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html'
+        id: 'draw-here',
+        title: 'Draw Here',
+        description: 'A creative drawing game that provides the perfect mental refresh. Express yourself freely while giving your analytical brain a rest.',
+        type: 'creative',
+        image: 'images/games/draw-here.jpg',
+        path: 'https://www.onlinegames.io/games/2021/unity2/draw-here/index.html'
+    },
+    {
+        id: 'House-Painter',
+        title: 'House Painter',
+        description: 'A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.',
+        type: 'calm',
+        image: 'images/games/House-Painter.jpg',
+        path: 'https://www.onlinegames.io/games/2023/construct/238/house-painter/index.html'
+    },
+    {
+        id: 'Charge-It',
+        title: 'Charge It',
+        description: 'A strategic circuit-building puzzle game designed to provide an effective mental break while exercising logical thinking.',
+        type: 'logic',
+        image: 'images/games/Charge-It.jpg',
+        path: 'https://www.onlinegames.io/games/2023/construct/241/charge-it/index.html'
+    },
+    {
+        id: 'Tetris',
+        title: 'Tetris',
+        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        type: 'logic',
+        image: 'images/games/Tetris.jpg',
+        path: 'https://www.onlinegames.io/games/2024/more/tetris/index.html'
     }
-    
 ];
 
 /**

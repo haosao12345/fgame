@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charge It - Mental Refresher Game | onerestgame</title>
+    <meta name="description" content="Take a strategic mental break with Charge It. This logic puzzle game helps refresh your brain and improve productivity through circuit-building challenges.">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-blue-dark: #0062CC;
+            --apple-gray: #8E8E93;
+            --apple-gray-light: #D1D1D6;
+            --apple-gray-lighter: #F2F2F7;
+            --apple-gray-dark: #636366;
+            --apple-bg-light: #FFFFFF;
+            --apple-bg-dark: #1C1C1E;
+            --apple-text: #1C1C1E;
+            --apple-green: #34C759;
+            --apple-red: #FF3B30;
+            --content-width: 1200px;
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--apple-gray-lighter);
+            color: var(--apple-text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--apple-bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .header .container {
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+            width: 100%;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-highlight {
+            font-weight: 600;
+            color: var(--apple-blue);
+        }
+        
+        .game-header-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-left: var(--spacing-md);
+        }
+
+        .logo {
+            margin-left: auto;
+        }
+
+        .logo a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .game-container {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .game-info {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .how-to-play,
+        .brain-benefits {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer {
+            background-color: var(--apple-bg-light);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-xxl);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .game-container iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-container iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../index.html" class="back-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Home
+                    </a>
+                    <h2 class="game-header-name">Charge It</h2>
+                </div>
+                <div class="logo">
+                    <a href="../index.html">
+                        <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Game Container -->
+        <div class="game-container" id="game-container">
+            <iframe src="https://www.onlinegames.io/games/2023/construct/241/charge-it/index.html" allowfullscreen="true" frameborder="0"></iframe>
+        </div>
+
+        <!-- Game Info -->
+        <section class="game-info" id="game-info">
+            <h1 class="game-title">Charge It</h1>
+            <p class="game-tagline">A Logic Puzzle for Mental Refreshment</p>
+            
+            <div class="game-meta">
+                <span class="game-category logic">Logic</span>
+                <div class="game-duration">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                    </svg>
+                    Ideal Break Time: 3-5 minutes
+                </div>
+            </div>
+
+            <div class="game-description">
+                <p>Charge It is a strategic circuit-building puzzle game designed to provide an effective mental break while exercising logical thinking. In this game, you'll connect circuits to power electronic devices, combining strategy and problem-solving skills. According to cognitive science research, switching to different types of intellectual activities can reduce fatigue in specific brain regions while maintaining overall mental engagement. This is the core design principle behind Charge It - offering a refreshing cognitive shift that serves as the perfect brain break between work sessions.</p>
+            </div>
+
+            <h3 class="section-title">Mental Refresh Benefits</h3>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                    <span>Activates the prefrontal cortex through logical puzzles while resting analytical task regions</span>
+                </li>
+                <li class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                    <span>The sense of achievement from solving each circuit puzzle enhances work motivation</span>
+                </li>
+                <li class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                    <span>The game's challenges provide moderate stress, stimulating mild arousal that enhances focus for subsequent work</span>
+                </li>
+                <li class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                    <span>Brief gameplay sessions align with efficient break principles, avoiding excessive attention resource depletion</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- How To Play -->
+        <section class="how-to-play">
+            <h2 class="section-title">How To Play</h2>
+            <p>In Charge It, your goal is to connect power sources to electronic devices by creating wire paths. Drag wires to connect power sources and devices, solving a series of increasingly challenging circuit puzzles. The controls are intuitive and easy to learn, but the puzzles require strategic thinking.</p>
+            
+            <div class="controls-list" id="controls-list">
+                <div class="control-item">
+                    <span class="control-key">Mouse Drag</span>
+                    <span>Connect circuit components</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Click</span>
+                    <span>Select and place components</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Right Click</span>
+                    <span>Remove components</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">R</span>
+                    <span>Reset current level</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Game Objective</h3>
+            <p>Complete each circuit puzzle by powering all devices. As you progress, you'll encounter more complex circuit layouts and additional obstacles that will challenge your logical thinking and strategic abilities. Each puzzle you solve provides a sense of accomplishment while offering an ideal cognitive switch that gives your brain a high-quality break.</p>
+        </section>
+
+        <!-- Brain Benefits -->
+        <section class="brain-benefits">
+            <h2 class="section-title">The Science of Mental Breaks</h2>
+            <p>Strategic mental breaks have been shown to significantly improve productivity. Here's how Charge It uses cognitive science principles to provide an ideal brain refresh:</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3 class="benefit-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                        Cognitive Load Shifting
+                    </h3>
+                    <p class="benefit-description">The puzzle tasks in the game utilize different brain regions than most work tasks. This shift allows overused brain areas to recover while keeping the brain generally active, avoiding the "startup cost" that occurs after complete disengagement.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3 class="benefit-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                        Structured Breaks
+                    </h3>
+                    <p class="benefit-description">Compared to unstructured breaks (like scrolling social media), this goal-oriented, bounded activity allows your brain to complete a cognitive shift and restore energy within a predetermined time, reducing the risk of attention fragmentation.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3 class="benefit-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                        Flow State Micro-Experience
+                    </h3>
+                    <p class="benefit-description">The balance of challenge and skill in the game produces brief "flow state" experiences where the brain is highly engaged but not stressed. This provides a high-quality form of rest for your brain, with research showing it can significantly improve performance on subsequent tasks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Notice -->
+        <div class="loading-notice">
+            <p>The game may take a moment to load. If it doesn't appear, please make sure JavaScript is enabled in your browser.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
