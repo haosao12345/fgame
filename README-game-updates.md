@@ -666,4 +666,172 @@ Tetris游戏详情页的返回按钮存在以下问题：
 1. 添加新游戏时，确保使用标准模板并验证返回按钮和其他UI元素的一致性
 2. 定期检查所有游戏详情页，确保样式更新后的一致性
 3. 考虑为返回按钮添加额外的无障碍支持，如ARIA标签
-4. 更新游戏详情页模板时，需要重新运行生成脚本更新所有游戏详情页 
+4. 更新游戏详情页模板时，需要重新运行生成脚本更新所有游戏详情页
+
+## 游戏卡片界面优化记录 (2025-03-27)
+
+### 问题描述
+游戏卡片的样式存在以下问题：
+1. 游戏图片被限制在固定高度的容器内，无法充分展示游戏画面
+2. 游戏标题与图片分离，界面结构不够紧凑
+3. 卡片整体缺乏视觉冲击力和现代美感
+
+### 修复内容
+
+1. **卡片布局重构**
+   - 重新设计了游戏卡片的布局，使图片完全铺满整个卡片
+   - 将游戏标题移至图片上方，通过半透明渐变背景覆盖在图片底部
+   - 增加卡片高度，为游戏图片提供更宽广的显示空间
+   ```javascript
+   // 修改卡片HTML，将游戏名称覆盖在图片上
+   let cardHTML = `
+       <div class="game-image-container">
+           <img src="${imageSrc}" alt="${title}" class="game-image" ${handleImageError}>
+           <!-- 游戏类型标识 -->
+           <div class="game-title-overlay">
+               <h3 class="game-title">${title}</h3>
+           </div>
+       </div>
+   `;
+   ```
+
+2. **视觉效果增强**
+   - 添加了从底部到顶部的渐变遮罩，使白色文字在任何背景上都清晰可见
+   - 设计了更强的文字阴影效果，增强可读性
+   - 优化了卡片悬停交互效果，增加标题区域上下内边距的动态变化
+   ```css
+   .game-title-overlay {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.2) 85%, rgba(0,0,0,0) 100%);
+       padding: 40px 16px 16px;
+       transition: padding 0.3s ease;
+   }
+   
+   .game-card:hover .game-title-overlay {
+       padding-bottom: 20px;
+   }
+   
+   .game-title {
+       color: white;
+       margin: 0;
+       font-size: 1.1rem;
+       font-weight: 600;
+       line-height: 1.3;
+       text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+   }
+   ```
+
+3. **图片容器尺寸优化**
+   - 根据不同的卡片尺寸设置，提供了更合理的图片容器高度
+   - 小尺寸：190px（原120px）
+   - 中尺寸：230px（原160px）
+   - 大尺寸：270px（原200px）
+   ```css
+   .game-card.image-small .game-image-container {
+       height: 190px;
+   }
+   
+   .game-card.image-medium .game-image-container {
+       height: 230px;
+   }
+   
+   .game-card.image-large .game-image-container {
+       height: 270px;
+   }
+   ```
+
+4. **响应式设计优化**
+   - 保留原有的网格布局响应式设计
+   - 移除了图片上方的遮罩层，因为现在采用了底部渐变遮罩
+   - 确保在各种屏幕尺寸下游戏卡片的一致展示
+
+### 效果与收益
+1. 更具视觉吸引力的游戏卡片设计，使游戏图片成为主要焦点
+2. 更加现代化的界面美感，符合当前流行的UI设计趋势
+3. 更好的空间利用，在相同网格布局下展示更丰富的游戏视觉内容
+4. 增强的用户交互体验，悬停效果更加自然和吸引人
+5. 提高了界面的整体一致性和专业感
+
+### 后续注意事项
+1. 游戏图片推荐使用16:9或接近的宽高比，以获得最佳显示效果
+2. 对于文字较长的游戏标题，可能需要考虑添加文本溢出处理
+3. 定期检查移动端下的显示效果，确保所有设备上的良好体验
+4. 如果在某些游戏图片上标题不够清晰，可考虑调整渐变遮罩的透明度和高度
+
+## 页脚元素间距优化记录 (2025-03-28)
+
+### 问题描述
+网站页脚中onerestgame相关元素间距过宽，导致占用过多垂直空间：
+1. 站点描述与logo之间的间距过大
+2. 页脚区域整体内边距过大，占用了过多屏幕空间
+3. 段落之间间距较大，影响整体页面的紧凑性
+
+### 修复内容
+
+1. **内联样式优化**
+   - 减少了`.site-description`的上边距，从15px缩小为10px
+   - 减少了描述段落的下边距，从10px缩小为6px
+   - 缩小了logo下边距，从15px缩小为8px
+   ```css
+   .site-description {
+       margin-top: 10px;  /* 从15px减少 */
+       font-size: 0.75rem;
+       color: #666;
+       line-height: 1.4;
+       max-width: 100%;
+       width: 100%;
+   }
+   
+   .site-description p {
+       margin-bottom: 6px;  /* 从10px减少 */
+   }
+   
+   .footer-logo {
+       margin-bottom: 8px;  /* 从15px减少 */
+   }
+   ```
+
+2. **页脚全局样式优化**
+   - 减少了页脚整体的内边距，从`60px 0 20px`调整为`40px 0 15px`
+   - 减少了`.footer-content`的下边距，从40px缩小为30px
+   - 减少了元素间的间隙，从30px缩小为20px
+   - 减少了`.footer-bottom`的上内边距，从20px缩小为15px
+   ```css
+   .footer {
+       background-color: var(--background-light);
+       padding: 40px 0 15px;  /* 从60px 0 20px减少 */
+   }
+   
+   .footer-content {
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 30px;  /* 从40px减少 */
+       flex-wrap: wrap;
+       gap: 20px;  /* 从30px减少 */
+   }
+   
+   .footer-bottom {
+       text-align: center;
+       padding-top: 15px;  /* 从20px减少 */
+       border-top: 1px solid var(--border-color);
+       color: var(--text-light);
+       font-size: 14px;
+   }
+   ```
+
+### 效果与收益
+1. 页脚区域更加紧凑，减少了不必要的空白空间
+2. 保持了视觉层次和结构组织的同时，优化了页面垂直空间利用
+3. 减少了用户向下滚动的需求，改善了用户体验
+4. 移动设备上显示效果更佳，页脚不再占用过多屏幕空间
+5. 整体页面布局更加平衡，提高了视觉美感
+
+### 后续注意事项
+1. 在添加新内容到页脚时，应保持紧凑的间距设计
+2. 确保在各种屏幕尺寸下测试页脚显示效果
+3. 考虑在极小屏幕上进一步优化页脚布局，如调整logo大小或简化内容
+
+// ... existing code ... 

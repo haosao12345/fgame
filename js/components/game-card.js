@@ -57,7 +57,7 @@ class GameCard {
         // 添加图片加载错误处理
         const handleImageError = `onerror="this.onerror=null; this.src='images/games/default-game.jpg';"`;
         
-        // Build card HTML with image container and type badge
+        // 修改卡片HTML，将游戏名称覆盖在图片上
         let cardHTML = `
             <div class="game-image-container">
                 <img src="${imageSrc}" alt="${title}" class="game-image" ${handleImageError}>
@@ -70,17 +70,15 @@ class GameCard {
             `;
         }
         
-        // Close image container
-        cardHTML += `</div>`;
-        
-        // Add content section with title
+        // 添加覆盖在图片上的游戏名称
         cardHTML += `
-            <div class="game-content">
-                <h3 class="game-title">${title}</h3>
+                <div class="game-title-overlay">
+                    <h3 class="game-title">${title}</h3>
+                </div>
             </div>
         `;
         
-        // Set inner HTML
+        // 设置内部HTML
         card.innerHTML = cardHTML;
         
         return card;
@@ -106,17 +104,62 @@ class GameCard {
 (function() {
     const style = document.createElement('style');
     style.textContent = `
-        /* Additional game card styles */
+        /* Game card styles for overlay layout */
+        .game-card {
+            overflow: hidden;
+            border-radius: 12px;
+            height: auto;
+            position: relative;
+        }
+        
+        .game-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
         .game-card.image-small .game-image-container {
-            height: 120px;
+            height: 190px;
         }
         
         .game-card.image-medium .game-image-container {
-            height: 160px;
+            height: 230px;
         }
         
         .game-card.image-large .game-image-container {
-            height: 200px;
+            height: 270px;
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%);
+            padding: 25px 16px 12px;
+            transition: padding 0.3s ease;
+        }
+        
+        .game-card:hover .game-title-overlay {
+            padding-bottom: 16px;
+        }
+        
+        .game-title {
+            color: white;
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
     `;
     
