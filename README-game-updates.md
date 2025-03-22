@@ -511,7 +511,7 @@ Remember these key elements of the onerestgame brand:
 - Maintain the consistent color scheme and typography across all pages
 - All content should be in English for international users
 
-For any questions or issues, please contact the web development team.
+For any questions or issues, please contact the web development team. 
 
 ## Overview
 
