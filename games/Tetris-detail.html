@@ -90,14 +90,22 @@
         }
         
         .logo-highlight {
+            font-family: 'SF Pro Display', sans-serif;
             font-weight: 600;
+            font-size: 1.5rem;
             color: var(--apple-blue);
         }
         
         .game-header-name {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
             font-size: 1.2rem;
-            font-weight: 500;
-            margin-left: var(--spacing-md);
+            color: var(--apple-text);
+            margin-left: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 240px;
         }
 
         .logo {
@@ -111,53 +119,307 @@
         }
 
         .game-container {
-            background-color: var(--apple-bg-light);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             margin: var(--spacing-xl) 0;
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background-color: #000;
         }
 
         .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 600px;
+            height: 100%;
             border: none;
         }
 
         .game-info {
             background-color: var(--apple-bg-light);
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
         }
 
         .how-to-play,
         .brain-benefits {
             background-color: var(--apple-bg-light);
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
         }
 
         .footer {
             background-color: var(--apple-bg-light);
-            padding: var(--spacing-xl) 0;
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            border-top: 1px solid var(--apple-gray-lighter);
             margin-top: var(--spacing-xxl);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--apple-gray);
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .game-container iframe {
-                height: 400px;
+            .header-content {
+                height: 56px;
+            }
+            
+            .game-header-name {
+                max-width: 180px;
+                font-size: 1.1rem;
+            }
+            
+            .game-title {
+                font-size: 1.8rem;
+            }
+            
+            .game-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .game-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+            }
+            
+            .controls-list, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-info, .how-to-play, .brain-benefits {
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                height: 50px;
+            }
+            
+            .back-link {
+                padding: 4px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .game-header-name {
+                max-width: 120px;
+                font-size: 1rem;
+            }
+            
+            .logo-highlight {
+                font-size: 1.25rem;
+            }
+            
+            .game-title {
+                font-size: 1.5rem;
+            }
+            
+            .game-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .game-category {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .game-container iframe {
-                height: 300px;
-            }
+        /* Loading Notice */
+        .loading-notice {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            color: var(--apple-gray-dark);
+            font-size: 0.9rem;
+            border: 1px solid var(--apple-gray-lighter);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            transition: all 0.2s ease;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background-color: transparent;
+            white-space: nowrap;
+        }
+
+        .back-link:hover {
+            background-color: rgba(0, 122, 255, 0.06);
+        }
+
+        .back-link:active {
+            background-color: rgba(0, 122, 255, 0.1);
+            transform: scale(0.98);
+        }
+
+        .back-link svg {
+            margin-right: 4px;
+            width: 13px;
+            height: 13px;
+        }
+
+        .game-title {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--apple-text);
+        }
+
+        .game-tagline {
+            font-size: 1.2rem;
+            color: var(--apple-gray-dark);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .game-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .game-category {
+            background-color: var(--apple-blue);
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-right: var(--spacing-md);
+        }
+
+        .game-category.focus {
+            background-color: var(--focus-type-color, #4a6bdf);
+        }
+
+        .game-category.creative {
+            background-color: var(--creative-type-color, #d84bee);
+        }
+
+        .game-category.logic {
+            background-color: var(--logic-type-color, #12aa83);
+        }
+
+        .game-category.calm {
+            background-color: var(--calm-type-color, #4bbeeb);
+        }
+
+        .game-duration {
+            display: flex;
+            align-items: center;
+            color: var(--apple-gray-dark);
+            font-size: 0.9rem;
+        }
+
+        .game-duration svg {
+            margin-right: var(--spacing-xs);
+        }
+
+        .section-title {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+            color: var(--apple-blue);
+        }
+
+        .game-description {
+            color: var(--apple-text);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-item svg {
+            flex-shrink: 0;
+            margin-right: var(--spacing-sm);
+            color: var(--apple-green);
+            margin-top: 4px;
+        }
+
+        .controls-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .control-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .control-key {
+            background-color: var(--apple-gray-lighter);
+            border: 1px solid var(--apple-gray-light);
+            border-radius: var(--border-radius-sm);
+            padding: 4px 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-right: var(--spacing-sm);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .benefit-card {
+            background-color: var(--apple-gray-lighter);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+        }
+
+        .benefit-title {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--apple-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-title svg {
+            margin-right: var(--spacing-sm);
+            color: var(--apple-blue);
+        }
+
+        .benefit-description {
+            color: var(--apple-gray-dark);
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -168,7 +430,7 @@
                 <div class="logo-section">
                     <a href="../index.html" class="back-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                         </svg>
                         Home
                     </a>
@@ -312,7 +574,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-bottom">
                 <p>&copy; 2023 onerestgame. All rights reserved.</p>
             </div>
         </div>
