@@ -834,4 +834,163 @@ Tetris游戏详情页的返回按钮存在以下问题：
 2. 确保在各种屏幕尺寸下测试页脚显示效果
 3. 考虑在极小屏幕上进一步优化页脚布局，如调整logo大小或简化内容
 
+## Google Analytics跟踪代码添加记录 (2025-03-30)
+
+### 问题描述
+网站需要添加Google Analytics跟踪代码，以便监控和分析网站流量及用户行为，但目前所有页面都没有集成此跟踪代码。
+
+### 修复内容
+
+1. **Google Analytics跟踪代码添加**
+   - 向所有HTML页面的`<head>`部分添加了Google Analytics的全局站点代码
+   - 代码位置放在CSS样式表引用之后，页面样式定义之前
+   ```html
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-BLDGT73B03');
+   </script>
+   ```
+
+2. **游戏详情页模板更新**
+   - 创建并更新了`game-detail-template.html`模板文件，包含Google Analytics跟踪代码
+   - 确保所有通过模板生成的新游戏详情页都会自动包含跟踪代码
+   - 模板中使用了占位符，如`{{GAME_TITLE}}`和`{{GAME_DESCRIPTION}}`等，用于替换游戏特定内容
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>{{GAME_TITLE}} - Mental Refresher Game | onerestgame</title>
+       <meta name="description" content="Take a strategic mental break with {{GAME_TITLE}}. This {{GAME_TYPE_LOWERCASE}} game helps refresh your brain and improve productivity in just minutes of gameplay.">
+       <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+       <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="../css/style.css">
+       <!-- Google tag (gtag.js) -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-BLDGT73B03');
+       </script>
+       <!-- 其他样式和脚本 -->
+   </head>
+   <body>
+       <!-- 页面内容 -->
+   </body>
+   </html>
+   ```
+
+3. **已有页面更新**
+   - 更新了以下现有HTML页面，添加了Google Analytics跟踪代码:
+     - `index.html`（主页）
+     - `game-detail.html`（游戏详情模板页）
+     - `games/monster-survivors-detail.html`
+     - `games/draw-here-detail.html`
+     - `games/House-Painter-detail.html`
+     - `games/Charge-It-detail.html`
+     - `games/Tetris-detail.html`
+     - `games/watermelon-game-detail.html`
+
+### 效果与收益
+1. 能够收集和分析用户访问数据，包括访问量、来源、页面停留时间等
+2. 可以追踪游戏点击和交互情况，了解用户喜好和行为模式
+3. 提供数据支持，帮助改进网站内容和用户体验
+4. 能够衡量营销活动效果和网站转化率
+5. 通过数据分析，可以进行更精准的内容优化和功能改进
+
+### 后续注意事项
+1. 定期检查Google Analytics后台，确保所有页面都正常发送跟踪数据
+2. 添加新页面时，确保使用更新后的模板，以自动包含跟踪代码
+3. 考虑设置更详细的事件跟踪，例如游戏开始、结束等用户交互事件
+4. 可能需要更新隐私政策，说明网站使用了Google Analytics进行数据收集
+5. 如有必要，添加Cookie通知和用户同意机制，以符合数据保护法规
+
+## 新游戏详情页创建记录 (2025-04-01)
+
+### 问题描述
+网站需要为四款新添加的游戏创建详情页面，包括Block Blast、Draw the Bridge、Find It和Sweet Sugar Match。这些游戏页面需要保持统一的风格和布局，同时展示各游戏的特点和益处。
+
+### 开发内容
+
+1. **游戏详情页创建**
+   - 为以下四款游戏创建了独立的详情页面：
+     - `games/block-blast-detail.html`
+     - `games/Draw-the-Bridge-detail.html`
+     - `games/Find-It-detail.html`
+     - `games/Sweet-Sugar-Match-detail.html`
+   - 所有页面基于游戏详情模板，保持一致的布局和样式
+   - 每个页面都包含完整的HTML结构，包括header、main content和footer
+
+2. **游戏内容个性化**
+   - 根据每个游戏的类型和特点，定制了各游戏的内容：
+     - Block Blast: 以策略性方块消除为特色的逻辑游戏
+     - Draw the Bridge: 强调创造性思维的绘画解谜游戏
+     - Find It: 专注于注意力训练的隐藏物品搜索游戏
+     - Sweet Sugar Match: 以模式匹配为核心的轻松休闲游戏
+   - 每个游戏页面都根据游戏类型设置了相应的分类标签(focus、creative、logic、calm)
+   ```html
+   <!-- 根据游戏类型应用不同的类 -->
+   <span class="game-category logic">Logic</span> <!-- Block Blast和Find It -->
+   <span class="game-category creative">Creative</span> <!-- Draw the Bridge -->
+   <span class="game-category calm">Calm</span> <!-- Sweet Sugar Match -->
+   ```
+
+3. **游戏科学益处说明**
+   - 为每个游戏详情页编写了专门的认知科学解释，突出游戏的心理益处
+   - 为不同游戏类型设计了各自的"Mental Refresh Benefits"列表
+   - 添加了"The Science of Mental Breaks"部分，解释游戏如何利用认知科学提供有效的心理休息
+   ```html
+   <section class="brain-benefits">
+       <h2 class="section-title">The Science of Mental Breaks</h2>
+       <p>Strategic mental breaks are crucial for maintaining cognitive performance. Here's how [Game Name] leverages cognitive science to provide an effective brain refresh:</p>
+
+       <div class="benefits-grid">
+           <!-- 针对每个游戏定制的科学理论解释 -->
+       </div>
+   </section>
+   ```
+
+4. **游戏控制说明定制**
+   - 为每个游戏创建了定制的控制说明，包括：
+     - 控制方式（鼠标、键盘、触摸等）
+     - 游戏目标描述
+     - 玩法技巧和建议
+   - 设计了清晰的控制列表格式，使用grid布局呈现
+   ```html
+   <div class="controls-list" id="controls-list">
+       <div class="control-item">
+           <span class="control-key">控制方式</span>
+           <span>控制描述</span>
+       </div>
+       <!-- 更多控制项... -->
+   </div>
+   ```
+
+5. **Google Analytics整合**
+   - 所有新创建的游戏详情页均集成了Google Analytics跟踪代码
+   - 跟踪代码添加至`<head>`部分以确保页面浏览数据被准确捕获
+   - 在所有页面上使用了相同的跟踪ID以保持数据一致性
+
+### 效果与收益
+1. 四款新游戏现在拥有完整、专业的详情页面，丰富了网站的游戏选择
+2. 所有页面保持一致的设计风格、布局和用户体验，提升品牌形象
+3. 详细的科学解释和益处说明增强了游戏的吸引力和可信度
+4. 适应性强的响应式设计确保在各种设备上都能获得良好的浏览体验
+5. 完整的Google Analytics集成使所有新游戏页面的用户行为可被追踪和分析
+
+### 后续注意事项
+1. 监控新游戏页面的访问数据，了解用户兴趣和交互情况
+2. 根据用户反馈，可能需要进一步优化游戏描述或控制说明
+3. 确保游戏路径链接保持有效，特别是使用外部云服务托管的游戏
+4. 随着游戏内容的更新，相应更新详情页的游戏描述和玩法说明
+5. 检查iframe内游戏加载速度，必要时优化或提供缓冲状态提示
+
 // ... existing code ... 

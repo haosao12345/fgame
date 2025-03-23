@@ -34,7 +34,40 @@ const gamesData = [
         type: 'logic',
         image: 'images/games/Tetris.jpg',
         path: 'https://www.onlinegames.io/games/2024/more/tetris/index.html'
-    }
+    },
+    //0323增加
+    {
+        id: 'block-blast',
+        title: 'Block Blast',
+        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        type: 'logic',
+        image: 'images/games/block-blast.jpg',
+        path: 'https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html'
+    },
+    {
+        id: 'Draw-the-Bridge',
+        title: 'Draw The Bridge',
+        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        type: 'logic',
+        image: 'images/games/Draw-the-Bridge.jpg',
+        path: 'https://www.onlinegames.io/games/2021/4/draw-the-bridge/index.html'
+    },
+    {
+        id: 'Find-It',
+        title: 'Find It',
+        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        type: 'logic',
+        image: 'images/games/Find-It.jpg',
+        path: 'https://cloud.onlinegames.io/games/2025/unity/find-it/index-og.html'
+    },
+    {
+        id: 'Sweet-Sugar-Match',
+        title: 'Sweet Sugar Match',
+        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        type: 'logic',
+        image: 'images/games/Sweet-Sugar-Match.jpg',
+        path: 'https://www.onlinegames.io/games/2022/unity/sweet-sugar-match/index.html'
+    },
 ];
 
 /**
