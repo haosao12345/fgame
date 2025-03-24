@@ -993,4 +993,114 @@ Tetris游戏详情页的返回按钮存在以下问题：
 4. 随着游戏内容的更新，相应更新详情页的游戏描述和玩法说明
 5. 检查iframe内游戏加载速度，必要时优化或提供缓冲状态提示
 
+## 游戏详情页生成脚本优化记录 (2025-04-02)
+
+### 问题描述
+游戏详情页生成脚本在处理不同来源的游戏时存在以下问题：
+1. 对于playhop.com的游戏，iframe嵌入路径不正确，导致游戏无法加载
+2. 脚本在处理新增游戏时，没有正确识别和处理所有新增的游戏
+3. 游戏控制说明和目标说明过于通用，缺乏针对特定游戏的定制内容
+
+### 修复内容
+
+1. **游戏容器生成优化**
+   - 修改了`generateGameContainer`函数，增加了对不同游戏来源的处理
+   - 为gameflare.com的游戏使用原始embed URL
+   - 为playhop.com的游戏使用正确的embed路径格式
+   ```javascript
+   function generateGameContainer(game) {
+       if (game.path && !game.comingSoon) {
+           if (game.path.includes('gameflare.com')) {
+               return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+           } else if (game.path.includes('playhop.com')) {
+               const gameId = game.path.split('/').pop();
+               return `<iframe src="https://playhop.com/embed/${gameId}" allowfullscreen="true" frameborder="0"></iframe>`;
+           } else {
+               return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+           }
+       }
+       // ... 其他代码
+   }
+   ```
+
+2. **新增游戏处理优化**
+   - 定义了明确的新增游戏ID列表，确保所有新增游戏都能被正确处理
+   - 优化了游戏筛选逻辑，只处理新增的游戏
+   ```javascript
+   const newGameIds = [
+       'Railbound',
+       'Color-Water-Sort-3D',
+       'Craft-Cars-Flying-Pigs',
+       'World-Hardest-Game',
+       'Save-The-Dog',
+       'Save-the-Fish',
+       'City-Blocks'
+   ];
+   ```
+
+3. **游戏控制说明优化**
+   - 为不同类型的游戏添加了特定的控制说明
+   - 增加了更多游戏类型的控制说明模板
+   ```javascript
+   function generateGameControls(game) {
+       switch (game.id) {
+           case 'monster-survivors':
+               return `
+                   <div class="control-item">
+                       <span class="control-key">W A S D</span>
+                       <span>Move character</span>
+                   </div>
+                   // ... 其他控制说明
+               `;
+           case 'color-match':
+               return `
+                   <div class="control-item">
+                       <span class="control-key">✓</span>
+                       <span>Match (word color matches meaning)</span>
+                   </div>
+                   // ... 其他控制说明
+               `;
+           default:
+               return `
+                   <div class="control-item">
+                       <span class="control-key">Mouse</span>
+                       <span>Interact with game elements</span>
+                   </div>
+                   // ... 默认控制说明
+               `;
+       }
+   }
+   ```
+
+4. **游戏目标说明优化**
+   - 为特定游戏添加了定制的目标说明
+   - 增加了更多游戏类型的目标说明模板
+   ```javascript
+   function generateGameGoal(game) {
+       switch (game.id) {
+           case 'monster-survivors':
+               return 'Survive as long as possible while defeating monsters and collecting upgrades. Each run is short but satisfying, making it perfect for a quick brain break.';
+           case 'color-match':
+               return 'Quickly determine if the color of the word matches its meaning. This game tests your attention and cognitive flexibility.';
+           case 'memory-cards':
+               return 'Flip cards and find matching pairs to train your memory. Complete the board in as few attempts as possible.';
+           default:
+               return 'Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break.';
+       }
+   }
+   ```
+
+### 效果与收益
+1. 解决了playhop.com游戏无法加载的问题，确保所有游戏都能正确嵌入
+2. 提高了脚本的可靠性，确保所有新增游戏都能被正确处理
+3. 为不同游戏提供了更具体和相关的控制说明和目标说明
+4. 改进了代码的可维护性和可扩展性，便于后续添加新的游戏类型
+
+### 后续注意事项
+1. 添加新游戏时，确保在`newGameIds`数组中添加游戏ID
+2. 对于新的游戏类型，在`generateGameControls`和`generateGameGoal`函数中添加相应的处理逻辑
+3. 定期检查游戏链接的有效性，确保所有游戏都能正常加载
+4. 考虑添加更多的游戏特定内容，如游戏技巧、策略建议等
+5. 可以进一步优化日志记录，添加更详细的错误信息和处理状态
+
 // ... existing code ... 
