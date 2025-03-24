@@ -70,52 +70,12 @@ const gamesData = [
     },
      //0324增加
     {
-        id: 'Railbound',
-        title: 'Railbound',
-        description: 'A relaxing puzzle game that helps clear your mind. Connect train tracks to guide trains to their destinations, perfect for a calming mental break that stimulates spatial thinking.',
-        type: 'logic',
-        image: 'images/games/Railbound.jpg',
-        path: 'https://www.gameflare.com/embed/railbound/'
-    },
-    {
         id: 'Color-Water-Sort-3D',
         title: 'Color Water Sort 3D',
         description: 'A soothing color-matching puzzle that provides a perfect mental reset. Sort colored water into matching tubes while enjoying the calming visual effects and gentle gameplay.',
         type: 'calm',
         image: 'images/games/Color-Water-Sort-3D.jpg',
         path: 'https://www.gameflare.com/embed/color-water-sort-3d/'
-    },
-    {
-        id: 'Craft-Cars-Flying-Pigs',
-        title: 'Craft Cars: Flying Pigs',
-        description: 'A creative building game that stimulates imagination while providing a fun break. Design and build unique vehicles to help flying pigs reach their destinations.',
-        type: 'creative',
-        image: 'images/games/Craft-Cars-Flying-Pigs.jpg',
-        path: 'https://www.gameflare.com/embed/craft-cars-flying-pigs/'
-    },
-    {
-        id: 'World-Hardest-Game',
-        title: "World's Hardest Game",
-        description: 'A challenging puzzle that helps sharpen focus and reflexes. Navigate through obstacles with precise timing, perfect for a quick mental workout during breaks.',
-        type: 'focus',
-        image: 'images/games/World-Hardest-Game.jpg',
-        path: 'https://www.gameflare.com/embed/world-s-hardest-game/'
-    },
-    {
-        id: 'Save-The-Dog',
-        title: "Save The Dog",
-        description: 'A heartwarming puzzle game that combines problem-solving with emotional engagement. Help rescue the dog by solving clever puzzles, providing both mental stimulation and satisfaction.',
-        type: 'logic',
-        image: 'images/games/Save-The-Dog.jpg',
-        path: 'https://www.gameflare.com/embed/save-the-dog/'
-    },
-    {
-        id: 'Save-the-Fish',
-        title: "Save the Fish",
-        description: 'A relaxing underwater puzzle that helps reduce stress. Guide fish to safety through engaging challenges, perfect for a calming break that stimulates strategic thinking.',
-        type: 'calm',
-        image: 'images/games/Save-the-Fish.jpg',
-        path: 'https://www.gameflare.com/embed/save-the-fish/'
     },
     {
         id: 'City-Blocks',
