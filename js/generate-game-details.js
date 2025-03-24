@@ -13,6 +13,7 @@ const path = require('path');
 const TEMPLATE_PATH = path.join(__dirname, '..', 'games', 'game-detail-template.html');
 const GAMES_DIR = path.join(__dirname, '..', 'games');
 const LOG_FILE = path.join(__dirname, '..', 'generate-details-log.txt');
+const GAMES_DATA_PATH = path.join(__dirname, 'games-data.js');
 
 // 记录日志到文件
 function log(message) {
@@ -25,17 +26,21 @@ function log(message) {
 // 清除之前的日志
 fs.writeFileSync(LOG_FILE, ''); // 清空日志文件
 
-// 硬编码游戏数据作为备选方案
-const gamesData = [
-    {
-        id: 'monster-survivors',
-        title: 'Monster Survivors',
-        description: 'A fast-paced action game that provides the perfect mental refresh. Navigate through waves of monsters for a quick cognitive reset.',
-        type: 'focus',
-        image: 'images/games/monster-survivors.jpg',
-        path: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html'
+// 从games-data.js读取游戏数据
+let gamesData = [];
+try {
+    const gamesDataContent = fs.readFileSync(GAMES_DATA_PATH, 'utf8');
+    // 提取gamesData数组的内容
+    const gamesDataMatch = gamesDataContent.match(/const gamesData = \[([\s\S]*?)\];/);
+    if (gamesDataMatch) {
+        const gamesDataStr = gamesDataMatch[1];
+        // 使用eval安全地解析游戏数据
+        gamesData = eval(`[${gamesDataStr}]`);
     }
-];
+} catch (error) {
+    log(`读取游戏数据时出错: ${error.message}`);
+    process.exit(1);
+}
 
 // 获取游戏类型显示名称的辅助函数
 function getGameTypeName(type) {
@@ -112,12 +117,16 @@ function generateGameGoal(game) {
 // 生成游戏容器内容
 function generateGameContainer(game) {
     if (game.path && !game.comingSoon) {
-        if (game.path.includes('http')) {
-            // 外部链接游戏使用iframe
+        // 检查是否是gameflare的游戏
+        if (game.path.includes('gameflare.com')) {
             return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+        } else if (game.path.includes('playhop.com')) {
+            // 如果是playhop的游戏，使用embed路径
+            const gameId = game.path.split('/').pop();
+            return `<iframe src="https://playhop.com/embed/${gameId}" allowfullscreen="true" frameborder="0"></iframe>`;
         } else {
-            // 本地游戏使用相对路径
-            return `<iframe src="../${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+            // 其他游戏保持原样
+            return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
         }
     } else {
         // 对于即将推出的游戏，显示预览图像
@@ -177,19 +186,39 @@ function generateDetailPage(game) {
     }
 }
 
+// 定义新增的游戏ID列表
+const newGameIds = [
+    'Railbound',
+    'Color-Water-Sort-3D',
+    'Craft-Cars-Flying-Pigs',
+    'World-Hardest-Game',
+    'Save-The-Dog',
+    'Save-the-Fish',
+    'City-Blocks'
+];
+
 // 主函数
-function main() {
+async function main() {
     log('===================================');
-    log('开始为所有游戏生成详情页...');
+    log('开始为新增游戏生成详情页...');
     log('===================================');
-    
-    log(`找到 ${gamesData.length} 个游戏，开始生成详情页...`);
-    
-    // 为每个游戏生成详情页
-    gamesData.forEach(generateDetailPage);
-    
+
+    // 只处理新增的游戏
+    const gamesToProcess = gamesData.filter(game => newGameIds.includes(game.id));
+    log(`找到 ${gamesToProcess.length} 个新增游戏，开始生成详情页...`);
+
+    for (const game of gamesToProcess) {
+        log(`正在为游戏 '${game.title}' 生成详情页...`);
+        try {
+            generateDetailPage(game);
+            log(`✓ 游戏 '${game.title}' 的详情页生成成功: ${path.join(GAMES_DIR, `${game.id}-detail.html`)}`);
+        } catch (error) {
+            log(`✗ 生成游戏 '${game.title}' 的详情页时出错: ${error.message}`);
+        }
+    }
+
     log('===================================');
-    log('所有游戏详情页生成完成！');
+    log('新增游戏详情页生成完成！');
     log('===================================');
 }
 

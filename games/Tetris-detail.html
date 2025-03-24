@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Tetris. This classic puzzle game helps refresh your brain and improve productivity with its engaging gameplay.">
+    <meta name="description" content="Take a strategic mental break with Tetris. This logic game helps refresh your brain and improve productivity in just minutes of gameplay.">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
@@ -97,25 +97,6 @@
             display: flex;
             align-items: center;
         }
-        
-        .logo-highlight {
-            font-family: 'SF Pro Display', sans-serif;
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: var(--apple-blue);
-        }
-        
-        .game-header-name {
-            font-family: 'SF Pro Display', sans-serif;
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--apple-text);
-            margin-left: 12px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 240px;
-        }
 
         .logo {
             margin-left: auto;
@@ -127,136 +108,23 @@
             align-items: center;
         }
 
-        .game-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            margin: var(--spacing-xl) 0;
-            border-radius: var(--border-radius-lg);
+        .logo-highlight {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--apple-blue);
+        }
+
+        .game-header-name {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--apple-text);
+            margin-left: 12px;
+            white-space: nowrap;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            background-color: #000;
-        }
-
-        .game-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .game-info {
-            background-color: var(--apple-bg-light);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .how-to-play,
-        .brain-benefits {
-            background-color: var(--apple-bg-light);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-sm);
-            padding: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .footer {
-            background-color: var(--apple-bg-light);
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
-            border-top: 1px solid var(--apple-gray-lighter);
-            margin-top: var(--spacing-xxl);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--apple-gray);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .header-content {
-                height: 56px;
-            }
-            
-            .game-header-name {
-                max-width: 180px;
-                font-size: 1.1rem;
-            }
-            
-            .game-title {
-                font-size: 1.8rem;
-            }
-            
-            .game-tagline {
-                font-size: 1.1rem;
-            }
-            
-            .game-container {
-                padding-bottom: 75%; /* Adjust aspect ratio for mobile */
-            }
-            
-            .controls-list, .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .game-info, .how-to-play, .brain-benefits {
-                padding: var(--spacing-lg);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header-content {
-                height: 50px;
-            }
-            
-            .back-link {
-                padding: 4px 8px;
-                font-size: 0.9rem;
-            }
-            
-            .game-header-name {
-                max-width: 120px;
-                font-size: 1rem;
-            }
-            
-            .logo-highlight {
-                font-size: 1.25rem;
-            }
-            
-            .game-title {
-                font-size: 1.5rem;
-            }
-            
-            .game-meta {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .game-category {
-                margin-bottom: var(--spacing-sm);
-            }
-            
-            .section-title {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Loading Notice */
-        .loading-notice {
-            background-color: var(--apple-bg-light);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-            text-align: center;
-            color: var(--apple-gray-dark);
-            font-size: 0.9rem;
-            border: 1px solid var(--apple-gray-lighter);
+            text-overflow: ellipsis;
+            max-width: 240px;
         }
 
         .back-link {
@@ -287,6 +155,37 @@
             margin-right: 4px;
             width: 13px;
             height: 13px;
+        }
+
+        /* Game Container */
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: var(--spacing-xl) 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background-color: #000;
+        }
+
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Game Info */
+        .game-info {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
         }
 
         .game-title {
@@ -376,6 +275,15 @@
             margin-top: 4px;
         }
 
+        /* How To Play */
+        .how-to-play {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
         .controls-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -396,6 +304,15 @@
             font-family: monospace;
             font-size: 0.9rem;
             margin-right: var(--spacing-sm);
+        }
+
+        /* Brain Benefits */
+        .brain-benefits {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
         }
 
         .benefits-grid {
@@ -430,7 +347,107 @@
             color: var(--apple-gray-dark);
             font-size: 0.95rem;
         }
+
+        /* Loading Notice */
+        .loading-notice {
+            background-color: var(--apple-bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            color: var(--apple-gray-dark);
+            font-size: 0.9rem;
+            border: 1px solid var(--apple-gray-lighter);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--apple-bg-light);
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            border-top: 1px solid var(--apple-gray-lighter);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--apple-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                height: 56px;
+            }
+            
+            .game-header-name {
+                max-width: 180px;
+                font-size: 1.1rem;
+            }
+            
+            .logo-highlight {
+                font-size: 1.4rem;
+            }
+            
+            .game-title {
+                font-size: 1.8rem;
+            }
+            
+            .game-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .game-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+            }
+            
+            .controls-list, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-info, .how-to-play, .brain-benefits {
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                height: 50px;
+            }
+            
+            .back-link {
+                padding: 4px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .game-header-name {
+                max-width: 120px;
+                font-size: 1rem;
+            }
+            
+            .logo-highlight {
+                font-size: 1.2rem;
+            }
+            
+            .game-title {
+                font-size: 1.5rem;
+            }
+            
+            .game-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .game-category {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
     </style>
+    
 </head>
 <body>
     <header class="header">
@@ -463,7 +480,7 @@
         <!-- Game Info -->
         <section class="game-info" id="game-info">
             <h1 class="game-title">Tetris</h1>
-            <p class="game-tagline">Classic Puzzle Game, Perfect Mental Break</p>
+            <p class="game-tagline">A logic game for quick mental refreshment</p>
             
             <div class="game-meta">
                 <span class="game-category logic">Logic</span>
@@ -477,7 +494,7 @@
             </div>
 
             <div class="game-description">
-                <p>Tetris is a classic mental refresher game, renowned for its simple rules and captivating gameplay. As an ideal mental break activity, it activates spatial thinking abilities in your brain while providing a brief but effective cognitive switch. Research suggests that playing Tetris not only alleviates work-related stress but also enhances attention and executive function for subsequent tasks. In this game, you'll manipulate differently shaped blocks (tetrominoes), strategically stacking them to clear complete rows. This strategic challenge provides balanced stimulation for your brain without excessively depleting cognitive resources.</p>
+                <p>The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.</p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -486,25 +503,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Enhances spatial-visual processing, activating the parietal lobe regions of the brain</span>
+                    <span>Quick attentional reset that helps clear mental fatigue</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Generates a calming "flow state" through repetitive activity, helping reduce work stress and anxiety</span>
+                    <span>Engages different brain regions than typical work tasks</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Stimulates dopamine release, promoting feelings of pleasure and positive mood</span>
+                    <span>Provides a sense of accomplishment that boosts mood</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Excellent cognitive switching tool, activating different brain regions than typical work, allowing fatigued areas to rest</span>
+                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
                 </li>
             </ul>
         </section>
@@ -512,35 +529,29 @@
         <!-- How To Play -->
         <section class="how-to-play">
             <h2 class="section-title">How To Play</h2>
-            <p>Tetris is simple to learn but challenging to master. You'll control various shaped blocks (tetrominoes) that fall from the top of the screen, manipulating them through rotation and movement to form complete horizontal lines at the bottom. When a line is filled with blocks, it disappears, earning you points. As the game progresses, blocks fall increasingly faster, adding to the challenge.</p>
+            <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
             
             <div class="controls-list" id="controls-list">
+                
                 <div class="control-item">
-                    <span class="control-key">←→</span>
-                    <span>Move pieces left/right</span>
+                    <span class="control-key">Mouse</span>
+                    <span>Interact with game elements</span>
                 </div>
                 <div class="control-item">
-                    <span class="control-key">↑</span>
-                    <span>Rotate piece</span>
+                    <span class="control-key">Click</span>
+                    <span>Select options</span>
                 </div>
-                <div class="control-item">
-                    <span class="control-key">↓</span>
-                    <span>Soft drop (accelerate descent)</span>
-                </div>
-                <div class="control-item">
-                    <span class="control-key">Space</span>
-                    <span>Hard drop (immediate placement)</span>
-                </div>
+            
             </div>
 
-            <h3 class="section-title">Game Objective</h3>
-            <p>The goal is to clear as many lines as possible by strategically positioning and rotating the falling pieces. The challenge lies in balancing immediate decisions with long-term strategy, providing an ideal cognitive switch that refreshes your mind while also developing spatial reasoning and decision-making skills. The difficulty increases gradually over time, maintaining moderate engagement of your brain without exhausting cognitive resources.</p>
+            <h3 class="section-title">Game Goal</h3>
+            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
         </section>
 
         <!-- Brain Benefits -->
         <section class="brain-benefits">
-            <h2 class="section-title">The Science of Mental Breaks</h2>
-            <p>Tetris as a mental break activity has been supported by scientific research. Here's how this classic game helps revitalize your brain:</p>
+            <h2 class="section-title">Science of Mental Breaks</h2>
+            <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how our games help refresh your brain:</p>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -548,9 +559,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Spatial Cognition Stimulation
+                        Attention Restoration
                     </h3>
-                    <p class="benefit-description">Tetris activates brain regions responsible for spatial reasoning, particularly the parietal lobe areas. This cognitive activity differs from what most office work requires, allowing fatigued brain regions to rest while maintaining overall mental engagement.</p>
+                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -558,9 +569,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Programmed Microbreaks
+                        Dopamine Release
                     </h3>
-                    <p class="benefit-description">Compared to purposeless breaks, Tetris provides a structured break experience with clear beginning and endpoints. This "programmed" approach allows for more efficient attention recovery, preventing breaks from becoming too long or attention from becoming too scattered.</p>
+                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -568,16 +579,16 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Neurotransmitter Balance
+                        Context Switching
                     </h3>
-                    <p class="benefit-description">The sense of achievement from clearing lines and scoring points promotes dopamine release, a "reward neurotransmitter" that improves mood and enhances work motivation. Simultaneously, the game's repetitive patterns produce a calm focus state that helps reduce cortisol levels, the stress hormone.</p>
+                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
                 </div>
             </div>
         </section>
 
         <!-- Loading Notice -->
         <div class="loading-notice">
-            <p>The game may take a moment to load. If it doesn't appear, please make sure JavaScript is enabled in your browser.</p>
+            <p>Game loading may take a moment. If the game doesn't appear, please ensure JavaScript is enabled in your browser settings.</p>
         </div>
     </main>
 
@@ -588,5 +599,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/games-data.js"></script>
+    
 </body>
 </html> 

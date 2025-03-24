@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draw Here - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Draw Here. This engaging drawing game helps refresh your brain and enhance creativity in just minutes of gameplay.">
+    <meta name="description" content="Take a strategic mental break with Draw Here. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
@@ -43,10 +43,6 @@
             --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-            --focus-type-color: #4a6bdf;
-            --creative-type-color: #d84bee;
-            --logic-type-color: #12aa83;
-            --calm-type-color: #4bbeeb;
         }
 
         * {
@@ -222,19 +218,19 @@
         }
 
         .game-category.focus {
-            background-color: var(--focus-type-color);
+            background-color: var(--focus-type-color, #4a6bdf);
         }
 
         .game-category.creative {
-            background-color: var(--creative-type-color);
+            background-color: var(--creative-type-color, #d84bee);
         }
 
         .game-category.logic {
-            background-color: var(--logic-type-color);
+            background-color: var(--logic-type-color, #12aa83);
         }
 
         .game-category.calm {
-            background-color: var(--calm-type-color);
+            background-color: var(--calm-type-color, #4bbeeb);
         }
 
         .game-duration {
@@ -451,6 +447,7 @@
             }
         }
     </style>
+    
 </head>
 <body>
     <header class="header">
@@ -483,48 +480,48 @@
         <!-- Game Info -->
         <section class="game-info" id="game-info">
             <h1 class="game-title">Draw Here</h1>
-            <p class="game-tagline">A Creative Mental Break Experience</p>
+            <p class="game-tagline">A creativity game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category creative">Creative</span>
+                <span class="game-category creative">Creativity</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                     </svg>
-                    Ideal Break Time: 2-4 minutes
+                    Ideal Break Time: 3-5 minutes
                 </div>
             </div>
 
             <div class="game-description">
-                <p>Draw Here is a creative relaxation game specifically designed to provide an effective mental break. This simple drawing experience engages the right side of your brain, activating regions associated with creativity and artistic expression. According to cognitive science research, switching to creative activities during breaks can help alleviate mental fatigue from analytical tasks, offering your brain the perfect refreshment. Draw Here provides a blank canvas with intuitive controls, encouraging free expression without judgment or pressure, making it an ideal mental break activity.</p>
+                <p>A creative drawing game that provides the perfect mental refresh. Express yourself freely while giving your analytical brain a rest.</p>
             </div>
 
-            <h3 class="section-title">Brain Break Benefits</h3>
+            <h3 class="section-title">Mental Refresh Benefits</h3>
             <ul class="feature-list">
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Activates different brain regions than typical work, allowing overused analytical areas to rest</span>
+                    <span>Quick attentional reset that helps clear mental fatigue</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Stimulates creative thinking, which can enhance problem-solving abilities when you return to work</span>
+                    <span>Engages different brain regions than typical work tasks</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Reduces mental stress through free expression, leading to improved focus afterward</span>
+                    <span>Provides a sense of accomplishment that boosts mood</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Brief, time-bound creative activities provide better recovery than unstructured breaks</span>
+                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
                 </li>
             </ul>
         </section>
@@ -532,35 +529,29 @@
         <!-- How To Play -->
         <section class="how-to-play">
             <h2 class="section-title">How To Play</h2>
-            <p>Draw Here provides a simple, intuitive drawing experience with no complex rules. Just let your creativity flow! Use your mouse or touchscreen to create anything that comes to mind - from abstract patterns to doodles to elaborate scenes. There's no right or wrong way to play; the goal is simply to engage in a different type of mental activity.</p>
+            <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
             
             <div class="controls-list" id="controls-list">
+                
                 <div class="control-item">
                     <span class="control-key">Mouse</span>
-                    <span>Click and drag to draw</span>
+                    <span>Interact with game elements</span>
                 </div>
                 <div class="control-item">
-                    <span class="control-key">Color Palette</span>
-                    <span>Select different colors</span>
+                    <span class="control-key">Click</span>
+                    <span>Select options</span>
                 </div>
-                <div class="control-item">
-                    <span class="control-key">Size Controls</span>
-                    <span>Adjust brush thickness</span>
-                </div>
-                <div class="control-item">
-                    <span class="control-key">Clear Button</span>
-                    <span>Start over with a blank canvas</span>
-                </div>
+            
             </div>
 
-            <h3 class="section-title">Game Objective</h3>
-            <p>Unlike most games, Draw Here doesn't have a specific objective to achieve or obstacles to overcome. Instead, it offers a judgment-free space for creative expression. The real goal is to give your analytical brain regions a rest while engaging your creative faculties. This cognitive switch serves as a mental palate cleanser, preparing your brain to return to focused work with renewed energy and perspective.</p>
+            <h3 class="section-title">Game Goal</h3>
+            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
         </section>
 
         <!-- Brain Benefits -->
         <section class="brain-benefits">
-            <h2 class="section-title">The Science of Mental Breaks</h2>
-            <p>Strategic mental breaks are crucial for maintaining cognitive performance. Here's how Draw Here leverages cognitive science to provide an effective brain refresh:</p>
+            <h2 class="section-title">Science of Mental Breaks</h2>
+            <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how our games help refresh your brain:</p>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -570,7 +561,7 @@
                         </svg>
                         Attention Restoration
                     </h3>
-                    <p class="benefit-description">Studies show that engaging in creative activities activates different neural pathways than analytical work. This shift allows overused attention networks to recover, reducing mental fatigue and preparing you for renewed focus.</p>
+                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -578,9 +569,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Structured Downtime
+                        Dopamine Release
                     </h3>
-                    <p class="benefit-description">Unlike scrolling social media or other passive breaks, this game provides a structured, time-bound activity with a clear beginning and end. Research indicates this type of break is more effective at restoring cognitive resources than unstructured leisure time.</p>
+                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -588,16 +579,16 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Dopamine Regulation
+                        Context Switching
                     </h3>
-                    <p class="benefit-description">Creative activities trigger the release of dopamine, a neurotransmitter associated with pleasure and motivation. Unlike the dopamine spikes from social media, this natural creative flow produces a more balanced, sustainable mood enhancement that carries over into subsequent work.</p>
+                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
                 </div>
             </div>
         </section>
 
         <!-- Loading Notice -->
         <div class="loading-notice">
-            <p>The game may take a moment to load. If it doesn't appear, please make sure JavaScript is enabled in your browser.</p>
+            <p>Game loading may take a moment. If the game doesn't appear, please ensure JavaScript is enabled in your browser settings.</p>
         </div>
     </main>
 
