@@ -85,6 +85,23 @@ const gamesData = [
         image: 'images/games/City-Blocks.jpg',
         path: 'https://www.gameflare.com/embed/city-blocks/'
     },
+    //0325增加
+    {
+        id: 'Organize-It',
+        title: "Organize It",
+        description: 'A satisfying organizational puzzle that offers instant mental refreshment with no login required. Sort and categorize items to create order from chaos, providing a perfect brain break that enhances focus and reduces cognitive fatigue.',
+        type: 'logic',
+        image: 'images/games/Organize-It.jpg',
+        path: 'https://html5.gamedistribution.com/0df5240c55bb4e1f8571179ab56f1004/'
+    },
+    {
+        id: 'Voxel-Bot',
+        title: "Voxel Bot",
+        description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
+        type: 'creative',
+        image: 'images/games/Voxel-Bot.jpg',
+        path: 'https://games.crazygames.com/en_US/voxel-bot/index.html'
+    }
 ];
 
 /**

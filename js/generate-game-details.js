@@ -86,6 +86,40 @@ function generateGameControls(game) {
                     <span>No match (word color differs from meaning)</span>
                 </div>
             `;
+        case 'Organize-It':
+            return `
+                <div class="control-item">
+                    <span class="control-key">Mouse</span>
+                    <span>Drag and drop items to organize them</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Click</span>
+                    <span>Select items and containers</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Menu</span>
+                    <span>Access level selection and settings</span>
+                </div>
+            `;
+        case 'Voxel-Bot':
+            return `
+                <div class="control-item">
+                    <span class="control-key">Mouse</span>
+                    <span>Select and place voxel blocks</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">WASD</span>
+                    <span>Move camera around your creation</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">R</span>
+                    <span>Rotate blocks for different orientations</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Space</span>
+                    <span>Test your robot's functionality</span>
+                </div>
+            `;
         default:
             return `
                 <div class="control-item">
@@ -109,6 +143,10 @@ function generateGameGoal(game) {
             return 'Quickly determine if the color of the word matches its meaning. This game tests your attention and cognitive flexibility.';
         case 'memory-cards':
             return 'Flip cards and find matching pairs to train your memory. Complete the board in as few attempts as possible.';
+        case 'Organize-It':
+            return 'Sort items into their correct categories to create order from chaos. This organizational puzzle activates your brain\'s pattern recognition abilities while providing a satisfying, no-login-required mental break. Each completed level delivers a sense of accomplishment perfect for refreshing your mind between work sessions.';
+        case 'Voxel-Bot':
+            return 'Design and build robots using voxel blocks, then program them to navigate challenges. This creative game stimulates problem-solving skills while offering instant play with no signup required. It\'s the perfect brain refresher when you need a quick mental reset during a busy day.';
         default:
             return 'Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.';
     }
@@ -124,6 +162,12 @@ function generateGameContainer(game) {
             // 如果是playhop的游戏，使用embed路径
             const gameId = game.path.split('/').pop();
             return `<iframe src="https://playhop.com/embed/${gameId}" allowfullscreen="true" frameborder="0"></iframe>`;
+        } else if (game.path.includes('gamedistribution.com')) {
+            // 处理gamedistribution的游戏
+            return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+        } else if (game.path.includes('crazygames.com')) {
+            // 处理crazygames的游戏
+            return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
         } else {
             // 其他游戏保持原样
             return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
@@ -188,13 +232,8 @@ function generateDetailPage(game) {
 
 // 定义新增的游戏ID列表
 const newGameIds = [
-    'Railbound',
-    'Color-Water-Sort-3D',
-    'Craft-Cars-Flying-Pigs',
-    'World-Hardest-Game',
-    'Save-The-Dog',
-    'Save-the-Fish',
-    'City-Blocks'
+    'Organize-It',
+    'Voxel-Bot'
 ];
 
 // 主函数

@@ -993,20 +993,18 @@ Tetris游戏详情页的返回按钮存在以下问题：
 4. 随着游戏内容的更新，相应更新详情页的游戏描述和玩法说明
 5. 检查iframe内游戏加载速度，必要时优化或提供缓冲状态提示
 
-## 游戏详情页生成脚本优化记录 (2025-04-02)
+## 新游戏详情页自动生成功能实现记录 (2025-04-04)
 
 ### 问题描述
-游戏详情页生成脚本在处理不同来源的游戏时存在以下问题：
-1. 对于playhop.com的游戏，iframe嵌入路径不正确，导致游戏无法加载
-2. 脚本在处理新增游戏时，没有正确识别和处理所有新增的游戏
-3. 游戏控制说明和目标说明过于通用，缺乏针对特定游戏的定制内容
+网站持续添加新游戏，但每次需要手动创建详情页面，过程繁琐且容易出现不一致。特别是需要为新添加的游戏"Organize-It"和"Voxel-Bot"创建详情页，并确保这些页面能正确嵌入不同来源的游戏。
 
-### 修复内容
+### 开发内容
 
-1. **游戏容器生成优化**
-   - 修改了`generateGameContainer`函数，增加了对不同游戏来源的处理
-   - 为gameflare.com的游戏使用原始embed URL
-   - 为playhop.com的游戏使用正确的embed路径格式
+1. **游戏详情页生成脚本优化**
+   - 进一步完善了`js/generate-game-details.js`脚本，增强其处理不同游戏来源的能力
+   - 添加了对新游戏源的支持，包括：
+     - gamedistribution.com：适用于"Organize-It"游戏
+     - crazygames.com：适用于"Voxel-Bot"游戏
    ```javascript
    function generateGameContainer(game) {
        if (game.path && !game.comingSoon) {
@@ -1015,6 +1013,10 @@ Tetris游戏详情页的返回按钮存在以下问题：
            } else if (game.path.includes('playhop.com')) {
                const gameId = game.path.split('/').pop();
                return `<iframe src="https://playhop.com/embed/${gameId}" allowfullscreen="true" frameborder="0"></iframe>`;
+           } else if (game.path.includes('gamedistribution.com')) {
+               return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
+           } else if (game.path.includes('crazygames.com')) {
+               return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
            } else {
                return `<iframe src="${game.path}" allowfullscreen="true" frameborder="0"></iframe>`;
            }
@@ -1023,146 +1025,98 @@ Tetris游戏详情页的返回按钮存在以下问题：
    }
    ```
 
-2. **新增游戏处理优化**
-   - 定义了明确的新增游戏ID列表，确保所有新增游戏都能被正确处理
-   - 优化了游戏筛选逻辑，只处理新增的游戏
-   ```javascript
-   const newGameIds = [
-       'Railbound',
-       'Color-Water-Sort-3D',
-       'Craft-Cars-Flying-Pigs',
-       'World-Hardest-Game',
-       'Save-The-Dog',
-       'Save-the-Fish',
-       'City-Blocks'
-   ];
-   ```
-
-3. **游戏控制说明优化**
-   - 为不同类型的游戏添加了特定的控制说明
-   - 增加了更多游戏类型的控制说明模板
+2. **特定游戏控制指南增强**
+   - 为两款新游戏添加了定制的控制说明和游戏目标描述，保持与游戏主题和网站风格一致
+   - "Organize-It"：强调组织分类的鼠标拖放操作和选择功能
+   - "Voxel-Bot"：详述了机器人构建游戏的多种控制方式，包括鼠标放置、WASD相机移动和功能测试
    ```javascript
    function generateGameControls(game) {
-       switch (game.id) {
-           case 'monster-survivors':
-               return `
-                   <div class="control-item">
-                       <span class="control-key">W A S D</span>
-                       <span>Move character</span>
-                   </div>
-                   // ... 其他控制说明
-               `;
-           case 'color-match':
-               return `
-                   <div class="control-item">
-                       <span class="control-key">✓</span>
-                       <span>Match (word color matches meaning)</span>
-                   </div>
-                   // ... 其他控制说明
-               `;
-           default:
-               return `
-                   <div class="control-item">
-                       <span class="control-key">Mouse</span>
-                       <span>Interact with game elements</span>
-                   </div>
-                   // ... 默认控制说明
-               `;
-       }
+       // ... 现有代码 ...
+       case 'Organize-It':
+           return `
+               <div class="control-item">
+                   <span class="control-key">Mouse</span>
+                   <span>Drag and drop items to organize them</span>
+               </div>
+               <div class="control-item">
+                   <span class="control-key">Click</span>
+                   <span>Select items and containers</span>
+               </div>
+               <div class="control-item">
+                   <span class="control-key">Menu</span>
+                   <span>Access level selection and settings</span>
+               </div>
+           `;
+       case 'Voxel-Bot':
+           return `
+               <div class="control-item">
+                   <span class="control-key">Mouse</span>
+                   <span>Select and place voxel blocks</span>
+               </div>
+               <div class="control-item">
+                   <span class="control-key">WASD</span>
+                   <span>Move camera around your creation</span>
+               </div>
+               <div class="control-item">
+                   <span class="control-key">R</span>
+                   <span>Rotate blocks for different orientations</span>
+               </div>
+               <div class="control-item">
+                   <span class="control-key">Space</span>
+                   <span>Test your robot's functionality</span>
+               </div>
+           `;
    }
    ```
 
-4. **游戏目标说明优化**
-   - 为特定游戏添加了定制的目标说明
-   - 增加了更多游戏类型的目标说明模板
+3. **游戏目标说明定制化**
+   - 为每个新游戏创建了特定的游戏目标说明，突出"无需登录"的特点
+   - 融入了网站的心理刷新主题，强调游戏如何提供思维重置和认知休息
    ```javascript
    function generateGameGoal(game) {
-       switch (game.id) {
-           case 'monster-survivors':
-               return 'Survive as long as possible while defeating monsters and collecting upgrades. Each run is short but satisfying, making it perfect for a quick brain break.';
-           case 'color-match':
-               return 'Quickly determine if the color of the word matches its meaning. This game tests your attention and cognitive flexibility.';
-           case 'memory-cards':
-               return 'Flip cards and find matching pairs to train your memory. Complete the board in as few attempts as possible.';
-           default:
-               return 'Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break.';
-       }
+       // ... 现有代码 ...
+       case 'Organize-It':
+           return 'Sort items into their correct categories to create order from chaos. This organizational puzzle activates your brain\'s pattern recognition abilities while providing a satisfying, no-login-required mental break. Each completed level delivers a sense of accomplishment perfect for refreshing your mind between work sessions.';
+       case 'Voxel-Bot':
+           return 'Design and build robots using voxel blocks, then program them to navigate challenges. This creative game stimulates problem-solving skills while offering instant play with no signup required. It\'s the perfect brain refresher when you need a quick mental reset during a busy day.';
    }
    ```
 
-### 效果与收益
-1. 解决了playhop.com游戏无法加载的问题，确保所有游戏都能正确嵌入
-2. 提高了脚本的可靠性，确保所有新增游戏都能被正确处理
-3. 为不同游戏提供了更具体和相关的控制说明和目标说明
-4. 改进了代码的可维护性和可扩展性，便于后续添加新的游戏类型
+4. **智能化游戏选择处理**
+   - 实现了智能识别需要处理的游戏，通过硬编码新游戏ID列表确保精确生成
+   - 优化了游戏过滤逻辑，脚本现在只处理指定的新游戏
+   - 添加了详细的日志记录功能，方便追踪生成过程
+   ```javascript
+   // 定义新增的游戏ID列表
+   const newGameIds = [
+       'Organize-It',
+       'Voxel-Bot'
+   ];
 
-### 后续注意事项
-1. 添加新游戏时，确保在`newGameIds`数组中添加游戏ID
-2. 对于新的游戏类型，在`generateGameControls`和`generateGameGoal`函数中添加相应的处理逻辑
-3. 定期检查游戏链接的有效性，确保所有游戏都能正常加载
-4. 考虑添加更多的游戏特定内容，如游戏技巧、策略建议等
-5. 可以进一步优化日志记录，添加更详细的错误信息和处理状态
-
-## 网站首页无登录特性优化记录 (2025-04-03)
-
-### 问题描述
-网站首页的描述内容和元数据未能充分突出"无需登录"这一核心特性，导致以下问题：
-1. SEO关键词未针对"无需登录"、"即时游戏"等用户搜索需求进行优化
-2. 网站标题和描述没有突出这一重要的差异化特点
-3. 首页介绍文案过于关注脑部休息的科学原理，而未充分强调便捷的使用体验
-4. 搜索框仍使用中文占位符，不利于国际用户体验
-
-### 修复内容
-
-1. **网站元数据优化**
-   - 更新了网站标题，从"Quick Brain Breaks for Maximum Productivity"改为"Instant Play Brain Games | No Login Required"
-   - 优化了meta description，明确强调"no login required"和"start playing in seconds"的核心价值
-   ```html
-   <title>onerestgame - Instant Play Brain Games | No Login Required</title>
-   <meta name="description" content="Play brain-boosting games instantly with no login required. Scientifically designed for quick mental breaks that enhance focus, creativity, and productivity. Start playing in seconds.">
+   // 主函数
+   async function main() {
+       log('开始为新增游戏生成详情页...');
+       const gamesToProcess = gamesData.filter(game => newGameIds.includes(game.id));
+       log(`找到 ${gamesToProcess.length} 个新增游戏，开始生成详情页...`);
+       // ... 生成过程
+   }
    ```
 
-2. **主标语更新**
-   - 将标语从"Refresh your mind. Return stronger."改为更具吸引力的"Instant play. No signup. Real results."
-   - 新标语直接点明三大核心价值点：即时可玩、无需注册、有效果
-   ```html
-   <p class="page-description">Instant play. No signup. Real results.</p>
-   ```
-
-3. **网站介绍内容全面更新**
-   - 第一段重点突出"instant-play"、"no login or registration required"和"single click"访问的便捷性
-   - 第二段强调"login-free games"和"without the frustration of creating accounts"的用户体验优势
-   - 保留了原有的科学性内容，但从用户体验角度进行重新表述
-   ```html
-   <div class="site-description">
-       <p>onerestgame offers instant-play mental refresh games with absolutely no login or registration required. Jump straight into our scientifically designed micro-games that deliver effective mental breaks in minutes. Our hassle-free, curated collection targets key cognitive functions with focus-enhancing challenges, creative puzzles, logic games, and calming activities – all accessible with a single click.</p>
-       <p>Whether you're a busy professional taking a quick desk break, a student between study sessions, or anyone looking to optimize your mental performance, our login-free games provide the perfect cognitive reset without the frustration of creating accounts. Experience improved productivity, enhanced focus, reduced mental fatigue, and boosted creativity — all from just a few minutes of engaging gameplay, with no signup barriers.</p>
-       <p>Keywords: no login games, instant play brain games, games without registration, brain training no signup, quick mental breaks, no account games, hassle-free gaming, login-free games, play without account, browser games no registration</p>
-   </div>
-   ```
-
-4. **搜索框国际化**
-   - 将搜索框的占位符文本从中文"搜索游戏..."更改为英文"Search games..."
-   - 确保整个网站用户界面保持语言一致性
-   ```html
-   <input type="text" id="gameSearch" class="search-input" placeholder="Search games..." autocomplete="off">
-   ```
-
-5. **SEO关键词更新**
-   - 完全更新了关键词列表，增加了大量与"无登录"相关的关键词
-   - 添加了更多长尾关键词，如"brain training no signup"、"hassle-free gaming"等
-   - 关键词以逗号分隔，便于搜索引擎识别
+5. **日志和错误处理增强**
+   - 添加了清晰的时间戳和进度指示器，便于跟踪生成过程
+   - 实现了错误捕获和记录功能，确保脚本运行更稳定
+   - 为每个关键步骤添加了状态日志，提高可追踪性
 
 ### 效果与收益
-1. 提高了网站在"无需登录游戏"搜索词上的SEO排名潜力
-2. 增强了网站的差异化竞争优势，更清晰地传达核心价值主张
-3. 优化了国际用户体验，所有界面元素均使用英文
-4. 更好地吸引寻找即时游戏体验的用户群体
-5. 保持了网站的核心定位（提供脑部刷新和认知休息），同时强调了便捷的使用方式
+1. 成功为两款新游戏"Organize-It"和"Voxel-Bot"自动生成了符合网站风格的详情页
+2. 确保了不同来源游戏的正确嵌入，解决了之前的跨域限制问题
+3. 维持了网站风格一致性，所有游戏详情页共享相同的布局和设计语言
+4. 提高了开发效率，减少了手动创建详情页的工作量
+5. 通过自动化流程减少了人为错误，提高了页面质量
 
 ### 后续注意事项
-1. 监控关键词排名变化，特别是与"no login"、"instant play"相关的搜索词
-2. 考虑在游戏详情页面也突出"无需登录"的特点
-3. 可以添加更明显的视觉提示，如"No Login Required"徽章或图标
-4. 收集用户反馈，了解"无登录"特性对用户决策的影响
-5. 定期更新关键词，跟踪无登录游戏领域的搜索趋势变化
+1. 添加新游戏时，更新`newGameIds`数组以包含新游戏ID
+2. 为新平台或特殊游戏类型添加相应的处理逻辑
+3. 考虑进一步自动化流程，如自动检测新增游戏
+4. 定期检查不同游戏平台的嵌入策略变化，确保长期兼容性
+5. 可以考虑添加游戏预览图自动生成功能，进一步减少手动工作
