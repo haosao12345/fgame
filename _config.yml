@@ -1,0 +1,6 @@
+defaults:
+  -
+    scope:
+      path: "css"
+    values:
+      content_type: "text/css" 
