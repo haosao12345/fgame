@@ -32,7 +32,7 @@ const gamesData = [
         title: 'Tetris',
         description: 'Classic puzzle game for quick mental refreshment',
         type: 'logic',
-        image: 'images/games/tetris.jpg',
+        image: 'images/games/Tetris.jpg',
         path: 'https://www.onlinegames.io/games/2024/more/tetris/index.html'
     },
     //0323增加
