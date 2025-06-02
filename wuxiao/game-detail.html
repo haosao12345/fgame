@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Painter - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with House Painter. This relaxation game helps refresh your brain and improve productivity in just minutes of gameplay.">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <title>Game Details - Mental Refresher Game | onerestgame</title>
+    <meta name="description" content="Take a strategic mental break with our games. These casual games help refresh your brain and improve productivity in just minutes of gameplay.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
@@ -79,27 +78,10 @@
         }
 
         .header .container {
-            width: 100%;
-            max-width: var(--content-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
-
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 64px;
-            width: 100%;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            margin-left: auto;
         }
 
         .logo a {
@@ -115,46 +97,21 @@
             color: var(--apple-blue);
         }
 
-        .game-header-name {
-            font-family: 'SF Pro Display', sans-serif;
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--apple-text);
-            margin-left: 12px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 240px;
-        }
-
         .back-link {
             display: flex;
             align-items: center;
             color: var(--apple-blue);
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
-            letter-spacing: -0.01em;
-            transition: all 0.2s ease;
-            padding: 5px 10px;
-            border-radius: 6px;
-            background-color: transparent;
-            white-space: nowrap;
+            transition: opacity 0.2s ease;
         }
 
         .back-link:hover {
-            background-color: rgba(0, 122, 255, 0.06);
-        }
-
-        .back-link:active {
-            background-color: rgba(0, 122, 255, 0.1);
-            transform: scale(0.98);
+            opacity: 0.8;
         }
 
         .back-link svg {
-            margin-right: 4px;
-            width: 13px;
-            height: 13px;
+            margin-right: var(--spacing-xs);
         }
 
         /* Game Container */
@@ -168,6 +125,42 @@
             overflow: hidden;
             box-shadow: var(--shadow-md);
             background-color: #000;
+        }
+
+        /* 添加音频控制按钮样式 */
+        .audio-control {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .audio-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .audio-control svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .audio-control[data-muted="true"] .icon-sound {
+            display: none;
+        }
+
+        .audio-control[data-muted="false"] .icon-muted {
+            display: none;
         }
 
         .game-container iframe {
@@ -215,22 +208,6 @@
             padding: 4px 12px;
             border-radius: 20px;
             margin-right: var(--spacing-md);
-        }
-
-        .game-category.focus {
-            background-color: var(--focus-type-color, #4a6bdf);
-        }
-
-        .game-category.creative {
-            background-color: var(--creative-type-color, #d84bee);
-        }
-
-        .game-category.logic {
-            background-color: var(--logic-type-color, #12aa83);
-        }
-
-        .game-category.calm {
-            background-color: var(--calm-type-color, #4bbeeb);
         }
 
         .game-duration {
@@ -376,19 +353,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                height: 56px;
-            }
-            
-            .game-header-name {
-                max-width: 180px;
-                font-size: 1.1rem;
-            }
-            
-            .logo-highlight {
-                font-size: 1.4rem;
-            }
-            
             .game-title {
                 font-size: 1.8rem;
             }
@@ -411,22 +375,12 @@
         }
         
         @media (max-width: 480px) {
-            .header-content {
-                height: 50px;
-            }
-            
-            .back-link {
-                padding: 4px 8px;
-                font-size: 0.9rem;
-            }
-            
-            .game-header-name {
-                max-width: 120px;
-                font-size: 1rem;
+            .header .container {
+                height: 56px;
             }
             
             .logo-highlight {
-                font-size: 1.2rem;
+                font-size: 1.25rem;
             }
             
             .game-title {
@@ -446,44 +400,56 @@
                 font-size: 1.2rem;
             }
         }
+
+        #gameContent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
     </style>
-    
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <a href="../index.html" class="back-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                        </svg>
-                        Home
-                    </a>
-                    <h2 class="game-header-name">House Painter</h2>
-                </div>
-                <div class="logo">
-                    <a href="../index.html">
-                        <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
-                    </a>
-                </div>
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                </a>
             </div>
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Back to Games
+            </a>
         </div>
     </header>
 
     <main class="container">
         <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <iframe src="https://www.onlinegames.io/games/2023/construct/238/house-painter/index.html" allowfullscreen="true" frameborder="0"></iframe>
+            <button id="audioControl" class="audio-control" data-muted="false" aria-label="Toggle audio">
+                <svg class="icon-sound" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 5v14l-7-7H1V12h4l7-7z M15.5 8.5a5 5 0 0 1 0 7M18 6a8 8 0 0 1 0 12"/>
+                </svg>
+                <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 5v14l-7-7H1V12h4l7-7z M15 9l6 6M21 9l-6 6"/>
+                </svg>
+            </button>
+            <iframe id="gameFrame" src="https://html5.gamedistribution.com/rvvASMiM/5da372e4a178438a8f69f141b5edc68a/index.html" 
+            allow="autoplay; fullscreen" allowfullscreen="true" frameborder="0"></iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title">House Painter</h1>
-            <p class="game-tagline">A relaxation game for quick mental refreshment</p>
+            <h1 class="game-title" id="game-title">Loading Game...</h1>
+            <p class="game-tagline" id="game-tagline"></p>
             
             <div class="game-meta">
-                <span class="game-category calm">Relaxation</span>
+                <span class="game-category" id="game-category"></span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -494,7 +460,7 @@
             </div>
 
             <div class="game-description">
-                <p>A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.</p>
+                <p id="game-description"></p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -532,20 +498,11 @@
             <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
             
             <div class="controls-list" id="controls-list">
-                
-                <div class="control-item">
-                    <span class="control-key">Mouse</span>
-                    <span>Interact with game elements</span>
-                </div>
-                <div class="control-item">
-                    <span class="control-key">Click</span>
-                    <span>Select options</span>
-                </div>
-            
+                <!-- 控制说明将由 JavaScript 动态加载 -->
             </div>
 
             <h3 class="section-title">Game Goal</h3>
-            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
+            <p id="game-goal">Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
         </section>
 
         <!-- Brain Benefits -->
@@ -600,8 +557,108 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="../js/games-data.js"></script>
-    
+    <!-- JavaScript 引用 -->
+    <script src="js/games-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 从 URL 参数中获取游戏 ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get('id');
+            
+            console.log('Loading game with ID:', gameId);
+            
+            // 默认游戏 ID，如果未提供
+            const defaultGameId = 'monster-survivors';
+            
+            // 使用 games-data.js 中的函数获取游戏数据
+            const game = getGameById(gameId || defaultGameId);
+
+            if (!game) {
+                console.error('Game not found:', gameId);
+                document.getElementById('game-title').textContent = 'Game Not Found';
+                document.getElementById('game-description').textContent = 'The requested game could not be found. Please try another game from our collection.';
+                return;
+            }
+
+            console.log('Game data:', game);
+
+            // 更新页面标题和元描述
+            document.title = `${game.title} - Mental Refresher Game | onerestgame`;
+            document.querySelector('meta[name="description"]').setAttribute('content', 
+                `Take a strategic mental break with ${game.title}. This casual ${getGameTypeName(game.type).toLowerCase()} game helps refresh your brain and improve productivity in just minutes of gameplay.`);
+
+            // 更新游戏信息
+            document.getElementById('game-title').textContent = game.title;
+            document.getElementById('game-tagline').textContent = `A ${getGameTypeName(game.type).toLowerCase()} game for quick mental refreshment`;
+            document.getElementById('game-category').textContent = getGameTypeName(game.type);
+            document.getElementById('game-category').className = `game-category ${game.type}`;
+            document.getElementById('game-description').textContent = game.description;
+
+            // 加载游戏
+            const gameFrame = document.getElementById('gameFrame');
+            if (game.path && !game.comingSoon) {
+                console.log('Loading game from path:', game.path);
+                
+                // 创建一个包装iframe的容器
+                const wrapper = document.createElement('div');
+                wrapper.style.position = 'relative';
+                wrapper.style.width = '100%';
+                wrapper.style.height = '100%';
+                
+                // 设置游戏iframe
+                gameFrame.src = game.path;
+                
+                // 添加错误处理
+                gameFrame.onerror = (error) => {
+                    console.error('Error loading game:', error);
+                    gameFrame.src = 'about:blank';
+                    alert('Failed to load game. Please try refreshing the page.');
+                };
+                
+                // 添加加载处理
+                gameFrame.onload = () => {
+                    console.log('Game iframe loaded successfully');
+                };
+            }
+
+            const audioControl = document.getElementById('audioControl');
+            
+            // 音频控制
+            let isMuted = false;
+
+            // 音频控制按钮点击事件
+            audioControl.addEventListener('click', function() {
+                isMuted = !isMuted;
+                audioControl.setAttribute('data-muted', isMuted);
+                
+                if (isMuted) {
+                    gameFrame.contentWindow.postMessage({ type: 'mute' }, '*');
+                } else {
+                    gameFrame.contentWindow.postMessage({ type: 'unmute' }, '*');
+                }
+            });
+
+            // 监听浏览器的音频控制事件
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.setActionHandler('play', function() {
+                    isMuted = false;
+                    audioControl.setAttribute('data-muted', 'false');
+                    gameFrame.contentWindow.postMessage({ type: 'unmute' }, '*');
+                });
+
+                navigator.mediaSession.setActionHandler('pause', function() {
+                    isMuted = true;
+                    audioControl.setAttribute('data-muted', 'true');
+                    gameFrame.contentWindow.postMessage({ type: 'mute' }, '*');
+                });
+            }
+
+            // 监听iframe加载完成
+            gameFrame.addEventListener('load', function() {
+                // 设置初始音频状态
+                this.contentWindow.postMessage({ type: 'unmute' }, '*');
+            });
+        });
+    </script>
 </body>
 </html> 

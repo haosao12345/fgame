@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Sugar Match - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Sweet Sugar Match. This logic game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <title>Tetris Online - Free Brain Break Game | No Login Required</title>
+    <meta name="description" content="Play Tetris online for free. This classic logic game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving cognitive skills.">
+    <meta name="keywords" content="tetris, mental break game, brain refresher, logic game, puzzle game, no login games, quick break games, free tetris online">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/tetris.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/tetris.html">
+    <meta property="og:title" content="Tetris Online - Free Brain Break Game | No Login Required">
+    <meta property="og:description" content="Play Tetris online for free. This classic logic game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/tetris.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/tetris.html">
+    <meta name="twitter:title" content="Tetris Online - Free Brain Break Game | No Login Required">
+    <meta name="twitter:description" content="Play Tetris online for free. This classic logic game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/tetris.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Tetris",
+      "description": "Play Tetris online for free. This classic logic game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving cognitive skills.",
+      "genre": ["Logic Game", "Puzzle Game", "Classic Game"],
+      "url": "https://onerestgame.com/games/tetris.html",
+      "image": "https://onerestgame.com/images/games/tetris.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -76,13 +124,7 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-        }
-
-        .header .container {
-            width: 100%;
-            max-width: var(--content-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
+            padding: 0;
         }
 
         .header-content {
@@ -91,6 +133,7 @@
             align-items: center;
             height: 64px;
             width: 100%;
+            padding: 0;
         }
 
         .logo-section {
@@ -217,20 +260,8 @@
             margin-right: var(--spacing-md);
         }
 
-        .game-category.focus {
-            background-color: var(--focus-type-color, #4a6bdf);
-        }
-
-        .game-category.creative {
-            background-color: var(--creative-type-color, #d84bee);
-        }
-
         .game-category.logic {
             background-color: var(--logic-type-color, #12aa83);
-        }
-
-        .game-category.calm {
-            background-color: var(--calm-type-color, #4bbeeb);
         }
 
         .game-duration {
@@ -446,8 +477,65 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* 修改面包屑导航样式 */
+        .breadcrumb-nav {
+            background-color: var(--apple-gray-lighter);
+            border-top: 1px solid var(--apple-gray-light);
+            padding: 8px 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
+            }
+        }
     </style>
-    
 </head>
 <body>
     <header class="header">
@@ -460,7 +548,7 @@
                         </svg>
                         Home
                     </a>
-                    <h2 class="game-header-name">Sweet Sugar Match</h2>
+                    <h2 class="game-header-name">Tetris</h2>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -471,137 +559,174 @@
         </div>
     </header>
 
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#logic">Logic Games</a></li>
+                <li>Tetris</li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="container">
-        <!-- Game Container -->
+        <article class="game-detail">
+            <!-- Game Container -->
+                    <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <iframe src="https://www.onlinegames.io/games/2022/unity/sweet-sugar-match/index.html" allowfullscreen="true" frameborder="0"></iframe>
+            <iframe 
+                src="https://www.onlinegames.io/games/2024/more/tetris/index.html" 
+                title="Play Tetris Online"
+                allow="fullscreen"
+                loading="lazy">
+            </iframe>
         </div>
 
-        <!-- Game Info -->
-        <section class="game-info" id="game-info">
-            <h1 class="game-title">Sweet Sugar Match</h1>
-            <p class="game-tagline">A logic game for quick mental refreshment</p>
-            
-            <div class="game-meta">
-                <span class="game-category logic">Logic</span>
-                <div class="game-duration">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                    </svg>
-                    Ideal Break Time: 3-5 minutes
-                </div>
-            </div>
 
-            <div class="game-description">
-                <p>The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.</p>
-            </div>
-
-            <h3 class="section-title">Mental Refresh Benefits</h3>
-            <ul class="feature-list">
-                <li class="feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                    </svg>
-                    <span>Quick attentional reset that helps clear mental fatigue</span>
-                </li>
-                <li class="feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                    </svg>
-                    <span>Engages different brain regions than typical work tasks</span>
-                </li>
-                <li class="feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                    </svg>
-                    <span>Provides a sense of accomplishment that boosts mood</span>
-                </li>
-                <li class="feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                    </svg>
-                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- How To Play -->
-        <section class="how-to-play">
-            <h2 class="section-title">How To Play</h2>
-            <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
-            
-            <div class="controls-list" id="controls-list">
+            <!-- Game Info -->
+            <section class="game-info" id="game-info">
+                <h1 class="game-title">Tetris</h1>
+                <p class="game-tagline">A classic logic game for quick mental refreshment</p>
                 
-                <div class="control-item">
-                    <span class="control-key">Mouse</span>
-                    <span>Interact with game elements</span>
+                <div class="game-meta">
+                    <span class="game-category logic">Logic Game</span>
+                    <div class="game-duration">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                        </svg>
+                        Ideal Break Time: 3-5 minutes
+                    </div>
                 </div>
-                <div class="control-item">
-                    <span class="control-key">Click</span>
-                    <span>Select options</span>
+
+                <div class="game-description">
+                    <p>Experience the timeless classic Tetris - a perfect blend of strategy and quick thinking. As colorful blocks fall from the top, your task is to arrange them efficiently to create complete lines. This engaging gameplay not only provides a refreshing break but also exercises your spatial awareness and decision-making skills.</p>
                 </div>
-            
+
+                <h2 class="section-title">Mental Refresh Benefits</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        <span>Enhances spatial awareness and pattern recognition</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        <span>Improves decision-making speed and accuracy</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        <span>Provides a satisfying flow state for mental reset</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        <span>Boosts problem-solving abilities through strategic gameplay</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- How To Play -->
+            <section class="how-to-play">
+                <h2 class="section-title">How To Play</h2>
+                <p>Tetris is easy to learn but offers endless depth for mastery. Use the controls below to arrange falling blocks and clear lines.</p>
+                
+                <div class="controls-list">
+                    <div class="control-item">
+                        <span class="control-key">←</span>
+                        <span>Move Left</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">→</span>
+                        <span>Move Right</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">↓</span>
+                        <span>Soft Drop</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">Space</span>
+                        <span>Hard Drop</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">↑</span>
+                        <span>Rotate</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">P</span>
+                        <span>Pause Game</span>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Game Goal</h3>
+                <p>Arrange falling blocks to create complete horizontal lines. When a line is complete, it will disappear, and you'll earn points. The game speeds up as you progress, testing your quick thinking and reflexes.</p>
+            </section>
+
+            <!-- Brain Benefits -->
+            <section class="brain-benefits">
+                <h2 class="section-title">Science of Mental Breaks</h2>
+                <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how Tetris helps refresh your brain:</p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h3 class="benefit-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                            </svg>
+                            Spatial Cognition
+                        </h3>
+                        <p class="benefit-description">Playing Tetris engages different neural pathways than typical work tasks, giving your primary cognitive resources a chance to recover.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h3 class="benefit-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                            </svg>
+                            Flow State
+                        </h3>
+                        <p class="benefit-description">The game's progressive challenge system helps induce a flow state, providing a complete mental reset from work-related stress.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h3 class="benefit-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                            </svg>
+                            Pattern Recognition
+                        </h3>
+                        <p class="benefit-description">Regular Tetris breaks can improve your brain's pattern recognition abilities, which transfers to many work-related tasks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Notice -->
+            <div class="loading-notice">
+                <p>Game loading may take a moment. If the game doesn't appear, please ensure JavaScript is enabled in your browser settings.</p>
             </div>
-
-            <h3 class="section-title">Game Goal</h3>
-            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
-        </section>
-
-        <!-- Brain Benefits -->
-        <section class="brain-benefits">
-            <h2 class="section-title">Science of Mental Breaks</h2>
-            <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how our games help refresh your brain:</p>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3 class="benefit-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                        </svg>
-                        Attention Restoration
-                    </h3>
-                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h3 class="benefit-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                        </svg>
-                        Dopamine Release
-                    </h3>
-                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h3 class="benefit-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                        </svg>
-                        Context Switching
-                    </h3>
-                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Loading Notice -->
-        <div class="loading-notice">
-            <p>Game loading may take a moment. If the game doesn't appear, please ensure JavaScript is enabled in your browser settings.</p>
-        </div>
+        </article>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/games-data.js"></script>
-    
+    <script>
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

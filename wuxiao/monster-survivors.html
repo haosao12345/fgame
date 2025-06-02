@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voxel Bot - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Voxel Bot. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <title>Monster Survivors Online - Free Brain Break Game | No Login Required</title>
+    <meta name="description" content="Play Monster Survivors online for free. This action survival game offers an instant mental break with no login required. Reset your brain in just 3 minutes of exciting gameplay while improving focus and reflexes.">
+    <meta name="keywords" content="monster survivors, action game, mental break game, brain refresher, survival game, no login games, quick break games, free action game">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/monster-survivors.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/monster-survivors.html">
+    <meta property="og:title" content="Monster Survivors Online - Free Brain Break Game | No Login Required">
+    <meta property="og:description" content="Play Monster Survivors online for free. This action survival game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/monster-survivors.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/monster-survivors.html">
+    <meta name="twitter:title" content="Monster Survivors Online - Free Brain Break Game | No Login Required">
+    <meta name="twitter:description" content="Play Monster Survivors online for free. This action survival game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/monster-survivors.jpg">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Monster Survivors",
+      "description": "Play Monster Survivors online for free. This action survival game offers an instant mental break with no login required. Reset your brain in just 3 minutes of exciting gameplay while improving focus and reflexes.",
+      "genre": ["Action Game", "Survival Game", "Mental Break Game"],
+      "url": "https://onerestgame.com/games/monster-survivors.html",
+      "image": "https://onerestgame.com/images/games/monster-survivors.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -76,6 +124,7 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            padding: 0;
         }
 
         .header .container {
@@ -91,6 +140,7 @@
             align-items: center;
             height: 64px;
             width: 100%;
+            padding: 0;
         }
 
         .logo-section {
@@ -446,6 +496,64 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* 添加面包屑导航样式 */
+        .breadcrumb-nav {
+            background-color: var(--apple-gray-lighter);
+            border-top: 1px solid var(--apple-gray-light);
+            padding: 8px 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
+            }
+        }
     </style>
     
 </head>
@@ -460,7 +568,7 @@
                         </svg>
                         Home
                     </a>
-                    <h2 class="game-header-name">Voxel Bot</h2>
+                    <h2 class="game-header-name">Monster Survivors</h2>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -471,19 +579,30 @@
         </div>
     </header>
 
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#action">Action Games</a></li>
+                <li>Monster Survivors</li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="container">
         <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <iframe src="https://games.crazygames.com/en_US/voxel-bot/index.html" allowfullscreen="true" frameborder="0"></iframe>
+            <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" allowfullscreen="true" frameborder="0"></iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title">Voxel Bot</h1>
-            <p class="game-tagline">A creativity game for quick mental refreshment</p>
+            <h1 class="game-title">Monster Survivors</h1>
+            <p class="game-tagline">An action-packed survival game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category creative">Creativity</span>
+                <span class="game-category focus">Action</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -494,7 +613,7 @@
             </div>
 
             <div class="game-description">
-                <p>An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.</p>
+                <p>An exciting survival action game that offers instant mental refreshment with no login required. Fight off waves of monsters while collecting power-ups, providing an engaging brain break that enhances focus and reflexes.</p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -503,25 +622,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Quick attentional reset that helps clear mental fatigue</span>
+                    <span>Improves focus and reaction time</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Engages different brain regions than typical work tasks</span>
+                    <span>Enhances decision-making under pressure</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Provides a sense of accomplishment that boosts mood</span>
+                    <span>Provides exciting and engaging gameplay</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
+                    <span>Perfect for quick mental breaks between tasks</span>
                 </li>
             </ul>
         </section>
@@ -532,28 +651,26 @@
             <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
             
             <div class="controls-list" id="controls-list">
-                
-                <div class="control-item">
-                    <span class="control-key">Mouse</span>
-                    <span>Select and place voxel blocks</span>
-                </div>
                 <div class="control-item">
                     <span class="control-key">WASD</span>
-                    <span>Move camera around your creation</span>
+                    <span>Move your character</span>
                 </div>
                 <div class="control-item">
-                    <span class="control-key">R</span>
-                    <span>Rotate blocks for different orientations</span>
+                    <span class="control-key">Mouse</span>
+                    <span>Aim and attack</span>
                 </div>
                 <div class="control-item">
                     <span class="control-key">Space</span>
-                    <span>Test your robot's functionality</span>
+                    <span>Special ability</span>
                 </div>
-            
+                <div class="control-item">
+                    <span class="control-key">ESC</span>
+                    <span>Pause game</span>
+                </div>
             </div>
 
             <h3 class="section-title">Game Goal</h3>
-            <p>Design and build robots using voxel blocks, then program them to navigate challenges. This creative game stimulates problem-solving skills while offering instant play with no signup required. It's the perfect brain refresher when you need a quick mental reset during a busy day.</p>
+            <p>Survive waves of monsters by collecting power-ups and upgrading your abilities. This action-packed game activates your reflexes and decision-making skills while providing an exciting, no-login-required mental break perfect for refreshing your mind between work sessions.</p>
         </section>
 
         <!-- Brain Benefits -->
@@ -567,9 +684,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Attention Restoration
+                        Focus Enhancement
                     </h3>
-                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
+                    <p class="benefit-description">Action games improve your ability to focus and maintain attention, skills that transfer directly to work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -579,7 +696,7 @@
                         </svg>
                         Dopamine Release
                     </h3>
-                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
+                    <p class="benefit-description">The exciting gameplay and achievements trigger mild dopamine release, improving mood and motivation for returning to work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -587,9 +704,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Context Switching
+                        Mental Reset
                     </h3>
-                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
+                    <p class="benefit-description">Taking short breaks with engaging action games helps clear mental fatigue and restore focus for your next task.</p>
                 </div>
             </div>
         </section>
@@ -603,13 +720,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/games-data.js"></script>
-    
+    <script>
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

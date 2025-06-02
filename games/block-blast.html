@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Blocks - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with City Blocks. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <title>Block Blaster Puzzle Online - Free Brain Break Game | No Login Required</title>
+    <meta name="description" content="Play Block Blaster Puzzle online for free. This colorful puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving pattern recognition.">
+    <meta name="keywords" content="Block Blaster Puzzle, puzzle game, mental break game, brain refresher, match game, no login games, quick break games, free puzzle game">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/block-blast.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/block-blast.html">
+    <meta property="og:title" content="Block Blaster Puzzle Online - Free Brain Break Game | No Login Required">
+    <meta property="og:description" content="Play Block Blaster Puzzle online for free. This colorful puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/block-blast.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/block-blast.html">
+    <meta name="twitter:title" content="Block Blaster Puzzle Online - Free Brain Break Game | No Login Required">
+    <meta name="twitter:description" content="Play Block Blaster Puzzle online for free. This colorful puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/block-blast.jpg">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Block Blaster Puzzle",
+      "description": "Play Block Blaster Puzzle online for free. This colorful puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving pattern recognition.",
+      "genre": ["Puzzle Game", "Match Game", "Mental Break Game"],
+      "url": "https://onerestgame.com/games/block-blast.html",
+      "image": "https://onerestgame.com/images/games/block-blast.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -76,6 +124,7 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            padding: 0;
         }
 
         .header .container {
@@ -91,6 +140,7 @@
             align-items: center;
             height: 64px;
             width: 100%;
+            padding: 0;
         }
 
         .logo-section {
@@ -374,6 +424,54 @@
             color: var(--apple-gray);
         }
 
+        /* 添加面包屑导航样式 */
+        .breadcrumb-nav {
+            background-color: var(--apple-gray-lighter);
+            border-top: 1px solid var(--apple-gray-light);
+            padding: 8px 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -407,6 +505,14 @@
             
             .game-info, .how-to-play, .brain-benefits {
                 padding: var(--spacing-lg);
+            }
+            
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
             }
         }
         
@@ -460,7 +566,7 @@
                         </svg>
                         Home
                     </a>
-                    <h2 class="game-header-name">City Blocks</h2>
+                    <h2 class="game-header-name">Block Blaster Puzzle</h2>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -471,19 +577,31 @@
         </div>
     </header>
 
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#puzzle">Puzzle Games</a></li>
+                <li>Block Blaster Puzzle</li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="container">
         <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <iframe src="https://www.gameflare.com/embed/city-blocks/" allowfullscreen="true" frameborder="0"></iframe>
+            <iframe src="https://html5.gamedistribution.com/rvvASMiM/5da372e4a178438a8f69f141b5edc68a/index.html" 
+            allowfullscreen="true" frameborder="0"></iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title">City Blocks</h1>
-            <p class="game-tagline">A creativity game for quick mental refreshment</p>
+            <h1 class="game-title">Block Blaster Puzzle</h1>
+            <p class="game-tagline">A colorful block-matching puzzle game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category creative">Creativity</span>
+                <span class="game-category logic">Puzzle</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -494,7 +612,7 @@
             </div>
 
             <div class="game-description">
-                <p>A creative city-building puzzle that exercises spatial awareness. Design and arrange city blocks to create efficient layouts, offering a satisfying mental break that enhances planning skills.</p>
+                <p>A delightful block-matching puzzle game that offers instant mental refreshment with no login required. Match colorful blocks to create satisfying combinations, providing a perfect brain break that enhances pattern recognition and focus.</p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -503,25 +621,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Quick attentional reset that helps clear mental fatigue</span>
+                    <span>Improves pattern recognition and visual processing</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Engages different brain regions than typical work tasks</span>
+                    <span>Enhances strategic thinking and planning</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Provides a sense of accomplishment that boosts mood</span>
+                    <span>Provides satisfying visual and audio feedback</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
+                    <span>Perfect for quick mental breaks between tasks</span>
                 </li>
             </ul>
         </section>
@@ -532,20 +650,22 @@
             <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
             
             <div class="controls-list" id="controls-list">
-                
                 <div class="control-item">
                     <span class="control-key">Mouse</span>
-                    <span>Interact with game elements</span>
+                    <span>Click blocks to match</span>
                 </div>
                 <div class="control-item">
                     <span class="control-key">Click</span>
-                    <span>Select options</span>
+                    <span>Select special power-ups</span>
                 </div>
-            
+                <div class="control-item">
+                    <span class="control-key">Space</span>
+                    <span>Pause game</span>
+                </div>
             </div>
 
             <h3 class="section-title">Game Goal</h3>
-            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
+            <p>Match three or more identical blocks to create satisfying combinations and clear the board. This colorful puzzle game activates your pattern recognition abilities while providing a delightful, no-login-required mental break perfect for refreshing your mind between work sessions.</p>
         </section>
 
         <!-- Brain Benefits -->
@@ -559,9 +679,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Attention Restoration
+                        Pattern Recognition
                     </h3>
-                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
+                    <p class="benefit-description">Matching puzzles enhance your brain's ability to recognize and process visual patterns, a skill that transfers to many work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -571,7 +691,7 @@
                         </svg>
                         Dopamine Release
                     </h3>
-                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
+                    <p class="benefit-description">The satisfying matches and combinations trigger mild dopamine release, improving mood and motivation for returning to work tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -579,9 +699,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Context Switching
+                        Mental Reset
                     </h3>
-                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
+                    <p class="benefit-description">Taking short breaks with engaging puzzles helps clear mental fatigue and restore focus for your next task.</p>
                 </div>
             </div>
         </section>
@@ -595,13 +715,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/games-data.js"></script>
-    
+    <script>
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

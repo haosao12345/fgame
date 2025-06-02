@@ -70,7 +70,7 @@
 
 1. **URL简化**：
    - 当前格式如"draw-here-detail.html"
-   - 建议简化为"draw-here.html"或创建目录结构"/games/draw-here/"
+   - 建议简化为"draw-here.html"
    - 目录结构更有利于组织未来的扩展内容
 
 2. **一致性**：
@@ -103,7 +103,13 @@
 
 ## 五、技术SEO优化
 
-1. **结构化数据标记**：
+1. **游戏iframe特殊说明**：
+   - 游戏详情页中的iframe源地址(src)不可修改
+   - 这些游戏源是经过严格测试和授权的，确保了游戏的稳定性和安全性
+   - 在进行任何页面优化时，必须保持iframe的src属性不变
+   - 可以优化iframe的其他属性（如title、loading等），但不得修改源地址
+
+2. **结构化数据标记**：
    - 添加Schema.org JSON-LD标记
      ```html
      <script type="application/ld+json">
@@ -126,19 +132,19 @@
      ```
    - 考虑添加面包屑导航的结构化数据
 
-2. **图片优化**：
+3. **图片优化**：
    - 为所有图片添加描述性alt文本
    - 添加图片的width和height属性，减少布局偏移
    - 考虑使用WebP格式提供现代图片格式
    - 实现懒加载非关键图片
 
-3. **站点地图**：
+4. **站点地图**：
    - 创建XML站点地图，列出所有游戏页面
    - 在robots.txt中引用站点地图
    - 分类站点地图，按游戏类型分组
    - 提交到Google Search Console
 
-4. **页面性能**：
+5. **页面性能**：
    - 延迟加载非关键JavaScript
    - 减少CSS和JavaScript文件大小
    - 使用browser caching和压缩

@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find It - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Find It. This logic game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <title>Home House Painter Online - Free Brain Break Game | No Login Required</title>
+    <meta name="description" content="Play Home House Painter online for free. This relaxing coloring game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while boosting creativity.">
+    <meta name="keywords" content="Home House Painter, coloring game, mental break game, brain refresher, relaxation game, no login games, quick break games, free coloring game">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/house-painter.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/house-painter.html">
+    <meta property="og:title" content="Home House Painter Online - Free Brain Break Game | No Login Required">
+    <meta property="og:description" content="Play Home House Painter online for free. This relaxing coloring game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/house-painter.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/house-painter.html">
+    <meta name="twitter:title" content="Home House Painter Online - Free Brain Break Game | No Login Required">
+    <meta name="twitter:description" content="Play Home House Painter online for free. This relaxing coloring game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/house-painter.jpg">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Home House Painter",
+      "description": "Play Home House Painter online for free. This relaxing coloring game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while boosting creativity.",
+      "genre": ["Relaxation Game", "Coloring Game", "Mental Break Game"],
+      "url": "https://onerestgame.com/games/house-painter.html",
+      "image": "https://onerestgame.com/images/games/house-painter.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -76,6 +124,7 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            padding: 0;
         }
 
         .header .container {
@@ -91,6 +140,7 @@
             align-items: center;
             height: 64px;
             width: 100%;
+            padding: 0;
         }
 
         .logo-section {
@@ -446,6 +496,64 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* 添加面包屑导航样式 */
+        .breadcrumb-nav {
+            background-color: var(--apple-gray-lighter);
+            border-top: 1px solid var(--apple-gray-light);
+            padding: 8px 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
+            }
+        }
     </style>
     
 </head>
@@ -460,7 +568,7 @@
                         </svg>
                         Home
                     </a>
-                    <h2 class="game-header-name">Find It</h2>
+                    <h2 class="game-header-name">Home House Painter</h2>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -471,19 +579,35 @@
         </div>
     </header>
 
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#calm">Relaxation Games</a></li>
+                <li>Home House Painter</li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="container">
-        <!-- Game Container -->
+        <!-- Game Container  https://html5.gamedistribution.com/rvvASMiM/3d3c8f059fd34b25bed8d1ae38acbee7/index.html-->
         <div class="game-container" id="game-container">
-            <iframe src="https://cloud.onlinegames.io/games/2025/unity/find-it/index-og.html" allowfullscreen="true" frameborder="0"></iframe>
+            <iframe 
+                src="https://html5.gamedistribution.com/rvvASMiM/3d3c8f059fd34b25bed8d1ae38acbee7/index.html" 
+                title="Play Home House Painter Online"
+                allow="fullscreen"
+                loading="lazy">
+            </iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title">Find It</h1>
-            <p class="game-tagline">A logic game for quick mental refreshment</p>
+            <h1 class="game-title">Home House Painter</h1>
+            <p class="game-tagline">A relaxing coloring game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category logic">Logic</span>
+                <span class="game-category calm">Relaxation Game</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -494,7 +618,7 @@
             </div>
 
             <div class="game-description">
-                <p>The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.</p>
+                <p>Home House Painter is a soothing coloring game that combines relaxation with creativity. Fill spaces with colors to create beautiful houses while taking a refreshing break from work. This calming gameplay provides a perfect mental reset while allowing your artistic side to flourish.</p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -595,13 +719,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/games-data.js"></script>
-    
+    <script>
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

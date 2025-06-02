@@ -13,7 +13,7 @@ const gamesData = [
     },
     {
         id: 'House-Painter',
-        title: 'House Painter',
+        title: 'Home House Painter',
         description: 'A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.',
         type: 'calm',
         image: 'images/games/House-Painter.jpg',
@@ -28,18 +28,18 @@ const gamesData = [
         path: 'https://www.onlinegames.io/games/2023/construct/241/charge-it/index.html'
     },
     {
-        id: 'Tetris',
+        id: 'tetris',
         title: 'Tetris',
-        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        description: 'Classic puzzle game for quick mental refreshment',
         type: 'logic',
-        image: 'images/games/Tetris.jpg',
+        image: 'images/games/tetris.jpg',
         path: 'https://www.onlinegames.io/games/2024/more/tetris/index.html'
     },
     //0323增加
     {
         id: 'block-blast',
-        title: 'Block Blast',
-        description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
+        title: 'Block Blaster Puzzle',
+        description: 'Aim for high scores or complete level objectives. Rotate and arrange blocks to clear rows and columns while enjoying stunning visuals. Each perfect move brings satisfaction, challenging you to beat your best and master each puzzle!.',
         type: 'logic',
         image: 'images/games/block-blast.jpg',
         path: 'https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html'
@@ -54,7 +54,7 @@ const gamesData = [
     },
     {
         id: 'Find-It',
-        title: 'Find It',
+        title: 'Find It Out Colorful Book',
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
         image: 'images/games/Find-It.jpg',
@@ -71,11 +71,11 @@ const gamesData = [
      //0324增加
     {
         id: 'Color-Water-Sort-3D',
-        title: 'Color Water Sort 3D',
+        title: 'Color Sort Puzzle',
         description: 'A soothing color-matching puzzle that provides a perfect mental reset. Sort colored water into matching tubes while enjoying the calming visual effects and gentle gameplay.',
         type: 'calm',
         image: 'images/games/Color-Water-Sort-3D.jpg',
-        path: 'https://www.gameflare.com/embed/color-water-sort-3d/'
+        path: 'https://html5.gamedistribution.com/rvvASMiM/26b3b48bea8e46f2b7123f0742a7164f/index.html'
     },
     {
         id: 'City-Blocks',
@@ -83,7 +83,7 @@ const gamesData = [
         description: 'A creative city-building puzzle that exercises spatial awareness. Design and arrange city blocks to create efficient layouts, offering a satisfying mental break that enhances planning skills.',
         type: 'creative',
         image: 'images/games/City-Blocks.jpg',
-        path: 'https://www.gameflare.com/embed/city-blocks/'
+        path: 'https://html5.gamedistribution.com/rvvASMiM/1a6b5d0bd94f40129fd9e698e5b7c556/index.html'
     },
     //0325增加
     {
@@ -93,15 +93,25 @@ const gamesData = [
         type: 'logic',
         image: 'images/games/Organize-It.jpg',
         path: 'https://html5.gamedistribution.com/0df5240c55bb4e1f8571179ab56f1004/'
-    },
-    {
-        id: 'Voxel-Bot',
-        title: "Voxel Bot",
-        description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
-        type: 'creative',
-        image: 'images/games/Voxel-Bot.jpg',
-        path: 'https://games.crazygames.com/en_US/voxel-bot/index.html'
     }
+    // ,
+    // {
+    //     id: 'Voxel-Bot',
+    //     title: "Voxel Bot",
+    //     description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
+    //     type: 'creative',
+    //     image: 'images/games/Voxel-Bot.jpg',
+    //     path: 'https://games.crazygames.com/en_US/voxel-bot/index.html'
+    // }
+    // ,
+    // {
+    //     id: 'Voxel-Bot',
+    //     title: "Voxel Bot",
+    //     description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
+    //     type: 'creative',
+    //     image: 'images/games/Voxel-Bot.jpg',
+    //     path: 'https://games.crazygames.com/en_US/cubes-2048-io/index.html'
+    // }
 ];
 
 /**

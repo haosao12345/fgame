@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Details - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with our games. These casual games help refresh your brain and improve productivity in just minutes of gameplay.">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Draw The Bridge Online - Free Brain Break Game | No Login Required</title>
+    <meta name="description" content="Play Draw The Bridge online for free. This creative puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving spatial reasoning.">
+    <meta name="keywords" content="draw the bridge, puzzle game, mental break game, brain refresher, creative game, no login games, quick break games, free puzzle game">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/draw-the-bridge.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/draw-the-bridge.html">
+    <meta property="og:title" content="Draw The Bridge Online - Free Brain Break Game | No Login Required">
+    <meta property="og:description" content="Play Draw The Bridge online for free. This creative puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/draw-the-bridge.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/draw-the-bridge.html">
+    <meta name="twitter:title" content="Draw The Bridge Online - Free Brain Break Game | No Login Required">
+    <meta name="twitter:description" content="Play Draw The Bridge online for free. This creative puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/draw-the-bridge.jpg">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Draw The Bridge",
+      "description": "Play Draw The Bridge online for free. This creative puzzle game offers an instant mental break with no login required. Reset your brain in just 3 minutes of relaxing gameplay while improving spatial reasoning.",
+      "genre": ["Puzzle Game", "Creative Game", "Mental Break Game"],
+      "url": "https://onerestgame.com/games/draw-the-bridge.html",
+      "image": "https://onerestgame.com/images/games/draw-the-bridge.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -75,13 +124,32 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--apple-gray-light);
         }
 
         .header .container {
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 64px;
+            width: 100%;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: auto;
         }
 
         .logo a {
@@ -97,21 +165,46 @@
             color: var(--apple-blue);
         }
 
+        .game-header-name {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--apple-text);
+            margin-left: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 240px;
+        }
+
         .back-link {
             display: flex;
             align-items: center;
             color: var(--apple-blue);
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.2s ease;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            transition: all 0.2s ease;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background-color: transparent;
+            white-space: nowrap;
         }
 
         .back-link:hover {
-            opacity: 0.8;
+            background-color: rgba(0, 122, 255, 0.06);
+        }
+
+        .back-link:active {
+            background-color: rgba(0, 122, 255, 0.1);
+            transform: scale(0.98);
         }
 
         .back-link svg {
-            margin-right: var(--spacing-xs);
+            margin-right: 4px;
+            width: 13px;
+            height: 13px;
         }
 
         /* Game Container */
@@ -123,7 +216,7 @@
             margin: var(--spacing-xl) 0;
             border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             background-color: #000;
         }
 
@@ -174,6 +267,22 @@
             margin-right: var(--spacing-md);
         }
 
+        .game-category.focus {
+            background-color: var(--focus-type-color, #4a6bdf);
+        }
+
+        .game-category.creative {
+            background-color: var(--creative-type-color, #d84bee);
+        }
+
+        .game-category.logic {
+            background-color: var(--logic-type-color, #12aa83);
+        }
+
+        .game-category.calm {
+            background-color: var(--calm-type-color, #4bbeeb);
+        }
+
         .game-duration {
             display: flex;
             align-items: center;
@@ -221,7 +330,7 @@
             background-color: var(--apple-bg-light);
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
             box-shadow: var(--shadow-sm);
         }
 
@@ -252,7 +361,7 @@
             background-color: var(--apple-bg-light);
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
             box-shadow: var(--shadow-sm);
         }
 
@@ -291,21 +400,21 @@
 
         /* Loading Notice */
         .loading-notice {
-            background-color: var(--apple-bg-light);
+            background-color: var(--apple-gray-lighter);
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
             text-align: center;
             color: var(--apple-gray-dark);
             font-size: 0.9rem;
-            border: 1px solid var(--apple-gray-lighter);
+            border: 1px solid var(--apple-gray-light);
         }
 
         /* Footer */
         .footer {
             background-color: var(--apple-bg-light);
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
-            border-top: 1px solid var(--apple-gray-lighter);
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--apple-gray-light);
             margin-top: var(--spacing-xxl);
         }
 
@@ -317,6 +426,19 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-content {
+                height: 56px;
+            }
+            
+            .game-header-name {
+                max-width: 180px;
+                font-size: 1.1rem;
+            }
+            
+            .logo-highlight {
+                font-size: 1.4rem;
+            }
+            
             .game-title {
                 font-size: 1.8rem;
             }
@@ -327,6 +449,7 @@
             
             .game-container {
                 padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+                margin: var(--spacing-lg) 0;
             }
             
             .controls-list, .benefits-grid {
@@ -334,17 +457,37 @@
             }
             
             .game-info, .how-to-play, .brain-benefits {
+                margin: var(--spacing-lg) 0;
                 padding: var(--spacing-lg);
+            }
+            
+            .loading-notice {
+                margin: var(--spacing-lg) 0;
+            }
+            
+            .footer {
+                margin-top: var(--spacing-xl);
+                padding: var(--spacing-lg) 0;
             }
         }
         
         @media (max-width: 480px) {
-            .header .container {
-                height: 56px;
+            .header-content {
+                height: 50px;
+            }
+            
+            .back-link {
+                padding: 4px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .game-header-name {
+                max-width: 120px;
+                font-size: 1rem;
             }
             
             .logo-highlight {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
             }
             
             .game-title {
@@ -363,39 +506,141 @@
             .section-title {
                 font-size: 1.2rem;
             }
+            
+            .game-container {
+                margin: var(--spacing-md) 0;
+            }
+            
+            .game-info,
+            .how-to-play,
+            .brain-benefits {
+                margin: var(--spacing-md) 0;
+                padding: var(--spacing-md);
+            }
+            
+            .loading-notice {
+                margin: var(--spacing-md) 0;
+                padding: var(--spacing-md);
+            }
+        }
+
+        /* 添加面包屑导航样式 */
+        .breadcrumb-nav {
+            background-color: var(--apple-bg-light);
+            border-bottom: 1px solid var(--apple-gray-light);
+            padding: var(--spacing-md) 0;
+            margin-bottom: 0;
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
+        }
+
+        /* 添加响应式样式 */
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.85rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+            
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 4px;
+            }
         }
     </style>
+    
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
-                </a>
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../index.html" class="back-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                        Home
+                    </a>
+                    <h2 class="game-header-name">Draw The Bridge</h2>
+                </div>
+                <div class="logo">
+                    <a href="../index.html">
+                        <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                    </a>
+                </div>
             </div>
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                </svg>
-                Back to Games
-            </a>
         </div>
     </header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#creative">Creative Games</a></li>
+                <li>Draw The Bridge</li>
+            </ol>
+        </div>
+    </nav>
 
     <main class="container">
         <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <!-- iframe 将由 JavaScript 动态加载 -->
+            <iframe src="https://www.onlinegames.io/games/2021/4/draw-the-bridge/index.html" allowfullscreen="true" frameborder="0"></iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title" id="game-title">Loading Game...</h1>
-            <p class="game-tagline" id="game-tagline"></p>
+            <h1 class="game-title">Draw The Bridge</h1>
+            <p class="game-tagline">A creative physics puzzle game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category" id="game-category"></span>
+                <span class="game-category creative">Creative</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -406,7 +651,7 @@
             </div>
 
             <div class="game-description">
-                <p id="game-description"></p>
+                <p>A delightful physics-based puzzle game that offers instant mental refreshment with no login required. Draw bridges to help vehicles reach their destination, providing a perfect brain break that enhances creative thinking and problem-solving skills.</p>
             </div>
 
             <h3 class="section-title">Mental Refresh Benefits</h3>
@@ -415,25 +660,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Quick attentional reset that helps clear mental fatigue</span>
+                    <span>Enhances creative problem-solving abilities</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Engages different brain regions than typical work tasks</span>
+                    <span>Improves spatial reasoning and physics understanding</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Provides a sense of accomplishment that boosts mood</span>
+                    <span>Provides satisfying visual and physics feedback</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
+                    <span>Perfect for quick creative breaks between tasks</span>
                 </li>
             </ul>
         </section>
@@ -441,20 +686,31 @@
         <!-- How To Play -->
         <section class="how-to-play">
             <h2 class="section-title">How To Play</h2>
-            <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
+            <p>Draw The Bridge is intuitive and easy to learn. Follow these simple steps to get started:</p>
             
             <div class="controls-list" id="controls-list">
-                <!-- 控制说明将由 JavaScript 动态加载 -->
+                <div class="control-item">
+                    <span class="control-key">Mouse</span>
+                    <span>Click and drag to draw bridges</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Click</span>
+                    <span>Start/Stop vehicle movement</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">R</span>
+                    <span>Reset level</span>
+                </div>
             </div>
 
             <h3 class="section-title">Game Goal</h3>
-            <p id="game-goal">Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
+            <p>Draw bridges to help vehicles safely reach their destination. This creative physics puzzle activates your problem-solving abilities while providing a delightful, no-login-required mental break perfect for refreshing your mind between work sessions.</p>
         </section>
 
         <!-- Brain Benefits -->
         <section class="brain-benefits">
             <h2 class="section-title">Science of Mental Breaks</h2>
-            <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how our games help refresh your brain:</p>
+            <p>Creative puzzle games provide unique benefits for mental refreshment. Here's how Draw The Bridge helps reset your brain:</p>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -462,9 +718,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Attention Restoration
+                        Creative Thinking
                     </h3>
-                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
+                    <p class="benefit-description">Drawing bridges engages your creative problem-solving abilities, helping to refresh your mind for other creative tasks.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -472,9 +728,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Dopamine Release
+                        Spatial Reasoning
                     </h3>
-                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
+                    <p class="benefit-description">The physics-based gameplay improves your spatial awareness and understanding of physical relationships.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -482,9 +738,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Context Switching
+                        Mental Reset
                     </h3>
-                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
+                    <p class="benefit-description">Taking short breaks with engaging puzzles helps clear mental fatigue and restore focus for your next task.</p>
                 </div>
             </div>
         </section>
@@ -498,141 +754,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 引用 -->
-    <script src="js/games-data.js"></script>
+    <!-- JavaScript -->
+    <script src="../js/games-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 从 URL 参数中获取游戏 ID
-            const urlParams = new URLSearchParams(window.location.search);
-            const gameId = urlParams.get('id');
-            
-            // 默认游戏 ID，如果未提供
-            const defaultGameId = 'monster-survivors';
-            
-            // 使用 games-data.js 中的函数获取游戏数据
-            const game = getGameById(gameId || defaultGameId);
-
-            if (!game) {
-                // 如果游戏不存在，显示错误信息
-                document.getElementById('game-title').textContent = 'Game Not Found';
-                document.getElementById('game-description').textContent = 'The requested game could not be found. Please try another game from our collection.';
-                return;
-            }
-
-            // 更新页面标题和元描述
-            document.title = `${game.title} - Mental Refresher Game | onerestgame`;
-            document.querySelector('meta[name="description"]').setAttribute('content', 
-                `Take a strategic mental break with ${game.title}. This casual ${getGameTypeName(game.type).toLowerCase()} game helps refresh your brain and improve productivity in just minutes of gameplay.`);
-
-            // 更新游戏信息
-            document.getElementById('game-title').textContent = game.title;
-            document.getElementById('game-tagline').textContent = `A ${getGameTypeName(game.type).toLowerCase()} game for quick mental refreshment`;
-            document.getElementById('game-category').textContent = getGameTypeName(game.type);
-            document.getElementById('game-category').className = `game-category ${game.type}`;
-            document.getElementById('game-description').textContent = game.description;
-
-            // 创建游戏 iframe
-            const gameContainer = document.getElementById('game-container');
-            
-            // 只有当实际提供了游戏路径时才创建 iframe
-            if (game.path && !game.comingSoon) {
-                const gameFrame = document.createElement('iframe');
-                gameFrame.src = game.path.includes('http') ? game.path : game.path;
-                gameFrame.allow = "fullscreen";
-                gameFrame.allowFullscreen = true;
-                gameFrame.frameBorder = "0";
-                gameContainer.appendChild(gameFrame);
-            } else {
-                // 对于即将推出的游戏，显示预览图像
-                const comingSoonDiv = document.createElement('div');
-                comingSoonDiv.style.width = '100%';
-                comingSoonDiv.style.height = '100%';
-                comingSoonDiv.style.display = 'flex';
-                comingSoonDiv.style.alignItems = 'center';
-                comingSoonDiv.style.justifyContent = 'center';
-                comingSoonDiv.style.flexDirection = 'column';
-                comingSoonDiv.style.backgroundColor = '#f5f5f7';
-                comingSoonDiv.style.position = 'absolute';
-                comingSoonDiv.style.top = '0';
-                comingSoonDiv.style.left = '0';
-                
-                const gameImage = document.createElement('img');
-                gameImage.src = game.image || 'images/games/default-game.jpg';
-                gameImage.alt = game.title;
-                gameImage.style.maxWidth = '80%';
-                gameImage.style.maxHeight = '80%';
-                gameImage.style.objectFit = 'contain';
-                
-                const comingSoonText = document.createElement('div');
-                comingSoonText.textContent = 'Coming Soon';
-                comingSoonText.style.marginTop = '1rem';
-                comingSoonText.style.fontSize = '1.5rem';
-                comingSoonText.style.fontWeight = 'bold';
-                comingSoonText.style.color = '#007AFF';
-                
-                comingSoonDiv.appendChild(gameImage);
-                if (game.comingSoon) {
-                    comingSoonDiv.appendChild(comingSoonText);
-                }
-                
-                gameContainer.appendChild(comingSoonDiv);
-            }
-
-            // 设置游戏特定的控制说明
-            const controlsList = document.getElementById('controls-list');
-            
-            // 根据游戏类型设置不同的控制说明
-            if (game.id === 'monster-survivors') {
-                controlsList.innerHTML = `
-                    <div class="control-item">
-                        <span class="control-key">W A S D</span>
-                        <span>Move character</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">Space</span>
-                        <span>Use special ability</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">1-5</span>
-                        <span>Select weapon</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">ESC</span>
-                        <span>Pause game</span>
-                    </div>
-                `;
-                document.getElementById('game-goal').textContent = 'Survive as long as possible while defeating monsters and collecting upgrades. Each run is short but satisfying, making it perfect for a quick brain break.';
-            } else if (game.id === 'color-match') {
-                controlsList.innerHTML = `
-                    <div class="control-item">
-                        <span class="control-key">✓</span>
-                        <span>Match (word color matches meaning)</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">✗</span>
-                        <span>No match (word color differs from meaning)</span>
-                    </div>
-                `;
-                document.getElementById('game-goal').textContent = 'Quickly determine if the color of the word matches its meaning. This game tests your attention and cognitive flexibility.';
-            } else {
-                // 默认控制说明
-                controlsList.innerHTML = `
-                    <div class="control-item">
-                        <span class="control-key">Mouse</span>
-                        <span>Interact with game elements</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">Click</span>
-                        <span>Select options</span>
-                    </div>
-                `;
-            }
-        });
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html> 

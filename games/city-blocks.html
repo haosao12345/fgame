@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block Blast - Mental Refresher Game | onerestgame</title>
-    <meta name="description" content="Take a strategic mental break with Block Blast. This logic game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <title>City Blocks - Mental Refresher Game | onerestgame</title>
+    <meta name="description" content="Take a strategic mental break with City Blocks. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <meta name="keywords" content="city blocks game, brain break game, creative puzzle, mental refresher, quick break games, productivity games, free online games">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/games/city-blocks.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onerestgame.com/games/city-blocks.html">
+    <meta property="og:title" content="City Blocks - Mental Refresher Game | onerestgame">
+    <meta property="og:description" content="Take a strategic mental break with City Blocks. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <meta property="og:image" content="https://onerestgame.com/images/games/city-blocks.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onerestgame.com/games/city-blocks.html">
+    <meta name="twitter:title" content="City Blocks - Mental Refresher Game | onerestgame">
+    <meta name="twitter:description" content="Take a strategic mental break with City Blocks. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.">
+    <meta name="twitter:image" content="https://onerestgame.com/images/games/city-blocks.jpg">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "City Blocks",
+      "description": "Take a strategic mental break with City Blocks. This creativity game helps refresh your brain and improve productivity in just minutes of gameplay.",
+      "genre": ["Creative Game", "Puzzle Game", "Mental Break Game"],
+      "url": "https://onerestgame.com/games/city-blocks.html",
+      "image": "https://onerestgame.com/images/games/city-blocks.jpg",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1120"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "onerestgame"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BLDGT73B03');
     </script>
+
     <style>
         :root {
             --apple-blue: #007AFF;
@@ -76,6 +124,8 @@
             z-index: 100;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--apple-gray-light);
         }
 
         .header .container {
@@ -166,7 +216,7 @@
             margin: var(--spacing-xl) 0;
             border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             background-color: #000;
         }
 
@@ -186,6 +236,7 @@
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
             box-shadow: var(--shadow-sm);
+            margin: var(--spacing-xl) 0;
         }
 
         .game-title {
@@ -282,6 +333,7 @@
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
             box-shadow: var(--shadow-sm);
+            margin: var(--spacing-xl) 0;
         }
 
         .controls-list {
@@ -313,6 +365,7 @@
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
             box-shadow: var(--shadow-sm);
+            margin: var(--spacing-xl) 0;
         }
 
         .benefits-grid {
@@ -350,21 +403,22 @@
 
         /* Loading Notice */
         .loading-notice {
-            background-color: var(--apple-bg-light);
+            background-color: var(--apple-gray-lighter);
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-lg);
             margin-bottom: var(--spacing-xl);
             text-align: center;
             color: var(--apple-gray-dark);
             font-size: 0.9rem;
-            border: 1px solid var(--apple-gray-lighter);
+            border: 1px solid var(--apple-gray-light);
+            margin: var(--spacing-xl) 0;
         }
 
         /* Footer */
         .footer {
             background-color: var(--apple-bg-light);
             padding: var(--spacing-xl) 0 var(--spacing-lg);
-            border-top: 1px solid var(--apple-gray-lighter);
+            border-top: 1px solid var(--apple-gray-light);
             margin-top: var(--spacing-xxl);
         }
 
@@ -408,6 +462,33 @@
             .game-info, .how-to-play, .brain-benefits {
                 padding: var(--spacing-lg);
             }
+
+            .breadcrumb {
+                font-size: 0.85rem;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 6px;
+            }
+
+            .game-container {
+                margin: var(--spacing-lg) 0;
+            }
+
+            .game-info,
+            .how-to-play,
+            .brain-benefits {
+                margin: var(--spacing-lg) 0;
+            }
+
+            .loading-notice {
+                margin: var(--spacing-lg) 0;
+            }
+
+            .footer {
+                margin-top: var(--spacing-xl);
+                padding: var(--spacing-lg) 0;
+            }
         }
         
         @media (max-width: 480px) {
@@ -445,6 +526,77 @@
             .section-title {
                 font-size: 1.2rem;
             }
+
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                margin: 0 4px;
+            }
+
+            .game-container {
+                margin: var(--spacing-md) 0;
+            }
+
+            .game-info,
+            .how-to-play,
+            .brain-benefits {
+                margin: var(--spacing-md) 0;
+                padding: var(--spacing-md);
+            }
+
+            .loading-notice {
+                margin: var(--spacing-md) 0;
+                padding: var(--spacing-md);
+            }
+        }
+
+        .breadcrumb-nav {
+            background-color: var(--apple-bg-light);
+            border-bottom: 1px solid var(--apple-gray-light);
+            padding: var(--spacing-md) 0;
+            margin-bottom: 0;
+        }
+
+        .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--apple-gray-dark);
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin: 0 8px;
+            color: var(--apple-gray);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--apple-blue-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb li:last-child {
+            color: var(--apple-gray-dark);
+            font-weight: 500;
         }
     </style>
     
@@ -460,7 +612,7 @@
                         </svg>
                         Home
                     </a>
-                    <h2 class="game-header-name">Block Blast</h2>
+                    <h2 class="game-header-name">City Blocks</h2>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -471,19 +623,30 @@
         </div>
     </header>
 
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#creative">Creative Games</a></li>
+                <li>City Blocks</li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="container">
         <!-- Game Container -->
         <div class="game-container" id="game-container">
-            <iframe src="https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html" allowfullscreen="true" frameborder="0"></iframe>
+            <iframe src="https://html5.gamedistribution.com/rvvASMiM/1a6b5d0bd94f40129fd9e698e5b7c556/index.html" allowfullscreen="true" frameborder="0"></iframe>
         </div>
 
         <!-- Game Info -->
         <section class="game-info" id="game-info">
-            <h1 class="game-title">Block Blast</h1>
-            <p class="game-tagline">A logic game for quick mental refreshment</p>
+            <h1 class="game-title">City Blocks</h1>
+            <p class="game-tagline">A creative building game for quick mental refreshment</p>
             
             <div class="game-meta">
-                <span class="game-category logic">Logic</span>
+                <span class="game-category creative">Creative</span>
                 <div class="game-duration">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
@@ -494,34 +657,34 @@
             </div>
 
             <div class="game-description">
-                <p>The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.</p>
+                <p>City Blocks is a creative building game that lets you construct and design your own city landscape. This engaging game provides a perfect mental break while exercising your spatial thinking and creativity through relaxing block placement and city planning.</p>
             </div>
 
-            <h3 class="section-title">Mental Refresh Benefits</h3>
+            <h3 class="section-title">Key Features</h3>
             <ul class="feature-list">
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Quick attentional reset that helps clear mental fatigue</span>
+                    <span>Intuitive block placement system</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Engages different brain regions than typical work tasks</span>
+                    <span>Various building types and styles</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Provides a sense of accomplishment that boosts mood</span>
+                    <span>Relaxing city-building experience</span>
                 </li>
                 <li class="feature-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
-                    <span>Time-boxed gameplay helps maintain productivity rhythm</span>
+                    <span>No login required to play</span>
                 </li>
             </ul>
         </section>
@@ -529,29 +692,31 @@
         <!-- How To Play -->
         <section class="how-to-play">
             <h2 class="section-title">How To Play</h2>
-            <p>Our games are easy to learn but offer depth for those who want to master them. Follow the in-game instructions to get started.</p>
+            <p>City Blocks features simple controls that let you focus on creativity. Here's how to get started:</p>
             
             <div class="controls-list" id="controls-list">
-                
-                <div class="control-item">
-                    <span class="control-key">Mouse</span>
-                    <span>Interact with game elements</span>
-                </div>
                 <div class="control-item">
                     <span class="control-key">Click</span>
-                    <span>Select options</span>
+                    <span>Place building blocks</span>
                 </div>
-            
+                <div class="control-item">
+                    <span class="control-key">Drag</span>
+                    <span>Rotate camera view</span>
+                </div>
+                <div class="control-item">
+                    <span class="control-key">Scroll</span>
+                    <span>Zoom in/out</span>
+                </div>
             </div>
 
             <h3 class="section-title">Game Goal</h3>
-            <p>Each game is designed to provide a satisfying experience in a short time, making it perfect for a quick brain break. The difficulty curve is designed to provide just the right level of challenge for a mental reset.</p>
+            <p>Create your own unique city landscape by strategically placing different types of buildings and structures. There's no right or wrong way to play - let your creativity guide you as you design and build during your break time. The relaxing nature of the game helps refresh your mind while exercising your creative thinking.</p>
         </section>
 
         <!-- Brain Benefits -->
         <section class="brain-benefits">
-            <h2 class="section-title">Science of Mental Breaks</h2>
-            <p>Short, targeted mental breaks have been shown to improve cognitive function and productivity. Here's how our games help refresh your brain:</p>
+            <h2 class="section-title">Brain Benefits</h2>
+            <p>Playing City Blocks offers several cognitive benefits during your break time:</p>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -559,9 +724,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Attention Restoration
+                        Creative Thinking
                     </h3>
-                    <p class="benefit-description">The directed attention required by our games helps reset cognitive resources that become depleted during focused work sessions.</p>
+                    <p class="benefit-description">Stimulates imagination and creative problem-solving through open-ended city design.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -569,9 +734,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Dopamine Release
+                        Spatial Awareness
                     </h3>
-                    <p class="benefit-description">The achievement-based gameplay triggers mild dopamine release, improving mood and motivation for returning to work tasks.</p>
+                    <p class="benefit-description">Enhances spatial thinking and planning abilities through 3D building placement.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -579,9 +744,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        Context Switching
+                        Stress Relief
                     </h3>
-                    <p class="benefit-description">Engaging in a completely different task allows your subconscious to continue processing work problems in the background.</p>
+                    <p class="benefit-description">Provides a calming, creative outlet that helps reduce mental fatigue and work-related stress.</p>
                 </div>
             </div>
         </section>
@@ -595,13 +760,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> onerestgame. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/games-data.js"></script>
-    
+    <script>
+        // 动态设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

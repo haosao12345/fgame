@@ -7,17 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile menu
     initMobileMenu();
     
-    // Load game card component
-    loadComponent('js/components/game-card.js', function() {
-        // Render games after component is loaded
-        renderGames(getAllGames());
-        
-        // Initialize filters
-        initFilters();
+    // 直接渲染游戏，不等待组件加载
+    renderGames(getAllGames());
+    
+    // Initialize filters
+    initFilters();
 
-        // Initialize search functionality
-        initSearch();
-    });
+    // Initialize search functionality
+    initSearch();
 });
 
 /**
@@ -76,15 +73,42 @@ function renderGames(games) {
     
     // Render each game card
     games.forEach(game => {
-        // Create game card using the simplified component
-        const cardOptions = {
-            showType: true,
-            imageSize: 'medium',
-            clickable: true
-        };
+        // 创建游戏卡片元素
+        const card = document.createElement('div');
+        card.className = 'game-card';
+        card.dataset.id = game.id;
         
-        const gameCard = new GameCard(game, cardOptions);
-        gamesGrid.appendChild(gameCard.element);
+        // 使用默认图片作为备用
+        const imageSrc = game.image || 'images/games/default-game.jpg';
+        
+        // 添加图片加载错误处理
+        const handleImageError = `onerror="this.onerror=null; this.src='images/games/default-game.jpg';"`;
+        
+        // 设置卡片HTML
+        card.innerHTML = `
+            <div class="game-image-container">
+                <img 
+                    src="${imageSrc}" 
+                    alt="Play ${game.title} - ${getGameTypeName(game.type)} mental refresher game" 
+                    class="game-image" 
+                    ${handleImageError}
+                    loading="lazy"
+                    title="${game.title} - Free Online ${getGameTypeName(game.type)} Game"
+                >
+                <div class="game-type ${game.type}">${getGameTypeName(game.type)}</div>
+                <div class="game-title-overlay">
+                    <h3 class="game-title">${game.title}</h3>
+                </div>
+            </div>
+        `;
+        
+        // 添加点击事件
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            window.location.href = `games/${game.id}.html`;
+        });
+        
+        gamesGrid.appendChild(card);
     });
 }
 
