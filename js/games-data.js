@@ -12,7 +12,7 @@ const gamesData = [
         path: 'https://www.onlinegames.io/games/2021/unity2/draw-here/index.html'
     },
     {
-        id: 'House-Painter',
+        id: 'house-painter',
         title: 'Home House Painter',
         description: 'A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.',
         type: 'calm',
@@ -20,7 +20,7 @@ const gamesData = [
         path: 'https://www.onlinegames.io/games/2023/construct/238/house-painter/index.html'
     },
     {
-        id: 'Charge-It',
+        id: 'charge-it',
         title: 'Charge It',
         description: 'A strategic circuit-building puzzle game designed to provide an effective mental break while exercising logical thinking.',
         type: 'logic',
@@ -45,7 +45,7 @@ const gamesData = [
         path: 'https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html'
     },
     {
-        id: 'Draw-the-Bridge',
+        id: 'draw-the-bridge',
         title: 'Draw The Bridge',
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
@@ -53,7 +53,7 @@ const gamesData = [
         path: 'https://www.onlinegames.io/games/2021/4/draw-the-bridge/index.html'
     },
     {
-        id: 'Find-It',
+        id: 'find-it',
         title: 'Find It Out Colorful Book',
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
@@ -61,7 +61,7 @@ const gamesData = [
         path: 'https://cloud.onlinegames.io/games/2025/unity/find-it/index-og.html'
     },
     {
-        id: 'Sweet-Sugar-Match',
+        id: 'sweet-sugar-match',
         title: 'Sweet Sugar Match',
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
@@ -70,7 +70,7 @@ const gamesData = [
     },
      //0324增加
     {
-        id: 'Color-Water-Sort-3D',
+        id: 'color-water-sort-3d',
         title: 'Color Sort Puzzle',
         description: 'A soothing color-matching puzzle that provides a perfect mental reset. Sort colored water into matching tubes while enjoying the calming visual effects and gentle gameplay.',
         type: 'calm',
@@ -78,7 +78,7 @@ const gamesData = [
         path: 'https://html5.gamedistribution.com/rvvASMiM/26b3b48bea8e46f2b7123f0742a7164f/index.html'
     },
     {
-        id: 'City-Blocks',
+        id: 'city-blocks',
         title: "City Blocks",
         description: 'A creative city-building puzzle that exercises spatial awareness. Design and arrange city blocks to create efficient layouts, offering a satisfying mental break that enhances planning skills.',
         type: 'creative',
@@ -87,7 +87,7 @@ const gamesData = [
     },
     //0325增加
     {
-        id: 'Organize-It',
+        id: 'organize-it',
         title: "Organize It",
         description: 'A satisfying organizational puzzle that offers instant mental refreshment with no login required. Sort and categorize items to create order from chaos, providing a perfect brain break that enhances focus and reduces cognitive fatigue.',
         type: 'logic',
