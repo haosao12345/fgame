@@ -17,7 +17,8 @@ const gamesData = [
         description: 'A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.',
         type: 'calm',
         image: 'images/games/House-Painter.jpg',
-        path: 'https://www.onlinegames.io/games/2023/construct/238/house-painter/index.html'
+        path: 'https://html5.gamedistribution.com/3d3c8f059fd34b25bed8d1ae38acbee7/?gd_sdk_referrer_url=https://onerestgame.com/games/house-painter'
+        
     },
     {
         id: 'charge-it',
