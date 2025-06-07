@@ -95,24 +95,15 @@ const gamesData = [
         image: 'images/games/Organize-It.jpg',
         path: 'https://html5.gamedistribution.com/0df5240c55bb4e1f8571179ab56f1004/'
     }
-    // ,
-    // {
-    //     id: 'Voxel-Bot',
-    //     title: "Voxel Bot",
-    //     description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
-    //     type: 'creative',
-    //     image: 'images/games/Voxel-Bot.jpg',
-    //     path: 'https://games.crazygames.com/en_US/voxel-bot/index.html'
-    // }
-    // ,
-    // {
-    //     id: 'Voxel-Bot',
-    //     title: "Voxel Bot",
-    //     description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
-    //     type: 'creative',
-    //     image: 'images/games/Voxel-Bot.jpg',
-    //     path: 'https://games.crazygames.com/en_US/cubes-2048-io/index.html'
-    // }
+    ,
+    {
+        id: '2048',
+        title: "2048",
+        description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
+        type: 'creative',
+        image: 'images/games/2048.jpg',
+        path: 'https://games.crazygames.com/en_US/2048/index.html'
+    }
 ];
 
 /**
