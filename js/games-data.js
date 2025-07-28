@@ -4,11 +4,21 @@
  */
 const gamesData = [
     {
+        id: 'Sokoban-Game',
+        title: 'Sokoban Game',
+        description: 'A creative drawing game that provides the perfect mental refresh. Express yourself freely while giving your analytical brain a rest.',
+        type: 'other',
+        image: 'images/games/Sokoban-Game.png',
+        click:"path",
+        path: 'https://sokobangame.online/'
+    },
+    {
         id: 'draw-here',
         title: 'Draw Here',
         description: 'A creative drawing game that provides the perfect mental refresh. Express yourself freely while giving your analytical brain a rest.',
         type: 'creative',
         image: 'images/games/draw-here.jpg',
+        click:"",
         path: 'https://www.onlinegames.io/games/2021/unity2/draw-here/index.html'
     },
     {
@@ -17,6 +27,7 @@ const gamesData = [
         description: 'A relaxing coloring game that helps reduce stress. Fill spaces with colors to create a beautiful house while refreshing your mind.',
         type: 'calm',
         image: 'images/games/House-Painter.jpg',
+        click:"",
         path: 'https://html5.gamedistribution.com/3d3c8f059fd34b25bed8d1ae38acbee7/?gd_sdk_referrer_url=https://onerestgame.com/games/house-painter'
         
     },
@@ -26,6 +37,7 @@ const gamesData = [
         description: 'A strategic circuit-building puzzle game designed to provide an effective mental break while exercising logical thinking.',
         type: 'logic',
         image: 'images/games/Charge-It.jpg',
+        click:"",
         path: 'https://www.onlinegames.io/games/2023/construct/241/charge-it/index.html'
     },
     {
@@ -34,6 +46,7 @@ const gamesData = [
         description: 'Classic puzzle game for quick mental refreshment',
         type: 'logic',
         image: 'images/games/Tetris.jpg',
+        click:"",
         path: 'https://www.onlinegames.io/games/2024/more/tetris/index.html'
     },
     //0323增加
@@ -43,6 +56,7 @@ const gamesData = [
         description: 'Aim for high scores or complete level objectives. Rotate and arrange blocks to clear rows and columns while enjoying stunning visuals. Each perfect move brings satisfaction, challenging you to beat your best and master each puzzle!.',
         type: 'logic',
         image: 'images/games/block-blast.jpg',
+        click:"",
         path: 'https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html'
     },
     {
@@ -51,6 +65,7 @@ const gamesData = [
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
         image: 'images/games/Draw-the-Bridge.jpg',
+        click:"",
         path: 'https://www.onlinegames.io/games/2021/4/draw-the-bridge/index.html'
     },
     {
@@ -59,6 +74,7 @@ const gamesData = [
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
         image: 'images/games/Find-It.jpg',
+        click:"",
         path: 'https://cloud.onlinegames.io/games/2025/unity/find-it/index-og.html'
     },
     {
@@ -67,6 +83,7 @@ const gamesData = [
         description: 'The classic block-stacking puzzle game that offers a perfect brain refresh. Arrange falling tetrominoes to clear lines and improve your spatial reasoning.',
         type: 'logic',
         image: 'images/games/Sweet-Sugar-Match.jpg',
+        click:"",
         path: 'https://www.onlinegames.io/games/2022/unity/sweet-sugar-match/index.html'
     },
      //0324增加
@@ -76,6 +93,7 @@ const gamesData = [
         description: 'A soothing color-matching puzzle that provides a perfect mental reset. Sort colored water into matching tubes while enjoying the calming visual effects and gentle gameplay.',
         type: 'calm',
         image: 'images/games/Color-Water-Sort-3D.jpg',
+        click:"",
         path: 'https://html5.gamedistribution.com/rvvASMiM/26b3b48bea8e46f2b7123f0742a7164f/index.html'
     },
     {
@@ -84,6 +102,7 @@ const gamesData = [
         description: 'A creative city-building puzzle that exercises spatial awareness. Design and arrange city blocks to create efficient layouts, offering a satisfying mental break that enhances planning skills.',
         type: 'creative',
         image: 'images/games/City-Blocks.jpg',
+        click:"",
         path: 'https://html5.gamedistribution.com/rvvASMiM/1a6b5d0bd94f40129fd9e698e5b7c556/index.html'
     },
     //0325增加
@@ -93,6 +112,7 @@ const gamesData = [
         description: 'A satisfying organizational puzzle that offers instant mental refreshment with no login required. Sort and categorize items to create order from chaos, providing a perfect brain break that enhances focus and reduces cognitive fatigue.',
         type: 'logic',
         image: 'images/games/Organize-It.jpg',
+        click:"",
         path: 'https://html5.gamedistribution.com/0df5240c55bb4e1f8571179ab56f1004/'
     }
     ,
@@ -102,6 +122,7 @@ const gamesData = [
         description: 'An engaging robot-building game that delivers quick cognitive refreshment without any login barriers. Construct and program your robot to navigate challenges, offering a stimulating mental break that activates problem-solving skills and creative thinking.',
         type: 'creative',
         image: 'images/games/2048.jpg',
+        click:"",
         path: 'https://games.crazygames.com/en_US/2048/index.html'
     }
 ];

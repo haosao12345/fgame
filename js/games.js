@@ -105,7 +105,11 @@ function renderGames(games) {
         // 添加点击事件
         card.style.cursor = 'pointer';
         card.addEventListener('click', () => {
-            window.location.href = `games/${game.id}.html`;
+            if(game.click != ""){
+                window.open(game.path,"_blank") 
+            }else{
+                window.location.href = `games/${game.id}.html`;
+            }
         });
         
         gamesGrid.appendChild(card);
