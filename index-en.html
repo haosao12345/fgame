@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Brain Games - No Login Required | Instant Play Mental Break Games | onerestgame</title>
+    <meta name="description" content="At onerestgame, you can play these puzzle games without logging in. These relaxing games can give your brain a moment to rest amidst busy work. We are adding new games every day and hope you have a great time playing..">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://onerestgame.com/" />
+    <meta property="og:title" content="Free Brain Games - No Login Required | onerestgame" />
+    <meta property="og:description" content="Play instant brain-boosting games with no login required. Science-backed mental break games for better focus and creativity." />
+    <meta property="og:image" content="https://onerestgame.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://onerestgame.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Brain Games - No Login Required | onerestgame" />
+    <meta name="twitter:description" content="Play instant brain-boosting games with no login required. Science-backed mental break games for better focus and creativity." />
+    <meta name="twitter:image" content="https://onerestgame.com/images/og-image.jpg" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLDGT73B03"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BLDGT73B03');
+    </script>
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .site-description {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: #666;
+            line-height: 1.4;
+            max-width: 100%;
+            width: 100%;
+        }
+        .site-description p {
+            margin-bottom: 6px;
+        }
+        .site-description p:last-child {
+            font-size: 0.7rem;
+            color: #888;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .footer-logo {
+            margin-bottom: 8px;
+        }
+
+        /* 游戏卡片样式 */
+        .game-card {
+            overflow: hidden;
+            border-radius: 12px;
+            height: auto;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-image-container {
+            position: relative;
+            width: 100%;
+            height: 230px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover .game-image {
+            transform: scale(1.05);
+        }
+
+        .game-type {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .game-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%);
+            padding: 25px 16px 12px;
+            transition: padding 0.3s ease;
+        }
+
+        .game-card:hover .game-title-overlay {
+            padding-bottom: 16px;
+        }
+
+        .game-title {
+            color: white;
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* 游戏类型颜色 */
+        .game-type.focus { background-color: rgba(66, 135, 245, 0.8); }
+        .game-type.creative { background-color: rgba(245, 131, 66, 0.8); }
+        .game-type.logic { background-color: rgba(66, 245, 141, 0.8); }
+        .game-type.calm { background-color: rgba(176, 66, 245, 0.8); }
+
+        /* 游戏网格布局 */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+            padding: 24px 0;
+        }
+
+        @media (max-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <nav class="container" role="navigation">
+            <div class="logo">
+                <a href="index.html" aria-label="onerestgame homepage">
+                    <span class="logo-highlight">onerest</span><span class="logo-highlight">game</span>
+                </a>
+            </div>
+            <div class="header-controls">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="gameSearch" class="search-input" placeholder="Search games..." autocomplete="off" aria-label="Search games">
+                        <button id="clearSearch" class="clear-search" style="display: none;" aria-label="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="games-list" aria-label="Games grid">
+            <div class="container">
+                <h1 class="visually-hidden">Free Brain Training Games - No Login Required</h1>
+                <div class="game-grid" id="gamesGrid" role="grid">
+                    <!-- Game cards will be dynamically loaded via JavaScript -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;" role="alert">
+                    <p>No games match your current filter criteria. Please try adjusting your filters.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" aria-label="onerestgame homepage">
+                        <span class="logo-highlight">onerestgame</span>
+                    </a>
+                </div>
+                <div class="site-description" role="complementary">
+                    <p>onerestgame offers instant-play mental refresh games with absolutely no login or registration required. Jump straight into our scientifically designed micro-games that deliver effective mental breaks in minutes. Our hassle-free, curated collection targets key cognitive functions with focus-enhancing challenges, creative puzzles, logic games, and calming activities – all accessible with a single click.</p>
+                    <p>Whether you're a busy professional taking a quick desk break, a student between study sessions, or anyone looking to optimize your mental performance, our login-free games provide the perfect cognitive reset without the frustration of creating accounts. Experience improved productivity, enhanced focus, reduced mental fatigue, and boosted creativity — all from just a few minutes of engaging gameplay, with no signup barriers.</p>
+                </div>
+            </div>
+            <nav class="footer-nav" role="navigation">
+                <h2 class="visually-hidden">Game Categories</h2>
+                <ul>
+                    <li><a href="#focus">Focus Games</a></li>
+                    <li><a href="#creative">Creative Games</a></li>
+                    <li><a href="#logic">Logic Games</a></li>
+                    <li><a href="#calm">Calming Games</a></li>
+                </ul>
+            </nav>
+            <div class="footer-bottom">
+                <p>&copy; 2023 onerestgame. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "onerestgame",
+        "url": "https://onerestgame.com",
+        "description": "Free instant-play brain training games with no login required",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://onerestgame.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/games-data.js" defer></script>
+    <script src="js/games.js" defer></script>
+</body>
+</html> 

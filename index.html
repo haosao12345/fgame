@@ -73,6 +73,7 @@
             height: auto;
             position: relative;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .game-card:hover {
@@ -138,6 +139,7 @@
         .game-type.creative { background-color: rgba(245, 131, 66, 0.8); }
         .game-type.logic { background-color: rgba(66, 245, 141, 0.8); }
         .game-type.calm { background-color: rgba(176, 66, 245, 0.8); }
+        .game-type.other { background-color: rgba(128, 128, 128, 0.8); }
 
         /* 游戏网格布局 */
         .game-grid {
@@ -193,7 +195,148 @@
             <div class="container">
                 <h1 class="visually-hidden">Free Brain Training Games - No Login Required</h1>
                 <div class="game-grid" id="gamesGrid" role="grid">
-                    <!-- Game cards will be dynamically loaded via JavaScript -->
+                    <!-- Sokoban Game -->
+                    <div class="game-card" data-id="Sokoban-Game" onclick="window.open('https://sokobangame.online/', '_blank')">
+                        <div class="game-image-container">
+                            <img src="images/games/Sokoban-Game.png" alt="Play Sokoban Game - Unknown mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Sokoban Game - Free Online Unknown Game">
+                            <div class="game-type other">Unknown</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Sokoban Game</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Draw Here -->
+                    <div class="game-card" data-id="draw-here" onclick="window.location.href='games/draw-here.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/draw-here.jpg" alt="Play Draw Here - Creativity mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Draw Here - Free Online Creativity Game">
+                            <div class="game-type creative">Creativity</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Draw Here</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Home House Painter -->
+                    <div class="game-card" data-id="house-painter" onclick="window.location.href='games/house-painter.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/House-Painter.jpg" alt="Play Home House Painter - Relaxation mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Home House Painter - Free Online Relaxation Game">
+                            <div class="game-type calm">Relaxation</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Home House Painter</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charge It -->
+                    <div class="game-card" data-id="charge-it" onclick="window.location.href='games/charge-it.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Charge-It.jpg" alt="Play Charge It - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Charge It - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Charge It</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tetris -->
+                    <div class="game-card" data-id="tetris" onclick="window.location.href='games/tetris.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Tetris.jpg" alt="Play Tetris - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Tetris - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Tetris</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Block Blaster Puzzle -->
+                    <div class="game-card" data-id="block-blast" onclick="window.location.href='games/block-blast.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/block-blast.jpg" alt="Play Block Blaster Puzzle - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Block Blaster Puzzle - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Block Blaster Puzzle</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Draw The Bridge -->
+                    <div class="game-card" data-id="draw-the-bridge" onclick="window.location.href='games/draw-the-bridge.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Draw-the-Bridge.jpg" alt="Play Draw The Bridge - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Draw The Bridge - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Draw The Bridge</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Find It Out Colorful Book -->
+                    <div class="game-card" data-id="find-it" onclick="window.location.href='games/find-it.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Find-It.jpg" alt="Play Find It Out Colorful Book - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Find It Out Colorful Book - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Find It Out Colorful Book</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sweet Sugar Match -->
+                    <div class="game-card" data-id="sweet-sugar-match" onclick="window.location.href='games/sweet-sugar-match.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Sweet-Sugar-Match.jpg" alt="Play Sweet Sugar Match - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Sweet Sugar Match - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Sweet Sugar Match</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Sort Puzzle -->
+                    <div class="game-card" data-id="color-water-sort-3d" onclick="window.location.href='games/color-water-sort-3d.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Color-Water-Sort-3D.jpg" alt="Play Color Sort Puzzle - Relaxation mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Color Sort Puzzle - Free Online Relaxation Game">
+                            <div class="game-type calm">Relaxation</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Color Sort Puzzle</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- City Blocks -->
+                    <div class="game-card" data-id="city-blocks" onclick="window.location.href='games/city-blocks.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/City-Blocks.jpg" alt="Play City Blocks - Creativity mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="City Blocks - Free Online Creativity Game">
+                            <div class="game-type creative">Creativity</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">City Blocks</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organize It -->
+                    <div class="game-card" data-id="organize-it" onclick="window.location.href='games/organize-it.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/Organize-It.jpg" alt="Play Organize It - Logic mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="Organize It - Free Online Logic Game">
+                            <div class="game-type logic">Logic</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">Organize It</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2048 -->
+                    <div class="game-card" data-id="2048" onclick="window.location.href='games/2048.html'">
+                        <div class="game-image-container">
+                            <img src="images/games/2048.jpg" alt="Play 2048 - Creativity mental refresher game" class="game-image" onerror="this.onerror=null; this.src='images/games/default-game.jpg';" loading="lazy" title="2048 - Free Online Creativity Game">
+                            <div class="game-type creative">Creativity</div>
+                            <div class="game-title-overlay">
+                                <h3 class="game-title">2048</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="no-results" id="noResults" style="display: none;" role="alert">
@@ -246,8 +389,53 @@
     }
     </script>
 
-    <script src="js/storage.js" defer></script>
-    <script src="js/games-data.js" defer></script>
-    <script src="js/games.js" defer></script>
+    <!-- 可选：如果需要搜索功能，可以添加简单的搜索脚本 -->
+    <script>
+        // 简单的搜索功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('gameSearch');
+            const clearButton = document.getElementById('clearSearch');
+            const gameCards = document.querySelectorAll('.game-card');
+            const noResults = document.getElementById('noResults');
+            const gamesGrid = document.getElementById('gamesGrid');
+
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                gameCards.forEach(card => {
+                    const title = card.querySelector('.game-title').textContent.toLowerCase();
+                    const gameType = card.querySelector('.game-type').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || gameType.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // 显示/隐藏无结果消息
+                if (visibleCount === 0 && searchTerm !== '') {
+                    gamesGrid.style.display = 'none';
+                    noResults.style.display = 'block';
+                } else {
+                    gamesGrid.style.display = 'grid';
+                    noResults.style.display = 'none';
+                }
+
+                // 显示/隐藏清除按钮
+                clearButton.style.display = searchTerm ? 'block' : 'none';
+            }
+
+            searchInput.addEventListener('input', performSearch);
+            
+            clearButton.addEventListener('click', function() {
+                searchInput.value = '';
+                performSearch();
+                searchInput.focus();
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
